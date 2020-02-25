@@ -7,4 +7,20 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  after_create :create_availabilities
+
+  private
+
+  def create_availabilities
+    (0..6).each do |day_number|
+      Availability.create(
+        user: self,
+        week_day: day_number,
+        start_time: nil,
+        end_time: nil
+      )
+    end
+  end
+
 end
