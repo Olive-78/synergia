@@ -1,0 +1,11 @@
+<%= @user.email %>
+<p>Availabilities :</p>
+<% @user.availabilities.each do |availability| %>
+  <% if availability.start_time %>
+    <%= availability.week_day %>
+    <%= availability.start_time %>
+    <%= availability.end_time %>
+  <% end %>
+<% end %>
+
+<%= link_to 'Edit availabilities', edit_availability_path(@user) %>
