@@ -1,18 +1,13 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
+require "open-uri"
+
+Availability.destroy_all
+Review.destroy_all
+Meeting.destroy_all
 User.destroy_all
 
-# User.destroy_all
-# Je ne peux pas destroy a cause des dependant destroy ???
-
 puts "x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x"
-puts "Start creation of the new database..."
+puts  "Start creation of the new database..."
 puts "x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x"
 
 puts "1. Old Database destroyed 👍"
@@ -24,7 +19,9 @@ sectors = ["Agroalimentaire", "Banque / Assurance", " BTP / Matériaux de constr
 
 distance = [10, 20, 30, 50, 100, 200]
 
-olivier_godard = User.create!({
+
+file = URI.open('')
+olivier_godard = User.new({
   first_name: "Olivier",
   last_name: "Godard",
   email: "olivier@foundaters.com",
@@ -39,8 +36,12 @@ olivier_godard = User.create!({
   company_sector: sectors.sample,
   distance: distance.sample,
 })
+olivier_godard.photo.attach(io: file, filename: '#{olivier_godard.first_name}#{olivier_godard.last_name}.jpg', content_type: 'image/jpg')
+olivier_godard.save!
 
-guillaume_protard = User.create!({
+
+file = URI.open('')
+guillaume_protard = User.new({
   first_name: "Guillaume",
   last_name: "Protard",
   email: "guillaume@foundaters.com",
@@ -55,8 +56,12 @@ guillaume_protard = User.create!({
   company_sector: sectors.sample,
   distance: distance.sample,
 })
+guillaume_protard.photo.attach(io: file, filename: '#{guillaume_protard.first_name}#{guillaume_protard.last_name}.jpg', content_type: 'image/jpg')
+guillaume_protard.save!
 
-tom_levy = User.create!({
+
+file = URI.open('')
+tom_levy = User.new({
   first_name: "Tom",
   last_name: "Levy" ,
   email: "tom@foundaters.com",
@@ -71,8 +76,12 @@ tom_levy = User.create!({
   company_sector: sectors.sample,
   distance: distance.sample,
 })
+tom_levy.photo.attach(io: file, filename: '#{tom_levy.first_name}#{tom_levy.last_name}.jpg', content_type: 'image/jpg')
+tom_levy.save!
 
-paul_couzinet = User.create!({
+
+file = URI.open('')
+paul_couzinet = User.new({
   first_name: "Paul",
   last_name: "Couzinet",
   email: "paul@foundaters.com",
@@ -87,8 +96,12 @@ paul_couzinet = User.create!({
   company_sector: sectors.sample,
   distance: distance.sample,
 })
+paul_couzinet.photo.attach(io: file, filename: '#{paul_couzinet.first_name}#{paul_couzinet.last_name}.jpg', content_type: 'image/jpg')
+paul_couzinet.save!
 
-virgini_atenza = User.create!({
+
+file = URI.open('')
+virgini_atenza = User.new({
   first_name: "Virginia",
   last_name: "Atenza",
   email: "virginia@foundaters.com",
@@ -103,8 +116,12 @@ virgini_atenza = User.create!({
   company_sector: sectors.sample,
   distance: distance.sample,
 })
+virgini_atenza.photo.attach(io: file, filename: '#{virgini_atenza.first_name}#{virgini_atenza.last_name}.jpg', content_type: 'image/jpg')
+virgini_atenza.save!
 
-astrid_aubert = User.create!({
+
+file = URI.open('')
+astrid_aubert = User.new({
   first_name: "Astrid",
   last_name: "Aubert",
   email: "astrid@foundaters.com",
@@ -119,8 +136,12 @@ astrid_aubert = User.create!({
   company_sector: sectors.sample,
   distance: distance.sample,
 })
+astrid_aubert.photo.attach(io: file, filename: '#{astrid_aubert.first_name}#{astrid_aubert.last_name}.jpg', content_type: 'image/jpg')
+astrid_aubert.save!
 
-karim_azib = User.create!({
+
+file = URI.open('')
+karim_azib = User.new({
   first_name: "Karim",
   last_name: "Azib",
   email: "karim@foundaters.com",
@@ -135,8 +156,12 @@ karim_azib = User.create!({
   company_sector: sectors.sample,
   distance: distance.sample,
 })
+karim_azib.photo.attach(io: file, filename: '#{karim_azib.first_name}#{karim_azib.last_name}.jpg', content_type: 'image/jpg')
+karim_azib.save!
 
-claire_bauduin = User.create!({
+
+file = URI.open('')
+claire_bauduin = User.new({
   first_name: "Claire",
   last_name: "Bauduin",
   email: "claire@foundaters.com",
@@ -151,8 +176,11 @@ claire_bauduin = User.create!({
   company_sector: sectors.sample,
   distance: distance.sample,
 })
+claire_bauduin.photo.attach(io: file, filename: '#{claire_bauduin.first_name}#{claire_bauduin.last_name}.jpg', content_type: 'image/jpg')
+claire_bauduin
 
-laurent_binder = User.create!({
+file = URI.open('')
+laurent_binder = User.new({
   first_name: "Laurent",
   last_name: "Binder",
   email: "laurent@foundaters.com",
@@ -167,8 +195,12 @@ laurent_binder = User.create!({
   company_sector: sectors.sample,
   distance: distance.sample,
 })
+laurent_binder.photo.attach(io: file, filename: '#{laurent_binder.first_name}#{laurent_binder.last_name}.jpg', content_type: 'image/jpg')
+laurent_binder.save!
 
-xavier_blanchy = User.create!({
+
+file = URI.open('')
+xavier_blanchy = User.new({
   first_name: "Xavier",
   last_name: "Blanchy",
   email: "xavier@foundaters.com",
@@ -183,8 +215,12 @@ xavier_blanchy = User.create!({
   company_sector: sectors.sample,
   distance: distance.sample,
 })
+xavier_blanchy.photo.attach(io: file, filename: '#{xavier_blanchy.first_name}#{xavier_blanchy.last_name}.jpg', content_type: 'image/jpg')
+xavier_blanchy.save!
 
-edouard_castelnau = User.create!({
+
+file = URI.open('')
+edouard_castelnau = User.new({
   first_name: "Edouard ",
   last_name: "Castelnau",
   email: "edouard@foundaters.com",
@@ -199,8 +235,12 @@ edouard_castelnau = User.create!({
   company_sector: sectors.sample,
   distance: distance.sample,
 })
+edouard_castelnau.photo.attach(io: file, filename: '#{edouard_castelnau.first_name}#{edouard_castelnau.last_name}.jpg', content_type: 'image/jpg')
+edouard_castelnau.save!
 
-nicolas_chardeau = User.create!({
+
+file = URI.open('')
+nicolas_chardeau = User.new({
   first_name: "Nicolas",
   last_name: "Chardeau",
   email: "nicolas@foundaters.com",
@@ -215,8 +255,12 @@ nicolas_chardeau = User.create!({
   company_sector: sectors.sample,
   distance: distance.sample,
 })
+nicolas_chardeau.photo.attach(io: file, filename: '#{nicolas_chardeau.first_name}#{nicolas_chardeau.last_name}.jpg', content_type: 'image/jpg')
+nicolas_chardeau.save!
 
-eugenie_coisne = User.create!({
+
+file = URI.open('')
+eugenie_coisne = User.new({
   first_name: "Eugénie",
   last_name: "Coisne",
   email: "eugenie@foundaters.com",
@@ -231,8 +275,12 @@ eugenie_coisne = User.create!({
   company_sector: sectors.sample,
   distance: distance.sample,
 })
+eugenie_coisne.photo.attach(io: file, filename: '#{eugenie_coisne.first_name}#{eugenie_coisne.last_name}.jpg', content_type: 'image/jpg')
+eugenie_coisne.save!
 
-maude_couturier = User.create!({
+
+file = URI.open('')
+maude_couturier = User.new({
   first_name: "Maude",
   last_name: "Couturier",
   email: "maude@foundaters.com",
@@ -247,8 +295,12 @@ maude_couturier = User.create!({
   company_sector: sectors.sample,
   distance: distance.sample,
 })
+maude_couturier.photo.attach(io: file, filename: '#{maude_couturier.first_name}#{maude_couturier.last_name}.jpg', content_type: 'image/jpg')
+maude_couturier.save!
 
-benjamin_crot = User.create!({
+
+file = URI.open('')
+benjamin_crot = User.new({
   first_name: "Benjamin",
   last_name: "Crot",
   email: "benjamin@foundaters.com",
@@ -263,8 +315,12 @@ benjamin_crot = User.create!({
   company_sector: sectors.sample,
   distance: distance.sample,
 })
+benjamin_crot.photo.attach(io: file, filename: '#{benjamin_crot.first_name}#{benjamin_crot.last_name}.jpg', content_type: 'image/jpg')
+benjamin_crot.save!
 
-swann_culioli = User.create!({
+
+file = URI.open('')
+swann_culioli = User.new({
   first_name: "Swann",
   last_name: "Culioli",
   email: "swann@foundaters.com",
@@ -279,8 +335,12 @@ swann_culioli = User.create!({
   company_sector: sectors.sample,
   distance: distance.sample,
 })
+swann_culioli.photo.attach(io: file, filename: '#{swann_culioli.first_name}#{swann_culioli.last_name}.jpg', content_type: 'image/jpg')
+swann_culioli.save!
 
-julie_dakoure = User.create!({
+
+file = URI.open('')
+julie_dakoure = User.new({
   first_name: "Julie",
   last_name: "Dakouré",
   email: "julie@foundaters.com",
@@ -295,8 +355,12 @@ julie_dakoure = User.create!({
   company_sector: sectors.sample,
   distance: distance.sample,
 })
+julie_dakoure.photo.attach(io: file, filename: '#{julie_dakoure.first_name}#{julie_dakoure.last_name}.jpg', content_type: 'image/jpg')
+julie_dakoure.save!
 
-fabien_davy = User.create!({
+
+file = URI.open('')
+fabien_davy = User.new({
   first_name: "Fabien",
   last_name: "Davy",
   email: "fabien@foundaters.com",
@@ -311,8 +375,12 @@ fabien_davy = User.create!({
   company_sector: sectors.sample,
   distance: distance.sample,
 })
+fabien_davy.photo.attach(io: file, filename: '#{fabien_davy.first_name}#{fabien_davy.last_name}.jpg', content_type: 'image/jpg')
+fabien_davy.save!
 
-paul_de_thore = User.create!({
+
+file = URI.open('')
+paul_de_thore = User.new({
   first_name: "Paul",
   last_name: "De Thoré",
   email: "pauldethore@foundaters.com",
@@ -327,8 +395,12 @@ paul_de_thore = User.create!({
   company_sector: sectors.sample,
   distance: distance.sample,
 })
+paul_de_thore.photo.attach(io: file, filename: '#{paul_de_thore.first_name}#{paul_de_thore.last_name}.jpg', content_type: 'image/jpg')
+paul_de_thore.save!
 
-hugo_dornbierer = User.create!({
+
+file = URI.open('')
+hugo_dornbierer = User.new({
   first_name: "Hugo",
   last_name: "Dornbierer",
   email: "hugo@foundaters.com",
@@ -343,83 +415,89 @@ hugo_dornbierer = User.create!({
   company_sector: sectors.sample,
   distance: distance.sample,
 })
+hugo_dornbierer.photo.attach(io: file, filename: '#{hugo_dornbierer.first_name}#{hugo_dornbierer.last_name}.jpg', content_type: 'image/jpg')
+hugo_dornbierer.save!
+
 
 puts "_______________________"
 puts "2. 10x New Users created 👍"
 puts "_______________________"
 
-# meeting_place = [{
-#   name: "OZ",
-#   address: "13 Boulevard du Temple, 75003 Paris"
-#   },
-# {
-#   name: "Sullivan",
-#   address: "14 Rue Crespin du Gast, 75011 Paris"
-# }]
+meeting_place = [{
+  name: "OZ",
+  address: "13 Boulevard du Temple, 75003 Paris"
+  },
+{
+  name: "Sullivan",
+  address: "14 Rue Crespin du Gast, 75011 Paris"
+}]
 
-# status = [1, 2, 3]
+status = [1, 2, 3]
 
-# user_1 = [olivier_godard, guillaume_protard, tom_levy, paul_couzinet, karim_azib, laurent_binder, xavier_blanchy, edouard_castelnau, nicolas_chardeau, benjamin_crot]
+user_1 = [olivier_godard, guillaume_protard, tom_levy, paul_couzinet, karim_azib, laurent_binder, xavier_blanchy, edouard_castelnau, nicolas_chardeau, benjamin_crot]
 
-# user_2 = [paul_de_thore, hugo_dornbierer, virgini_atenza, astrid_aubert, claire_bauduin, eugenie_coisne, maude_couturier, julie_dakoure,swann_culioli, fabien_davy]
+user_2 = [paul_de_thore, hugo_dornbierer, virgini_atenza, astrid_aubert, claire_bauduin, eugenie_coisne, maude_couturier, julie_dakoure,swann_culioli, fabien_davy]
 
-# 10.times do
-#   meeting = Meeting.new
-#   meeting.date = Faker::Date.in_date_period(month: 3)
+50.times do
+  meeting = Meeting.new
+  meeting.date = Faker::Date.in_date_period(month: 3)
 
-#   place = meeting_place.sample
+  place = meeting_place.sample
 
-#   meeting.venue_name = place.name
-#   meeting.venue_address = place.address
+  meeting.venue_name = place[:name]
+  meeting.venue_address = place[:address]
 
-#   meeting.status = status.sample
+  meeting.status = status.sample
 
-#   meeting.user_one_id = user_1.sample
-#   meeting.user_two_id = user_2.sample
+  meeting.user_one = user_1.sample
+  meeting.user_two = user_2.sample
 
-#   meeting.save!
-# end
+  meeting.save!
+end
 
-# puts "_______________________"
-# puts "2. 10x New Meetings created 👍"
-# puts "_______________________"
+puts "_______________________"
+puts "2. 50x New Meetings created 👍"
+puts "_______________________"
 
-# ratings = (1..5).to_a
+reviews = [
+"Aiming for a top job in the organization. He sets very high standards, aware that this will bring attention and promotion. Intellectually versatile. When a topic is unfamiliar or new concepts are put forward, he listens, learns and adjusts quickly, and is soon making a full and useful contribution to the conversation.",
 
-# reviews = [
-# "Aiming for a top job in the organization. He sets very high standards, aware that this will bring attention and promotion. Intellectually versatile. When a topic is unfamiliar or new concepts are put forward, he listens, learns and adjusts quickly, and is soon making a full and useful contribution to the conversation.",
+"Responds to setbacks or adversity with redoubled vigour and enthusiasm. Will never accept that defeat is a foregone conclusion, and inspires others to stay positive and fight on. Intellectually versatile. When a topic is unfamiliar or new concepts are put forward, he listens, learns and adjusts quickly, and is soon making a full and useful contribution to the conversation.",
 
-# "Responds to setbacks or adversity with redoubled vigour and enthusiasm. Will never accept that defeat is a foregone conclusion, and inspires others to stay positive and fight on. Intellectually versatile. When a topic is unfamiliar or new concepts are put forward, he listens, learns and adjusts quickly, and is soon making a full and useful contribution to the conversation.",
+"Regularly produces creative, original ideas, plans, products or methods, well-attuned to the needs and capabilities of the organization, and producing clear benefits. Intellectually versatile. When a topic is unfamiliar or new concepts are put forward, he listens, learns and adjusts quickly, and is soon making a full and useful contribution to the conversation.",
 
-# "Regularly produces creative, original ideas, plans, products or methods, well-attuned to the needs and capabilities of the organization, and producing clear benefits. Intellectually versatile. When a topic is unfamiliar or new concepts are put forward, he listens, learns and adjusts quickly, and is soon making a full and useful contribution to the conversation.",
+"Always eager to take on a new task, whether hard or simple, and tackles it diligently, without question or complaint. This positive attitude inspires others too. Intellectually versatile. When a topic is unfamiliar or new concepts are put forward, he listens, learns and adjusts quickly, and is soon making a full and useful contribution to the conversation.",
 
-# "Always eager to take on a new task, whether hard or simple, and tackles it diligently, without question or complaint. This positive attitude inspires others too. Intellectually versatile. When a topic is unfamiliar or new concepts are put forward, he listens, learns and adjusts quickly, and is soon making a full and useful contribution to the conversation.",
+"Always eager to take on a new task, whether hard or simple, and tackles it diligently, without question or complaint. This positive attitude inspires others too. he prefers own company to that of other people.",
 
-# "Always eager to take on a new task, whether hard or simple, and tackles it diligently, without question or complaint. This positive attitude inspires others too. he prefers own company to that of other people.",
+"A natural leader. People tend to listen and follow his example and guidance. he is chosen as leader without making an issue of leadership. Always eager to take on a new task, whether hard or simple, and tackles it diligently, without question or complaint. This positive attitude inspires others too.",
 
-# "A natural leader. People tend to listen and follow his example and guidance. he is chosen as leader without making an issue of leadership. Always eager to take on a new task, whether hard or simple, and tackles it diligently, without question or complaint. This positive attitude inspires others too.",
+"Always eager to take on a new task, whether hard or simple, and tackles it diligently, without question or complaint. This positive attitude inspires others too. Late on fewer than 3 occasions in 6 months.",
 
-# "Always eager to take on a new task, whether hard or simple, and tackles it diligently, without question or complaint. This positive attitude inspires others too. Late on fewer than 3 occasions in 6 months.",
+"Always contributes vigorously to the efforts of the team, whether as a leader or a team member. Understands own weaknesses ond others’ strengths and goes to the right people for help. Sympathetically helps others to address their weaknesses. Always eager to take on a new task, whether hard or simple, and tackles it diligently, without question or complaint. This positive attitude inspires others too.",
 
-# "Always contributes vigorously to the efforts of the team, whether as a leader or a team member. Understands own weaknesses ond others’ strengths and goes to the right people for help. Sympathetically helps others to address their weaknesses. Always eager to take on a new task, whether hard or simple, and tackles it diligently, without question or complaint. This positive attitude inspires others too.",
+"Understands the importance of confidentiality, and can always be trusted not to reveal confidential or private information to unauthorized parties. Always contributes vigorously to the efforts of the team, whether as a leader or a team member. Understands own weaknesses ond others’ strengths and goes to the right people for help. Sympathetically helps others to address their weaknesses.",
 
-# "Understands the importance of confidentiality, and can always be trusted not to reveal confidential or private information to unauthorized parties. Always contributes vigorously to the efforts of the team, whether as a leader or a team member. Understands own weaknesses ond others’ strengths and goes to the right people for help. Sympathetically helps others to address their weaknesses.",
+"A self-starter – someone who always finds out the right thing to do and gets on with the job. If a manager has given no guidance he will still take appropriate action. If the required tools are unavailable, he is able to improvise. Always contributes vigorously to the efforts of the team, whether as a leader or a team member. Understands own weaknesses ond others’ strengths and goes to the right people for help. Sympathetically helps others to address their weaknesses."]
 
-# "A self-starter – someone who always finds out the right thing to do and gets on with the job. If a manager has given no guidance he will still take appropriate action. If the required tools are unavailable, he is able to improvise. Always contributes vigorously to the efforts of the team, whether as a leader or a team member. Understands own weaknesses ond others’ strengths and goes to the right people for help. Sympathetically helps others to address their weaknesses."]
+  meeting_ids = (Meeting.first.id..Meeting.last.id).to_a
 
+  users = [olivier_godard, guillaume_protard, tom_levy, paul_couzinet, karim_azib, laurent_binder, xavier_blanchy, edouard_castelnau, nicolas_chardeau, benjamin_crot, paul_de_thore, hugo_dornbierer, virgini_atenza, astrid_aubert, claire_bauduin, eugenie_coisne, maude_couturier, julie_dakoure,swann_culioli, fabien_davy]
 
-# # 10.times do
-# #   review = Review.new
-# #   review.content = reviews.sample
-# #   review.rating = ratings
-# #   review.meeting = //////////////////////////////
-# #   review.user = users.sample
-# #   review.save!
+50.times do
+  review = Review.new
+  review.content = reviews.sample
+  review.rating = rand(1..5)
+  review.meeting = Meeting.find(meeting_ids.first)
+  meeting_ids.delete_at(0)
+  review.user = users.sample
+  review.save!
+end
 
-# puts "_______________________"
-# puts "2. 10x New Reviews created 👍"
-# puts "_______________________"
+puts "_______________________"
+puts "3. 50x New Reviews created 👍"
+puts "_______________________"
 
 puts "x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x"
-puts "New database created with sucess!"
+puts    "New database created with sucess!"
 puts "x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x"
