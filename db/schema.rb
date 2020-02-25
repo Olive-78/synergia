@@ -27,12 +27,13 @@ ActiveRecord::Schema.define(version: 2020_02_25_130805) do
 
   create_table "meetings", force: :cascade do |t|
     t.date "date"
-    t.string "place"
+    t.string "venue_name"
     t.integer "status"
     t.bigint "user_one_id", null: false
     t.bigint "user_two_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "venue_address"
     t.index ["user_one_id"], name: "index_meetings_on_user_one_id"
     t.index ["user_two_id"], name: "index_meetings_on_user_two_id"
   end
