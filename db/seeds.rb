@@ -20,7 +20,7 @@ sectors = ["Agroalimentaire", "Banque / Assurance", " BTP / Matériaux de constr
 distance = [10, 20, 30, 50, 100, 200]
 
 
-file = URI.open('')
+file = URI.open('https://res.cloudinary.com/dqyyujlp1/image/upload/v1582637434/Olivier_Godard_g2kskd.png')
 olivier_godard = User.new({
   first_name: "Olivier",
   last_name: "Godard",
@@ -36,11 +36,11 @@ olivier_godard = User.new({
   company_sector: sectors.sample,
   distance: distance.sample,
 })
-olivier_godard.photo.attach(io: file, filename: '#{olivier_godard.first_name}#{olivier_godard.last_name}.jpg', content_type: 'image/jpg')
+olivier_godard.photo.attach(io: file, filename: "#{olivier_godard.first_name}#{olivier_godard.last_name}.png", content_type: 'image/png')
 olivier_godard.save!
 
 
-file = URI.open('')
+file = URI.open('https://res.cloudinary.com/dqyyujlp1/image/upload/v1582637433/Guillaume_Protard_bdqsep.png')
 guillaume_protard = User.new({
   first_name: "Guillaume",
   last_name: "Protard",
@@ -56,11 +56,11 @@ guillaume_protard = User.new({
   company_sector: sectors.sample,
   distance: distance.sample,
 })
-guillaume_protard.photo.attach(io: file, filename: '#{guillaume_protard.first_name}#{guillaume_protard.last_name}.jpg', content_type: 'image/jpg')
+guillaume_protard.photo.attach(io: file, filename: "#{guillaume_protard.first_name}#{guillaume_protard.last_name}.png", content_type: 'image/png')
 guillaume_protard.save!
 
 
-file = URI.open('')
+file = URI.open('https://res.cloudinary.com/dqyyujlp1/image/upload/v1582637434/Tom_Levy_lxr218.jpg')
 tom_levy = User.new({
   first_name: "Tom",
   last_name: "Levy" ,
@@ -76,11 +76,11 @@ tom_levy = User.new({
   company_sector: sectors.sample,
   distance: distance.sample,
 })
-tom_levy.photo.attach(io: file, filename: '#{tom_levy.first_name}#{tom_levy.last_name}.jpg', content_type: 'image/jpg')
+tom_levy.photo.attach(io: file, filename: "#{tom_levy.first_name}#{tom_levy.last_name}.jpg", content_type: 'image/jpg')
 tom_levy.save!
 
 
-file = URI.open('')
+file = URI.open('https://res.cloudinary.com/dqyyujlp1/image/upload/v1582637434/Paul_Couzinet_skof0r.jpg')
 paul_couzinet = User.new({
   first_name: "Paul",
   last_name: "Couzinet",
@@ -96,11 +96,11 @@ paul_couzinet = User.new({
   company_sector: sectors.sample,
   distance: distance.sample,
 })
-paul_couzinet.photo.attach(io: file, filename: '#{paul_couzinet.first_name}#{paul_couzinet.last_name}.jpg', content_type: 'image/jpg')
+paul_couzinet.photo.attach(io: file, filename: "#{paul_couzinet.first_name}#{paul_couzinet.last_name}.jpg", content_type: 'image/jpg')
 paul_couzinet.save!
 
 
-file = URI.open('')
+file = URI.open('https://res.cloudinary.com/dqyyujlp1/image/upload/v1582637434/Virginia_Atenza_kqahpz.jpg')
 virgini_atenza = User.new({
   first_name: "Virginia",
   last_name: "Atenza",
@@ -116,11 +116,11 @@ virgini_atenza = User.new({
   company_sector: sectors.sample,
   distance: distance.sample,
 })
-virgini_atenza.photo.attach(io: file, filename: '#{virgini_atenza.first_name}#{virgini_atenza.last_name}.jpg', content_type: 'image/jpg')
+virgini_atenza.photo.attach(io: file, filename: "#{virgini_atenza.first_name}#{virgini_atenza.last_name}.jpg", content_type: 'image/jpg')
 virgini_atenza.save!
 
 
-file = URI.open('')
+file = URI.open('https://res.cloudinary.com/dqyyujlp1/image/upload/v1582637432/Astrid_Aubert_buddmf.jpg')
 astrid_aubert = User.new({
   first_name: "Astrid",
   last_name: "Aubert",
@@ -136,11 +136,11 @@ astrid_aubert = User.new({
   company_sector: sectors.sample,
   distance: distance.sample,
 })
-astrid_aubert.photo.attach(io: file, filename: '#{astrid_aubert.first_name}#{astrid_aubert.last_name}.jpg', content_type: 'image/jpg')
+astrid_aubert.photo.attach(io: file, filename: "#{astrid_aubert.first_name}#{astrid_aubert.last_name}.jpg", content_type: 'image/jpg')
 astrid_aubert.save!
 
 
-file = URI.open('')
+file = URI.open('https://res.cloudinary.com/dqyyujlp1/image/upload/v1582637433/Karim_Azib_xrzq0w.png')
 karim_azib = User.new({
   first_name: "Karim",
   last_name: "Azib",
@@ -156,11 +156,11 @@ karim_azib = User.new({
   company_sector: sectors.sample,
   distance: distance.sample,
 })
-karim_azib.photo.attach(io: file, filename: '#{karim_azib.first_name}#{karim_azib.last_name}.jpg', content_type: 'image/jpg')
+karim_azib.photo.attach(io: file, filename: "#{karim_azib.first_name}#{karim_azib.last_name}.png", content_type: 'image/png')
 karim_azib.save!
 
 
-file = URI.open('')
+file = URI.open('https://res.cloudinary.com/dqyyujlp1/image/upload/v1582637432/Claire_Bauduin_dezkcw.jpg')
 claire_bauduin = User.new({
   first_name: "Claire",
   last_name: "Bauduin",
@@ -176,30 +176,31 @@ claire_bauduin = User.new({
   company_sector: sectors.sample,
   distance: distance.sample,
 })
-claire_bauduin.photo.attach(io: file, filename: '#{claire_bauduin.first_name}#{claire_bauduin.last_name}.jpg', content_type: 'image/jpg')
-claire_bauduin
-
-file = URI.open('')
-laurent_binder = User.new({
-  first_name: "Laurent",
-  last_name: "Binder",
-  email: "laurent@foundaters.com",
-  password: "aqwzsx",
-  address: "196, Avenue Secrétan, Boulevard de la Villette, 75019 Paris",
-  phone_number: "06 91 83 55 22",
-  description: "I've worked as a sound engineer for many years, recording and mixing albums. From now on, I would like to learn some coding and be able to join a dev team to work in the digital industry.",
-  birth_date: Faker::Date.in_date_period(year: 1979, month: 12),
-  linkedin: "https://www.linkedin.com/in/laurent-binder-805652174/",
-  company_name: Faker::Company.name,
-  company_ca: money.sample,
-  company_sector: sectors.sample,
-  distance: distance.sample,
-})
-laurent_binder.photo.attach(io: file, filename: '#{laurent_binder.first_name}#{laurent_binder.last_name}.jpg', content_type: 'image/jpg')
-laurent_binder.save!
+claire_bauduin.photo.attach(io: file, filename: "#{claire_bauduin.first_name}#{claire_bauduin.last_name}.jpg", content_type: 'image/jpg')
+claire_bauduin.save!
 
 
-file = URI.open('')
+# file = URI.open('https://res.cloudinary.com/dqyyujlp1/image/upload/v1582637433/Laurent_Binder_pndszh.jpg')
+# laurent_binder = User.new({
+#   first_name: "Laurent",
+#   last_name: "Binder",
+#   email: "laurent@foundaters.com",
+#   password: "aqwzsx",
+#   address: "196, Avenue Secrétan, Boulevard de la Villette, 75019 Paris",
+#   phone_number: "06 91 83 55 22",
+#   description: "I've worked as a sound engineer for many years, recording and mixing albums. From now on, I would like to learn some coding and be able to join a dev team to work in the digital industry.",
+#   birth_date: Faker::Date.in_date_period(year: 1979, month: 12),
+#   linkedin: "https://www.linkedin.com/in/laurent-binder-805652174/",
+#   company_name: Faker::Company.name,
+#   company_ca: money.sample,
+#   company_sector: sectors.sample,
+#   distance: distance.sample,
+# })
+# laurent_binder.photo.attach(io: file, filename: '#{laurent_binder.first_name}#{laurent_binder.last_name}.jpg', content_type: 'image/jpg')
+# laurent_binder.save!
+
+
+file = URI.open('https://res.cloudinary.com/dqyyujlp1/image/upload/v1582637435/Xavier_Blanchy_tnc71p.png')
 xavier_blanchy = User.new({
   first_name: "Xavier",
   last_name: "Blanchy",
@@ -215,31 +216,31 @@ xavier_blanchy = User.new({
   company_sector: sectors.sample,
   distance: distance.sample,
 })
-xavier_blanchy.photo.attach(io: file, filename: '#{xavier_blanchy.first_name}#{xavier_blanchy.last_name}.jpg', content_type: 'image/jpg')
+xavier_blanchy.photo.attach(io: file, filename: "#{xavier_blanchy.first_name}#{xavier_blanchy.last_name}.png", content_type: 'image/png')
 xavier_blanchy.save!
 
 
-file = URI.open('')
-edouard_castelnau = User.new({
-  first_name: "Edouard ",
-  last_name: "Castelnau",
-  email: "edouard@foundaters.com",
-  password: "aqwzsx",
-  address: "141 Boulevard de Sébastopol, 75002 Paris",
-  phone_number: "06 66 78 09 11",
-  description: "Après avoir travaillé dans de nombreux milieux différents (scolaire, cinéma, restauration etc.), je souhaite me reconvertir dans le développement web car j'estime que c'est un secteur d'avenir.",
-  birth_date: Faker::Date.in_date_period(year: 1990, month: 3),
-  linkedin: "",
-  company_name: Faker::Company.name,
-  company_ca: money.sample,
-  company_sector: sectors.sample,
-  distance: distance.sample,
-})
-edouard_castelnau.photo.attach(io: file, filename: '#{edouard_castelnau.first_name}#{edouard_castelnau.last_name}.jpg', content_type: 'image/jpg')
-edouard_castelnau.save!
+# file = URI.open('https://res.cloudinary.com/dqyyujlp1/image/upload/v1582637432/Edouard_Castelnau_fvho13.jpg')
+# edouard_castelnau = User.new({
+#   first_name: "Edouard",
+#   last_name: "Castelnau",
+#   email: "edouard@foundaters.com",
+#   password: "aqwzsx",
+#   address: "141 Boulevard de Sébastopol, 75002 Paris",
+#   phone_number: "06 66 78 09 11",
+#   description: "Après avoir travaillé dans de nombreux milieux différents (scolaire, cinéma, restauration etc.), je souhaite me reconvertir dans le développement web car j'estime que c'est un secteur d'avenir.",
+#   birth_date: Faker::Date.in_date_period(year: 1990, month: 3),
+#   linkedin: "",
+#   company_name: Faker::Company.name,
+#   company_ca: money.sample,
+#   company_sector: sectors.sample,
+#   distance: distance.sample,
+# })
+# edouard_castelnau.photo.attach(io: file, filename: "#{edouard_castelnau.first_name}#{edouard_castelnau.last_name}.jpg", content_type: 'image/jpg')
+# edouard_castelnau.save!
 
 
-file = URI.open('')
+file = URI.open('https://res.cloudinary.com/dqyyujlp1/image/upload/v1582637433/Nicolas_Chardeau_qg7ioo.jpg')
 nicolas_chardeau = User.new({
   first_name: "Nicolas",
   last_name: "Chardeau",
@@ -255,11 +256,11 @@ nicolas_chardeau = User.new({
   company_sector: sectors.sample,
   distance: distance.sample,
 })
-nicolas_chardeau.photo.attach(io: file, filename: '#{nicolas_chardeau.first_name}#{nicolas_chardeau.last_name}.jpg', content_type: 'image/jpg')
+nicolas_chardeau.photo.attach(io: file, filename: "#{nicolas_chardeau.first_name}#{nicolas_chardeau.last_name}.jpg", content_type: 'image/jpg')
 nicolas_chardeau.save!
 
 
-file = URI.open('')
+file = URI.open('https://res.cloudinary.com/dqyyujlp1/image/upload/v1582637432/Euge%CC%81nie_Coisne_v7aoqy.jpg')
 eugenie_coisne = User.new({
   first_name: "Eugénie",
   last_name: "Coisne",
@@ -275,31 +276,31 @@ eugenie_coisne = User.new({
   company_sector: sectors.sample,
   distance: distance.sample,
 })
-eugenie_coisne.photo.attach(io: file, filename: '#{eugenie_coisne.first_name}#{eugenie_coisne.last_name}.jpg', content_type: 'image/jpg')
+eugenie_coisne.photo.attach(io: file, filename: "#{eugenie_coisne.first_name}#{eugenie_coisne.last_name}.jpg", content_type: 'image/jpg')
 eugenie_coisne.save!
 
 
-file = URI.open('')
-maude_couturier = User.new({
-  first_name: "Maude",
-  last_name: "Couturier",
-  email: "maude@foundaters.com",
-  password: "aqwzsx",
-  address: "89 Rue Réaumur, 75002 Paris",
-  phone_number: "06 90 36 39 88",
-  description: "I worked as a consultant for 6 years in Montreal, New York and Paris. I started in finance and transitioned to a manager position at Deloitte's Digital Factory. Working with developers and PM gave me a taste of what I was missing in the tech industry. I decided to join le Wagon to learn how to code and become a product manager, get to know startups and meet new people !",
-  birth_date: Faker::Date.in_date_period(year: 1991, month: 4),
-  linkedin: "https://www.linkedin.com/in/maude-couturier-538403a3/",
-  company_name: Faker::Company.name,
-  company_ca: money.sample,
-  company_sector: sectors.sample,
-  distance: distance.sample,
-})
-maude_couturier.photo.attach(io: file, filename: '#{maude_couturier.first_name}#{maude_couturier.last_name}.jpg', content_type: 'image/jpg')
-maude_couturier.save!
+# file = URI.open('https://res.cloudinary.com/dqyyujlp1/image/upload/v1582637433/Maude_Couturier_o78cal.jpg')
+# maude_couturier = User.new({
+#   first_name: "Maude",
+#   last_name: "Couturier",
+#   email: "maude@foundaters.com",
+#   password: "aqwzsx",
+#   address: "89 Rue Réaumur, 75002 Paris",
+#   phone_number: "06 90 36 39 88",
+#   description: "I worked as a consultant for 6 years in Montreal, New York and Paris. I started in finance and transitioned to a manager position at Deloitte's Digital Factory. Working with developers and PM gave me a taste of what I was missing in the tech industry. I decided to join le Wagon to learn how to code and become a product manager, get to know startups and meet new people !",
+#   birth_date: Faker::Date.in_date_period(year: 1991, month: 4),
+#   linkedin: "https://www.linkedin.com/in/maude-couturier-538403a3/",
+#   company_name: Faker::Company.name,
+#   company_ca: money.sample,
+#   company_sector: sectors.sample,
+#   distance: distance.sample,
+# })
+# maude_couturier.photo.attach(io: file, filename: "#{maude_couturier.first_name}#{maude_couturier.last_name}.jpg", content_type: 'image/jpg')
+# maude_couturier.save!
 
 
-file = URI.open('')
+file = URI.open('https://res.cloudinary.com/dqyyujlp1/image/upload/v1582637435/Benjamin_Crot_fhbvb7.png')
 benjamin_crot = User.new({
   first_name: "Benjamin",
   last_name: "Crot",
@@ -315,11 +316,11 @@ benjamin_crot = User.new({
   company_sector: sectors.sample,
   distance: distance.sample,
 })
-benjamin_crot.photo.attach(io: file, filename: '#{benjamin_crot.first_name}#{benjamin_crot.last_name}.jpg', content_type: 'image/jpg')
+benjamin_crot.photo.attach(io: file, filename: "#{benjamin_crot.first_name}#{benjamin_crot.last_name}.png", content_type: 'image/png')
 benjamin_crot.save!
 
 
-file = URI.open('')
+file = URI.open('https://res.cloudinary.com/dqyyujlp1/image/upload/v1582637434/Swann_Culioli_lokdp1.jpg')
 swann_culioli = User.new({
   first_name: "Swann",
   last_name: "Culioli",
@@ -335,11 +336,11 @@ swann_culioli = User.new({
   company_sector: sectors.sample,
   distance: distance.sample,
 })
-swann_culioli.photo.attach(io: file, filename: '#{swann_culioli.first_name}#{swann_culioli.last_name}.jpg', content_type: 'image/jpg')
+swann_culioli.photo.attach(io: file, filename: "#{swann_culioli.first_name}#{swann_culioli.last_name}.jpg", content_type: 'image/jpg')
 swann_culioli.save!
 
 
-file = URI.open('')
+file = URI.open('https://res.cloudinary.com/dqyyujlp1/image/upload/v1582637433/Julie_Dakoure%CC%81_rdocyk.jpg')
 julie_dakoure = User.new({
   first_name: "Julie",
   last_name: "Dakouré",
@@ -355,11 +356,11 @@ julie_dakoure = User.new({
   company_sector: sectors.sample,
   distance: distance.sample,
 })
-julie_dakoure.photo.attach(io: file, filename: '#{julie_dakoure.first_name}#{julie_dakoure.last_name}.jpg', content_type: 'image/jpg')
+julie_dakoure.photo.attach(io: file, filename: "#{julie_dakoure.first_name}#{julie_dakoure.last_name}.jpg", content_type: 'image/jpg')
 julie_dakoure.save!
 
 
-file = URI.open('')
+file = URI.open('https://res.cloudinary.com/dqyyujlp1/image/upload/v1582637432/Fabien_Davy_pgrpus.jpg')
 fabien_davy = User.new({
   first_name: "Fabien",
   last_name: "Davy",
@@ -375,11 +376,11 @@ fabien_davy = User.new({
   company_sector: sectors.sample,
   distance: distance.sample,
 })
-fabien_davy.photo.attach(io: file, filename: '#{fabien_davy.first_name}#{fabien_davy.last_name}.jpg', content_type: 'image/jpg')
+fabien_davy.photo.attach(io: file, filename: "#{fabien_davy.first_name}#{fabien_davy.last_name}.jpg", content_type: 'image/jpg')
 fabien_davy.save!
 
 
-file = URI.open('')
+file = URI.open('https://res.cloudinary.com/dqyyujlp1/image/upload/v1582637434/Paul_Thore%CC%81_mbmain.jpg')
 paul_de_thore = User.new({
   first_name: "Paul",
   last_name: "De Thoré",
@@ -395,11 +396,11 @@ paul_de_thore = User.new({
   company_sector: sectors.sample,
   distance: distance.sample,
 })
-paul_de_thore.photo.attach(io: file, filename: '#{paul_de_thore.first_name}#{paul_de_thore.last_name}.jpg', content_type: 'image/jpg')
+paul_de_thore.photo.attach(io: file, filename: "#{paul_de_thore.first_name}#{paul_de_thore.last_name}.jpg", content_type: 'image/jpg')
 paul_de_thore.save!
 
 
-file = URI.open('')
+file = URI.open('https://res.cloudinary.com/dqyyujlp1/image/upload/v1582637433/Hugo_Dornbierer_kexxtg.jpg')
 hugo_dornbierer = User.new({
   first_name: "Hugo",
   last_name: "Dornbierer",
@@ -415,7 +416,7 @@ hugo_dornbierer = User.new({
   company_sector: sectors.sample,
   distance: distance.sample,
 })
-hugo_dornbierer.photo.attach(io: file, filename: '#{hugo_dornbierer.first_name}#{hugo_dornbierer.last_name}.jpg', content_type: 'image/jpg')
+hugo_dornbierer.photo.attach(io: file, filename: "#{hugo_dornbierer.first_name}#{hugo_dornbierer.last_name}.jpg", content_type: 'image/jpg')
 hugo_dornbierer.save!
 
 
@@ -434,9 +435,9 @@ meeting_place = [{
 
 status = [1, 2, 3]
 
-user_1 = [olivier_godard, guillaume_protard, tom_levy, paul_couzinet, karim_azib, laurent_binder, xavier_blanchy, edouard_castelnau, nicolas_chardeau, benjamin_crot]
+user_1 = [olivier_godard, guillaume_protard, tom_levy, paul_couzinet, karim_azib, xavier_blanchy, nicolas_chardeau, benjamin_crot]
 
-user_2 = [paul_de_thore, hugo_dornbierer, virgini_atenza, astrid_aubert, claire_bauduin, eugenie_coisne, maude_couturier, julie_dakoure,swann_culioli, fabien_davy]
+user_2 = [paul_de_thore, hugo_dornbierer, virgini_atenza, astrid_aubert, claire_bauduin, eugenie_coisne, julie_dakoure,swann_culioli, fabien_davy]
 
 50.times do
   meeting = Meeting.new
@@ -482,7 +483,7 @@ reviews = [
 
   meeting_ids = (Meeting.first.id..Meeting.last.id).to_a
 
-  users = [olivier_godard, guillaume_protard, tom_levy, paul_couzinet, karim_azib, laurent_binder, xavier_blanchy, edouard_castelnau, nicolas_chardeau, benjamin_crot, paul_de_thore, hugo_dornbierer, virgini_atenza, astrid_aubert, claire_bauduin, eugenie_coisne, maude_couturier, julie_dakoure,swann_culioli, fabien_davy]
+  users = [olivier_godard, guillaume_protard, tom_levy, paul_couzinet, karim_azib, xavier_blanchy, nicolas_chardeau, benjamin_crot, paul_de_thore, hugo_dornbierer, virgini_atenza, astrid_aubert, claire_bauduin, eugenie_coisne, julie_dakoure,swann_culioli, fabien_davy]
 
 50.times do
   review = Review.new
