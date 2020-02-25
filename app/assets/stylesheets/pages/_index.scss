@@ -38,6 +38,9 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 50px;
+    padding: 15px;
+    margin-top: 90px;
+    align-items:center;
 }
 .card {
     width: 250px;
@@ -57,7 +60,8 @@
 .container {
     width: 900px;
     margin: auto;
-    display: block;
+    display: inline-flex;
+    flex-direction: row;
 
 }
 
