@@ -5,9 +5,9 @@ class AvailabilitiesController < ApplicationController
   end
 
   def update
-    # @user = User.find(params[:user_id])
+    @user = User.find(params[:user_id])
     @availability = Availability.find(params[:id])
-    # @availability.user = @user
+    @availability.user = @user
     @availability.update(availability_params)
     redirect_to user_path
   end
