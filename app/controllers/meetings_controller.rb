@@ -2,11 +2,11 @@ class MeetingsController < ApplicationController
 
   def index
     # @meetings = policy_scope(Meeting)
-    @meetings = Meeting.where(user_id: current_user)
+    @meetings = Meeting.where(user_two_id: current_user).or(Meeting.where(user_two_id: current_user))
   end
 
   def show
-    @meeting = Meeting.find(params[:meeting_id])
+    @meeting = Meeting.find(params[:id])
     # authorize @meeting
   end
 

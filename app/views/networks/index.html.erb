@@ -1,0 +1,17 @@
+<h1 class="mynetwork">Your Network</h1>
+<%= @meetings.count %>
+<%= @current_user_test %>
+
+<% @contacts.each do |contact| %>
+<%= link_to user_path(contact) do   %>
+<%#= cl_image_tag contact.photo %>
+<% end %>
+<%# @.each do |contact| %>
+  <%# @contact.first_name  %>
+  <%# @contacts.last_name  %>
+  <%# @contacts.phone_number %>
+  <%# @contacts.address %>
+  <%# @contacts.description %>
+  <%# @contacts.linkedin %>
+<%# end %>
+
