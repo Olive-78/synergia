@@ -1,6 +1,69 @@
 // Import page-specific CSS files here.
 @import "home";
 
-.mynetwork {
+.indextitle {
   text-align:center;
 }
+
+#network{
+  text-align:center;
+}
+
+.banner {
+   background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),url(networking-770.png);
+    background-size: cover;
+    background-position: center;
+    padding: 200px 0;
+}
+
+
+.banner h1 {
+    color: white;
+
+}
+.banner p {
+    color: white;
+    opacity: .7;
+    font-size: 20px;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+.card {
+    width: 250px;
+    border-radius: 3px;
+    box-shadow: 0 0 5px rgb(230,230,230);
+    text-align: center;
+    padding: 30px;
+    border: 1px solid rgb(230,230,230);
+}
+
+
+.card img {
+  height:  150px;
+  align-self: center;
+}
+
+.container {
+    width: 900px;
+    margin: auto;
+    display: block;
+
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
