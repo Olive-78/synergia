@@ -13,4 +13,6 @@ Rails.application.routes.draw do
   resources :meetings, only: [ :show, :index, :update ]
 
   resources :networks, only: [ :index ]
+
+  resources :dashboards, only: :index
 end
