@@ -1,11 +1,16 @@
 <h1 id="network">Your Network</h1>
-  <div class="container">
-<% @contacts.each do |contact| %>
-  <%= link_to user_path(contact) do %>
-  <div class="cards">
-     <div>
-    <%= cl_image_tag contact.photo.key, height: 150, width: 200, crop: :fill  %>
-    </div>
-   </div>
-  <% end %>
-<% end %>
+<div class="containerperso">
+  <div class="disposition">
+    <% @contacts.each do |contact| %>
+      <%= link_to user_path(contact) do %>
+        <div class="cards" style="background-image: url('<%= cl_image_path contact.photo.key %>');">
+          <div class="networkname">
+            <%= contact.last_name %>
+            <%= contact.first_name %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+

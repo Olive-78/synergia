@@ -1,4 +1,41 @@
-<%= @user.email %>
+  <div class="photouser">
+    <%= cl_image_tag @user.photo.key %>
+  </div>
+<div class="fullname">
+   <%= @user.first_name %>
+   <%= @user.last_name%>
+</div>
+<hr>
+<div class="email">
+Email : <%= @user.email %>
+</div>
+<hr>
+<div class="phone">
+Téléphone : <%= @user.phone_number %>
+</div>
+<hr>
+<div class="birth">
+Date de naissance : <%= @user.birth_date%>
+</div>
+<hr>
+<div class="address">
+Addresse : <%= @user.address %>
+</div>
+<hr>
+<div class="description">
+Description :
+<%= @user.description %>
+</div>
+<hr>
+<div class="turnover">
+Chiffre d'affaire : <%= @user.company_ca %> €
+</div>
+<hr>
+<div class= "sector">
+Secteur : <%= @user.company_sector %>
+</div>
+<hr>
+
 <p>Availabilities :</p>
 <% @user.availabilities.each do |availability| %>
   <% if availability.breakfast || availability.lunch || availability.afterwork %>
@@ -14,3 +51,4 @@
 <% end %>
 
 <%= link_to 'Edit availabilities', new_week_availability_path %>
+
