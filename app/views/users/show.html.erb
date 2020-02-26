@@ -1,11 +1,16 @@
 <%= @user.email %>
 <p>Availabilities :</p>
 <% @user.availabilities.each do |availability| %>
-  <% if availability.start_time %>
-    <%= availability.week_day %>
-    <%= availability.start_time %>
-    <%= availability.end_time %>
+  <% if availability.breakfast || availability.lunch || availability.afterwork %>
+    <%= Date::DAYNAMES[availability.week_day] %>
+    <% if availability.breakfast %>
+      <%= "Breakfast" %>
+    <% elsif availability.lunch %>
+      <%= "Lunch" %>
+    <% elsif availability.afterwork%>
+      <%= "Afterwork" %>
+    <% end %>
   <% end %>
 <% end %>
 
-<%= link_to 'Edit availabilities', edit_availability_path(@user) %>
+<%= link_to 'Edit availabilities', new_week_availability_path %>

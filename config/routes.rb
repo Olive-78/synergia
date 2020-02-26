@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :reviews, only: [ :create ]
   end
 
-  resources :availabilities, only: [ :update, :edit ]
+  resources :week_availabilities, only: [ :new, :create ]
 
   resources :meetings, only: [ :show, :index, :update ]
 

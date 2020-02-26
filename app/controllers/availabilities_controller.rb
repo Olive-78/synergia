@@ -1,11 +1,12 @@
 class AvailabilitiesController < ApplicationController
 
   def edit
+    @user = User.find(params[:id])
     @availability = Availability.find(params[:id])
   end
 
   def update
-    @user = User.find(params[:user_id])
+    @user = User.find(params[:id])
     @availability = Availability.find(params[:id])
     @availability.user = @user
     @availability.update(availability_params)
