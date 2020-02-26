@@ -1,6 +1,71 @@
 // Import page-specific CSS files here.
 @import "home";
 
+.profile-avatar-ban {
+  display: flex;
+  justify-content: center;
+  padding-top: 6px;
+}
+
+.display-width {
+  width: 95%;
+  margin: 0 auto
+}
+
+.medium-avatar {
+  display: flex;
+  align-items: center;
+}
+
+.dashboard-card {
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-top: 10px;
+  border-radius: 8px;
+  padding: 10px;
+  position: relative;
+  i {
+    position:absolute;
+  }
+}
+
+.fa-check-circle {
+  right: 8px;
+  top: 12px;
+  color:green;
+  font-size: 20px;
+}
+
+.fa-times-circle {
+  right: 35px;
+  top: 12px;
+  color:red;
+  font-size: 20px;
+}
+
+.card-title {
+  text-align: center;
+}
+
+.user-info {
+  display: flex;
+}
+
+.user-details {
+  margin-left: 15px;
+}
+
+.meeting-info {
+  border-top: solid lightgray 1px;
+  padding-inline: 10px;
+}
+
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
 .indextitle {
 
   text-align:center;
