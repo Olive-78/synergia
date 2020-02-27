@@ -1,5 +1,5 @@
 .btn-gradient-validate {
-  color: white;
+  color: white !important;
   padding: 8px 24px;
   border-radius: 25px;
   font-weight: bold;
@@ -12,7 +12,11 @@
 
 .btn-gradient-validate:hover {
     background: #208838;
-    color: white;
+    color: white !important;
+}
+
+.fa-check-circle {
+  color: white !important;
 }
 
 .btn-gradient-deny {
