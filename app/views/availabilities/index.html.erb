@@ -1,0 +1,47 @@
+<div class="d-flex justify-content-center">
+  <% @availabilities.sort_by{|d| d[:week_day]}.rotate(1).each do |availability| %>
+  <div class='m-3'>
+    <%= simple_form_for((availability), remote: true) do |f| %>
+      <div>
+        <%= f.label Date::DAYNAMES[availability.week_day] %>
+      </div>
+      <div <% if availability.breakfast == true %>
+        class="touch-choice selected"
+        <% else %>
+        class="choice selected"
+        <% end %>>
+        <%= f.label 'Breakfast' %>
+      <div style="display: none">
+
+        <%= f.input :breakfast %>
+      </div>
+      </div>
+      <div <% if availability.lunch == true %>
+        class="touch-choice selected"
+        <% else %>
+        class="choice selected"
+        <% end %>>
+        <%= f.label 'Lunch' %>
+      <div style="display: none">
+
+        <%= f.input :lunch %>
+      </div>
+      </div>
+      <div <% if availability.afterwork == true %>
+        class="touch-choice selected"
+        <% else %>
+        class="choice selected"
+        <% end %>>
+        <%= f.label 'Afterwork' %>
+      <div style="display: none">
+
+        <%= f.input :afterwork%>
+      </div>
+      </div>
+      <div style="display: none">
+        <%= f.submit %>
+      </div>
+    <% end %>
+  </div>
+  <% end %>
+</div>
