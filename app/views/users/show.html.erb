@@ -3,15 +3,15 @@
    <div class="cardsphoto">
    <div class="photouser">
     <%= cl_image_tag @user.photo.key %>
+  <div class="fullname">
+   <%= @user.first_name %>
+   <%= @user.last_name%>
+ </div>
   </div>
   </div>
   <br>
   <%= image_tag 'contact.png', class:"imgcontact" %>
   <h5 class="catecontact">Contact  </h5>
-  <div class="fullname">
-   <%= @user.first_name %>
-   <%= @user.last_name%>
- </div>
  <div class="email">
   <%= @user.email %>
 </div>
@@ -47,6 +47,7 @@
 <div class= "sector">
   Secteur : <%= @user.company_sector %>
   <hr>
+</div>
 
 <p class="avail">Availabilities :</p>
 <% @user.availabilities.each do |availability| %>
@@ -61,6 +62,9 @@
 <% end %>
 <% end %>
 <% end %>
+<div class="distance">
+  <%= @user.distance%> Km max
+</div>
 
 <%= link_to 'Edit availabilities', availabilities_path %>
 
