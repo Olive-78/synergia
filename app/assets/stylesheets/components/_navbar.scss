@@ -1,7 +1,5 @@
 .content-wrapper {
-  min-height: calc(100vh - 70px - 80px);
-  padding: 0px;
-  margin: 0px;
+  min-height: calc(100vh - 64px);
 }
 
 .navbar-bottom {
@@ -17,6 +15,70 @@
   i {
     font-size: 30px;
   }
+}
+
+.navbar-element {
+    width: 20%;
+    text-align: center;
+}
+
+.navbar-element .navbar-icon {
+  width: 30px;
+  height: 30px;
+  background-size: cover;
+  background-position: center;
+  margin: auto;
+}
+
+.navbar-calendar .navbar-icon {
+  background-image: url(asset_path('calendar-icon.svg'));
+}
+
+.navbar-dashboard .navbar-icon {
+  background-image: url(asset_path('home-icon.svg'));
+}
+
+.navbar-network .navbar-icon {
+  background-image: url(asset_path('network-icon.svg'));
+}
+
+.navbar-search .navbar-icon {
+  background-image: url(asset_path('search-icon.svg'));
+}
+
+.navbar-element p {
+  margin: 2px auto;
+  font-size: 12px;
+  text-transform: uppercase;
+  padding-top: 3px;
+  color: #AAAAAA;
+}
+
+#meetings-index .navbar-calendar {
+  .navbar-icon {
+    background-image: url(asset_path('calendar-icon-highlight.svg'));
+  }
+  p {
+    color: #001f3f;
+  }
+}
+
+#dashboards-index .navbar-dashboard {
+  .navbar-icon {
+    background-image: url(asset_path('home-icon-highlight.svg'));
+  }
+ p {
+   color: #001f3f;
+ }
+}
+
+#networks-index .navbar-network {
+  .navbar-icon {
+    background-image: url(asset_path('network-icon-highlight.svg'));
+  }
+  p {
+   color: #001f3f;
+ }
 }
 
 // .navbar-lewagon {
