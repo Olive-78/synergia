@@ -1,7 +1,4 @@
 <div>
-  <div class="profile-avatar-ban">
-    <%= cl_image_tag @user.photo.key, class: "avatar" %>
-  </div>
   <div class="display-width">
     <div class="dashboard-card">
       <i class="fas fa-check-circle"></i>
@@ -11,19 +8,19 @@
       </div>
       <div class="user-info">
         <div class="medium-avatar">
-          <%= cl_image_tag(@user_two.photo.key, class: "avatar-large")%>
+          <%= cl_image_tag(@user_next_meeting.photo.key, class: "avatar-large")%>
         </div>
         <div class="user-details">
-          <p><strong><%= @user_two.first_name%> <%= @user_two.last_name %></strong></p>
-          <p><%= @user_two.company_name %></p>
+          <p><strong><%= @user_next_meeting.first_name%> <%= @user_next_meeting.last_name %></strong></p>
+          <p><%= @user_next_meeting.company_name %></p>
         </div>
       </div>
       <div class="meeting-info">
-        <p><%= @meeting.venue_name %></p>
-        <p><%= @meeting.date %></p>
+        <p><%= @next_meeting.venue_name %></p>
+        <p><%= @next_meeting.date %></p>
       </div>
       <div class="center">
-        <a href="#", class="btn btn-primary">En savoir plus</a>
+        <%= link_to "En savoir plus", meeting_path(@next_meeting) %>
       </div>
     </div>
 
@@ -33,15 +30,15 @@
         </div>
         <div class="user-info">
           <div class="medium-avatar">
-            <%= cl_image_tag(@user_two.photo.key, class: "avatar-large")%>
+            <%= cl_image_tag(@user_last_meeting.photo.key, class: "avatar-large")%>
           </div>
           <div class="user-details">
-            <p><strong><%= @user_two.first_name%> <%= @user_two.last_name %></strong></p>
-            <p><%= @user_two.company_name %></p>
+            <p><strong><%= @user_last_meeting.first_name%> <%= @user_last_meeting.last_name %></strong></p>
+            <p><%= @user_last_meeting.company_name %></p>
           </div>
         </div>
         <div class="center">
-          <a href="#", class="btn btn-primary">Laisser un commentaire</a>
+          <%= link_to "Laisser un commentaire", new_user_review_path(@last_meeting) %>
         </div>
     </div>
 
