@@ -1,47 +1,55 @@
-<div class="d-flex justify-content-center">
-  <% @availabilities.sort_by{|d| d[:week_day]}.rotate(1).each do |availability| %>
-  <div class='m-3'>
-    <%= simple_form_for((availability), remote: true) do |f| %>
-      <div>
-        <%= f.label Date::DAYNAMES[availability.week_day] %>
+<div class="ava col-sm-12">
+  <div class="dispo"><p>Choisis tes disponibilités</p></div>
+    <div class="calendar">
+      <% @availabilities.sort_by{|d| d[:week_day]}.rotate(1).each do |availability| %>
+      <div class='m-3'>
+        <%= simple_form_for((availability), remote: true) do |f| %>
+          <div class="d-flex direction row">
+            <div class="days col-3 mr-4">
+              <% f.label day = Date::DAYNAMES[availability.week_day] %>
+              <% if day == 'Monday' %>
+                <%= 'Lundi' %>
+              <% elsif day == 'Tuesday' %>
+                <%= 'Mardi' %>
+              <% elsif day == 'Wednesday' %>
+                <%= 'Mercredi' %>
+              <% elsif day == 'Thursday' %>
+                <%= 'Jeudi' %>
+              <% elsif day == 'Friday' %>
+                <%= 'Vendredi' %>
+              <% elsif day == 'Saturday' %>
+                <%= 'Samedi' %>
+              <% elsif day == 'Sunday' %>
+                <%= 'Dimanche' %>
+              <% end %>
+            </div>
+            <div class="tabs selected ml-2 <%= availability.breakfast? ? 'touch-choice' : 'choice' %>">
+              <i class="fas fa-coffee"></i>
+            <div style="display: none">
+              <%= f.input :breakfast %>
+            </div>
+            </div>
+            <div class="tabs selected ml-2 <%= availability.lunch? ? 'touch-choice' : 'choice' %>">
+              <i class="fas fa-hamburger"></i>
+              <div style="display: none">
+                <%= f.input :lunch %>
+              </div>
+            </div>
+            <div class="tabs selected ml-2 <%= availability.afterwork? ? 'touch-choice' : 'choice' %>">
+              <i class="fas fa-beer"></i>
+            <div style="display: none">
+              <%= f.input :afterwork%>
+            </div>
+            </div>
+            <div style="display: none">
+              <%= f.submit %>
+            </div>
+          <% end %>
+          </div>
       </div>
-      <div <% if availability.breakfast == true %>
-        class="touch-choice selected"
-        <% else %>
-        class="choice selected"
-        <% end %>>
-        <%= f.label 'Breakfast' %>
-      <div style="display: none">
-
-        <%= f.input :breakfast %>
-      </div>
-      </div>
-      <div <% if availability.lunch == true %>
-        class="touch-choice selected"
-        <% else %>
-        class="choice selected"
-        <% end %>>
-        <%= f.label 'Lunch' %>
-      <div style="display: none">
-
-        <%= f.input :lunch %>
-      </div>
-      </div>
-      <div <% if availability.afterwork == true %>
-        class="touch-choice selected"
-        <% else %>
-        class="choice selected"
-        <% end %>>
-        <%= f.label 'Afterwork' %>
-      <div style="display: none">
-
-        <%= f.input :afterwork%>
-      </div>
-      </div>
-      <div style="display: none">
-        <%= f.submit %>
-      </div>
-    <% end %>
-  </div>
-  <% end %>
+      <% end %>
+    </div>
 </div>
+
+
+
