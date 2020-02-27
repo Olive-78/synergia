@@ -1,5 +1,36 @@
-<h5><%= @meeting.date %></h5>
-<p><%= @meeting.venue_name %></p>
-<p><%= @meeting.venue_address %></p>
-<p><%= @meeting.user_one_id %></p>
-<p><%= @meeting.user_two_id %></p>
+<div class="container">
+  <div class="d-flex flex-column">
+    <div class="d-flex flex-row justify-content-center">
+      <div class="avatar-large">
+        <% if @user_one.photo.key.present? %>
+          <%= cl_image_tag @user_one.photo.key %>
+        <% else %>
+          <%= image_tag("image_not_found.png") %>
+        <% end %>
+      </div>
+
+      <div class="avatar-large">
+        <% if @user_two.photo.key.present? %>
+          <%= cl_image_tag @user_two.photo.key %>
+        <% else %>
+          <%= image_tag("image_not_found.png") %>
+        <% end %>
+      </div>
+    </div>
+    <div class="justify-content-center">
+      <p<%= "Rendez-vous avec #{@user_two.first_name} #{@user_two.last_name}" %></p>
+
+      <p><%= "#{@meeting.date.day} #{@meeting.date.month} #{@meeting.date.year}" %></p>
+      <p><%= @meeting.venue_name %></p>
+      <p><%= @meeting.venue_address %></p>
+    </div>
+    <div class="row d-flex flex-row justify-content-around align-items-center">
+      <div>
+        <%= link_to "Accepter", "#", class: "btn btn-gradient-validate" %>
+      </div>
+      <div>
+        <%= link_to "Refuser", "#", class: "btn btn-gradient-deny" %>
+      </div>
+    </div>
+  </div>
+</div>
