@@ -1,16 +1,56 @@
-<%= @user.email %>
-<p>Availabilities :</p>
+   <br>
+   <div class="photouser">
+    <%= cl_image_tag @user.photo.key %>
+  </div>
+  <br>
+  <h5 class="catecontact">Contact  </h5>
+  <div class="fullname">
+   <%= @user.first_name %>
+   <%= @user.last_name%>
+ </div>
+ <div class="email">
+  <%= @user.email %>
+</div>
+<div class="phone">
+  <%= @user.phone_number %>
+</div>
+<div class="address">
+  <%= @user.address %>
+</div>
+<div class="birth">
+  <%= @user.birth_date%>
+</div>
+  <hr>
+  <h5 class="about">A propos de moi</h5>
+<div class="description">
+  <%= @user.description %>
+</div>
+<hr>
+  <h5 class="entreprise">Mon entreprise </h5>
+<div class= "sector">
+  <%= @user.company_name %>
+</div>
+<div class="turnover">
+  Chiffre d'affaire : <%= @user.company_ca %> €
+</div>
+<div class= "sector">
+  Secteur : <%= @user.company_sector %>
+</div>
+<hr>
+
+<p class="avail">Availabilities :</p>
 <% @user.availabilities.each do |availability| %>
-  <% if availability.breakfast || availability.lunch || availability.afterwork %>
-    <%= Date::DAYNAMES[availability.week_day] %>
-    <% if availability.breakfast %>
-      <%= "Breakfast" %>
-    <% elsif availability.lunch %>
-      <%= "Lunch" %>
-    <% elsif availability.afterwork%>
-      <%= "Afterwork" %>
-    <% end %>
-  <% end %>
+<% if availability.breakfast || availability.lunch || availability.afterwork %>
+<%= Date::DAYNAMES[availability.week_day] %>
+<% if availability.breakfast %>
+<%= "Breakfast" %>
+<% elsif availability.lunch %>
+<%= "Lunch" %>
+<% elsif availability.afterwork%>
+<%= "Afterwork" %>
+<% end %>
+<% end %>
 <% end %>
 
 <%= link_to 'Edit availabilities', new_week_availability_path %>
+

@@ -71,6 +71,17 @@
   text-align:center;
 }
 
+.network {
+  text-align:center;
+}
+.networkname {
+  text-align:center;
+  margin-left: 12px;
+  color: white;
+  opacity: .7;
+  font-size: 14px;
+  font-weight: bold;
+}
 
 #network{
   text-align:center;
@@ -100,19 +111,22 @@
 }
 
 .cards {
+    height: 150px;
+    width: 150px;
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 50px;
-    padding: 15px;
-    margin-top: 90px;
-    align-items:center;
+    align-items : flex-end;
+    background-size: cover;
+    border-radius: 9px;
+    margin : 17px;
+    padding-left: 14px;
 }
+
 .card {
     width: 250px;
     border-radius: 3px;
     box-shadow: 0 0 5px rgb(230,230,230);
     text-align: center;
-    padding: 30px;
+    padding: 20px;
     border: 1px solid rgb(230,230,230);
 }
 
@@ -122,11 +136,11 @@
   align-self: center;
 }
 
-.container {
-    width: 900px;
+.containerperso {
+    width: 100vw;
     margin: auto;
-    display: inline-flex;
-    flex-direction: row;
+    // display: inline-flex;
+    // flex-direction: row;
 
 }
 
@@ -138,3 +152,12 @@ p {
     margin-inline-end: 0px;
 }
 
+.photouser {
+  img {
+    width: 180px;
+    background-size: cover;
+    border-radius: 9px;
+    margin : 4px;
+  }
+  text-align: center;
+}
