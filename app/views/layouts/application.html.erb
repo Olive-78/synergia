@@ -10,9 +10,10 @@
     <%= javascript_pack_tag 'application', 'data-turbokinks-track': 'reload', defer: true %>
   </head>
   <body>
-    <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-    <%= yield %>
-
+    <div class="content-wrapper">
+      <%= yield %>
+    </div>
+    <%= render 'shared/navbar_bottom' %>
   </body>
 </html>

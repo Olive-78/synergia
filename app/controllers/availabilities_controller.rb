@@ -7,6 +7,7 @@ class AvailabilitiesController < ApplicationController
   def edit
     @user = User.find(params[:id])
     @availability = Availability.find(params[:id])
+    authorize @availability
   end
 
   def update
@@ -14,6 +15,7 @@ class AvailabilitiesController < ApplicationController
     @availability.user = current_user
     @availability.update(availability_params)
     redirect_to availabilities_path
+    authorize @availability
   end
 
   private
