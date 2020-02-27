@@ -1,0 +1,16 @@
+.choice {
+  text-align: center;
+  border : dashed 1px black;
+  border-radius: 10%;
+  width: 100px;
+  cursor: pointer;
+  p {
+  cursor: pointer;
+  }
+}
+
+.touch-choice {
+ border : solid 2px black;
+ border-radius: 10%;
+ background-color: green;
+}
