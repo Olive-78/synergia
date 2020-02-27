@@ -1,3 +1,4 @@
+
    <br>
    <br>
    <div class="cardsphoto">
@@ -48,7 +49,7 @@
   Secteur : <%= @user.company_sector %>
   <hr>
 </div>
-
+<%= image_tag 'calendar.png', class:"portfolio" %>
 <p class="avail">Availabilities :</p>
 <% @user.availabilities.each do |availability| %>
 <% if availability.breakfast || availability.lunch || availability.afterwork %>
@@ -65,6 +66,9 @@
 <div class="distance">
   <%= @user.distance%> Km max
 </div>
+</div>
+<div class="availi">
 
 <%= link_to 'Edit availabilities', availabilities_path %>
+</div>
 
