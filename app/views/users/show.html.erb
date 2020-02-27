@@ -1,9 +1,12 @@
    <br>
+   <br>
+   <div class="cardsphoto">
    <div class="photouser">
     <%= cl_image_tag @user.photo.key %>
   </div>
+  </div>
   <br>
-<%= image_tag 'contact.png', class:"imgcontact" %>
+  <%= image_tag 'contact.png', class:"imgcontact" %>
   <h5 class="catecontact">Contact  </h5>
   <div class="fullname">
    <%= @user.first_name %>
@@ -29,7 +32,7 @@
 
   <h5 class="about">A propos de moi</h5>
 <div class="description">
-  <%= @user.description %>
+  " <%= @user.description %> "
 </div>
 <hr>
   <%= image_tag 'work.png', class:"work" %>
