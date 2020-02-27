@@ -1,36 +1,67 @@
+<div class="users">
+  <div class="image-chevauchement">
+    <div class="avatar-large image-user-1">
+      <% if current_user.photo.key.present? %>
+        <%= cl_image_tag current_user.photo.key %>
+      <% else %>
+        <%= image_tag("image_not_found.png") %>
+      <% end %>
+    </div>
+
+    <div class="avatar-large image-user-2">
+      <% if @user_two != current_user %>
+        <%= cl_image_tag @user_two.photo.key %>
+      <% elsif @user_one != current_user %>
+        <%= cl_image_tag @user_one.photo.key %>
+      <% else %>
+        <%= image_tag("image_not_found.png") %>
+      <% end %>
+    </div>
+  </div>
+</div>
 <div class="container">
-  <div class="d-flex flex-column">
-    <div class="d-flex flex-row justify-content-center">
-      <div class="avatar-large">
-        <% if @user_one.photo.key.present? %>
-          <%= cl_image_tag @user_one.photo.key %>
-        <% else %>
-          <%= image_tag("image_not_found.png") %>
-        <% end %>
-      </div>
-
-      <div class="avatar-large">
-        <% if @user_two.photo.key.present? %>
-          <%= cl_image_tag @user_two.photo.key %>
-        <% else %>
-          <%= image_tag("image_not_found.png") %>
-        <% end %>
-      </div>
+  <div class="justify-content-center text-center">
+    <p>Rendez-vous avec <%= @user_one == current_user ? "#{@user_two.first_name} #{@user_two.last_name}" : "#{@user_one.first_name} #{@user_one.last_name}" %></p>
+    <div class="h3">
+      <% @month = @meeting.date.strftime("%B") %>
+      <% if @month == "January" %>
+        <p><%= @meeting.date.strftime("%d Janvier %Y") %></p>
+      <% elsif @month == "February"%>
+        <p><%= @meeting.date.strftime("%d Février %Y") %></p>
+      <% elsif @month == "March"%>
+        <p><%= @meeting.date.strftime("%d Mars %Y") %></p>
+      <% elsif @month == "April"%>
+        <p><%= @meeting.date.strftime("%d Avril %Y") %></p>
+      <% elsif @month == "May"%>
+        <p><%= @meeting.date.strftime("%d Mai %Y") %></p>
+      <% elsif @month == "June"%>
+        <p><%= @meeting.date.strftime("%d Juin %Y") %></p>
+      <% elsif @month == "July"%>
+        <p><%= @meeting.date.strftime("%d Juillet %Y") %></p>
+      <% elsif @month == "August"%>
+        <p><%= @meeting.date.strftime("%d Aout %Y") %></p>
+      <% elsif @month == "September"%>
+        <p><%= @meeting.date.strftime("%d Septembre %Y") %></p>
+      <% elsif @month == "October"%>
+        <p><%= @meeting.date.strftime("%d Octobre %Y") %></p>
+      <% elsif @month == "November"%>
+        <p><%= @meeting.date.strftime("%d Novembre %Y") %></p>
+      <% elsif @month == "December"%>
+        <p><%= @meeting.date.strftime("%d Décembre %Y") %></p>
+      <% else %>
+        <p><%= @meeting.date.strftime("%d %B %Y") %></p>
+      <% end %>
     </div>
-    <div class="justify-content-center">
-      <p<%= "Rendez-vous avec #{@user_two.first_name} #{@user_two.last_name}" %></p>
-
-      <p><%= "#{@meeting.date.day} #{@meeting.date.month} #{@meeting.date.year}" %></p>
-      <p><%= @meeting.venue_name %></p>
-      <p><%= @meeting.venue_address %></p>
+    <p class="h5"><%= @meeting.venue_name %></p>
+    <p><%= @meeting.venue_address %></p>
+    <p><%= %>(x km de chez vous)</p>
+  </div>
+  <div class="d-flex flex-row justify-content-between px-3">
+    <div>
+      <%= link_to raw('<i class="far fa-check-circle"></i> Accepter', "#", class: "btn btn-gradient-validate" %>
     </div>
-    <div class="row d-flex flex-row justify-content-around align-items-center">
-      <div>
-        <%= link_to "Accepter", "#", class: "btn btn-gradient-validate" %>
-      </div>
-      <div>
-        <%= link_to "Refuser", "#", class: "btn btn-gradient-deny" %>
-      </div>
+    <div>
+      <%= link_to "Refuser", "#", class: "btn btn-gradient-deny" %>
     </div>
   </div>
 </div>
