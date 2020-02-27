@@ -4,7 +4,4 @@ class PagePolicy < ApplicationPolicy
       scope.all
     end
   end
-  def home?
-    true
-  end
 end

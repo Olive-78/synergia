@@ -5,12 +5,8 @@ class MeetingPolicy < ApplicationPolicy
     end
   end
 
-  def index?
-    record.user == user
-  end
-
   def show?
-    record.user == user
+    record.user_one == user || record.user_two == user
   end
 
   def update?
