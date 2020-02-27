@@ -1,4 +1,12 @@
 class ReviewsController < ApplicationController
+  def new
+    # @user = current_user
+    @meeting = Meeting.where(user_two_id: current_user).or(Meeting.where(user_one_id: current_user)).order("id DESC").offset(1).first
+    @review = Review.new
+    @review.meeting = @meeting
+    authorize @review
+  end
+
   def create
     @meeting = Meeting.find(params[:meeting_id])
     @review = Review.new(review_params)
