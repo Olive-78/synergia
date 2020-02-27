@@ -1,24 +1,57 @@
 <div class="navbar-bottom">
   <div class="navbar-elements">
-    <div class="navbar-element">
-      <a href=""><i class="fas fa-home"></i></a>
-      <p><small>Dashboard</small></p>
-    </div>
-    <div class="navbar-element">
+
+      <div class="navbar-element navbar-dashboard">
+        <%= link_to dashboards_path do %>
+        <div class="navbar-icon"></div>
+        <p>Dashboard</p>
+        <% end %>
+      </div>
+
+      <div class="navbar-element navbar-calendar">
+        <%= link_to meetings_path do %>
+        <div class="navbar-icon"></div>
+        <%#= image_tag "calendar-icon.svg"%>
+        <p>Calendrier</p>
+        <% end %>
+      </div>
+
+      <div class="navbar-element navbar-network">
+        <%= link_to networks_path do %>
+        <div class="navbar-icon"></div>
+        <%#= image_tag "network-icon.svg"%>
+        <p>Réseau</p>
+        <% end %>
+      </div>
+
+      <div class="navbar-element navbar-search">
+        <%= link_to "#" do %>
+        <div class="navbar-icon"></div>
+        <%#= image_tag "search-icon.svg"%>
+        <p>Rechercher</p>
+        <% end %>
+      </div>
+
+  </div>
+</div>
+
+
+
+<!--     <div class="navbar-element">
       <a href=""><i class="fas fa-calendar"></i></a>
-      <p><small>Calendrier</small></p>
+      <p>Calendrier</p>
     </div>
     <div class="navbar-element">
       <a href=""><i class="fas fa-users"></i></a>
-      <p><small>Relations</small></p>
+      <p>Relations</p>
     </div>
     <div class="navbar-element">
-      <a href=""><i class="fas fa-search"></i></a>
-      <p><small>Rechercher</small></p>
+      <a href=""><%= image_tag "search-icon.svg"%></a>
+      <p>Rechercher</p>
     </div>
     </div>
 </div>
-<!--   <div class="navbar-element">
+  <div class="navbar-element">
     <div class="navbar-icon">
       <i class="fas fa-calendar"></i>
     </div>
@@ -41,5 +74,6 @@
     <div class="navbar-desc">
       <p>Rechercher</p>
     </div>
-  </div> -->
+  </div>
 
+ -->

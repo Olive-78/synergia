@@ -1,13 +1,17 @@
    <br>
+   <br>
+   <div class="cardsphoto">
    <div class="photouser">
     <%= cl_image_tag @user.photo.key %>
-  </div>
-  <br>
-  <h5 class="catecontact">Contact  </h5>
   <div class="fullname">
    <%= @user.first_name %>
    <%= @user.last_name%>
  </div>
+  </div>
+  </div>
+  <br>
+  <%= image_tag 'contact.png', class:"imgcontact" %>
+  <h5 class="catecontact">Contact  </h5>
  <div class="email">
   <%= @user.email %>
 </div>
@@ -20,12 +24,19 @@
 <div class="birth">
   <%= @user.birth_date%>
 </div>
+  <%= link_to @user.linkedin do %>
+    <%= image_tag 'linkedin.png', class:"linkedin1" %>
+  <% end %>
   <hr>
+  <%= image_tag 'portfolio.png', class:"portfolio" %>
+
   <h5 class="about">A propos de moi</h5>
 <div class="description">
-  <%= @user.description %>
+  " <%= @user.description %> "
 </div>
 <hr>
+  <%= image_tag 'work.png', class:"work" %>
+
   <h5 class="entreprise">Mon entreprise </h5>
 <div class= "sector">
   <%= @user.company_name %>
@@ -35,8 +46,8 @@
 </div>
 <div class= "sector">
   Secteur : <%= @user.company_sector %>
+  <hr>
 </div>
-<hr>
 
 <p class="avail">Availabilities :</p>
 <% @user.availabilities.each do |availability| %>
@@ -51,6 +62,9 @@
 <% end %>
 <% end %>
 <% end %>
+<div class="distance">
+  <%= @user.distance%> Km max
+</div>
 
-<%= link_to 'Edit availabilities', new_week_availability_path %>
+<%= link_to 'Edit availabilities', availabilities_path %>
 
