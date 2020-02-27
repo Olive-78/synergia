@@ -1,53 +1,55 @@
-  <div class="photouser">
+   <br>
+   <div class="photouser">
     <%= cl_image_tag @user.photo.key %>
   </div>
-<div class="fullname">
+  <br>
+  <h5 class="catecontact">Contact  </h5>
+  <div class="fullname">
    <%= @user.first_name %>
    <%= @user.last_name%>
+ </div>
+ <div class="email">
+  <%= @user.email %>
 </div>
-<hr>
-<div class="email">
-Email : <%= @user.email %>
-</div>
-<hr>
 <div class="phone">
-Téléphone : <%= @user.phone_number %>
+  <%= @user.phone_number %>
 </div>
-<hr>
-<div class="birth">
-Date de naissance : <%= @user.birth_date%>
-</div>
-<hr>
 <div class="address">
-Addresse : <%= @user.address %>
+  <%= @user.address %>
 </div>
-<hr>
+<div class="birth">
+  <%= @user.birth_date%>
+</div>
+  <hr>
+  <h5 class="about">A propos de moi</h5>
 <div class="description">
-Description :
-<%= @user.description %>
+  <%= @user.description %>
 </div>
 <hr>
-<div class="turnover">
-Chiffre d'affaire : <%= @user.company_ca %> €
-</div>
-<hr>
+  <h5 class="entreprise">Mon entreprise </h5>
 <div class= "sector">
-Secteur : <%= @user.company_sector %>
+  <%= @user.company_name %>
+</div>
+<div class="turnover">
+  Chiffre d'affaire : <%= @user.company_ca %> €
+</div>
+<div class= "sector">
+  Secteur : <%= @user.company_sector %>
 </div>
 <hr>
 
-<p>Availabilities :</p>
+<p class="avail">Availabilities :</p>
 <% @user.availabilities.each do |availability| %>
-  <% if availability.breakfast || availability.lunch || availability.afterwork %>
-    <%= Date::DAYNAMES[availability.week_day] %>
-    <% if availability.breakfast %>
-      <%= "Breakfast" %>
-    <% elsif availability.lunch %>
-      <%= "Lunch" %>
-    <% elsif availability.afterwork%>
-      <%= "Afterwork" %>
-    <% end %>
-  <% end %>
+<% if availability.breakfast || availability.lunch || availability.afterwork %>
+<%= Date::DAYNAMES[availability.week_day] %>
+<% if availability.breakfast %>
+<%= "Breakfast" %>
+<% elsif availability.lunch %>
+<%= "Lunch" %>
+<% elsif availability.afterwork%>
+<%= "Afterwork" %>
+<% end %>
+<% end %>
 <% end %>
 
 <%= link_to 'Edit availabilities', new_week_availability_path %>
