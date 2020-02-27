@@ -48,9 +48,11 @@
 .dispo {
   text-align: center;
   font-size: 20px;
-  margin: 0px;
   p {
-    margin : 1px 0px;
     color: $blue;
   }
+}
+
+.ava {
+  height: 100%;
 }
