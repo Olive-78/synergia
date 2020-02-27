@@ -1,15 +1,17 @@
 <%= simple_form_for(@week_availability) do |f| %>
   <%= f.label "Wich days are you available :" %>
   <br>
-  <% [:lundi, :mardi, :mercredi, :jeudi, :vendredi, :samedi, :dimanche].each do |day| %>
-    <%= f.check_box day %>
-    <%= day %>
-  <% end %>
-  <%= f.check_box :breakfast %>
-  <%= f.label 'Breakfast' %>
-  <%= f.check_box :lunch %>
-  <%= f.label 'Lunch' %>
-  <%= f.check_box :afterwork %>
-  <%= f.label 'Afterwork' %>
+    <% [:lundi, :mardi, :mercredi, :jeudi, :vendredi, :samedi, :dimanche].each do |day| %>
+      <%= f.check_box day %>
+      <%= day.capitalize %>
+    <% end %>
+    <%= f.check_box :breakfast %>
+    <%= f.label 'Breakfast' %>
+    <%= f.check_box :lunch %>
+    <%= f.label 'Lunch' %>
+    <%= f.check_box :afterwork %>
+    <%= f.label 'Afterwork' %>
+
   <%= f.submit 'Add my new disponibilities' %>
 <% end %>
+

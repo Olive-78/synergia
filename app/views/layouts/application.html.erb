@@ -7,13 +7,13 @@
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
-    <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
+    <%= javascript_pack_tag 'application', 'data-turbokinks-track': 'reload', defer: true %>
   </head>
   <body>
-    <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-    <%= yield %>
-
-    <%= javascript_pack_tag 'application' %>
+    <div class="content-wrapper">
+      <%= yield %>
+    </div>
+    <%= render 'shared/navbar_bottom' %>
   </body>
 </html>

@@ -1,22 +1,27 @@
 class AvailabilitiesController < ApplicationController
 
+  def index
+    @availabilities = current_user.availabilities
+  end
+
   def edit
     @user = User.find(params[:id])
     @availability = Availability.find(params[:id])
+    authorize @availability
   end
 
   def update
-    @user = User.find(params[:id])
     @availability = Availability.find(params[:id])
-    @availability.user = @user
+    @availability.user = current_user
     @availability.update(availability_params)
-    redirect_to user_path
+    redirect_to availabilities_path
+    authorize @availability
   end
 
   private
 
   def availability_params
-    params.require(:availability).permit(:week_day, :start_time, :end_time)
+    params.require(:availability).permit(:week_day, :breakfast, :lunch, :afterwork)
   end
 
 end
