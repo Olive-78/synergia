@@ -1,7 +1,8 @@
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>My landing page</title>
+  <title>Foundaters</title>
   <link rel="shortcut icon" href="data:image/x-icon;" type="image/x-icon">
   <!-- We need this line below for responsiveness! -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,40 +10,42 @@
 </head>
 <body>
   <!-- code a Hero / Banner section -->
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path 'networking-770.png' %>);">
+  <div class="banner" >
     <div class="container">
-      <h1> Fundaters, develop your network</h1>
-      <p>Network does work</p>
-      <a href="How it's work?" class="btn-blue"></a>
+      <h1> Foundaters, rencontres entre entrepreneurs</h1>
+      <p></p>
+      <a href="Comment ça marche?" class="btn-blue"></a>
     </div>
   </div>
 
   <div class="container">
     <h2 class="text-center">How it works</h2>
-    <div class="cards">
+    <div class="cardshome">
 
-      <div class="card">
-        <%= image_tag 'networking-770.png', alt: "" %>
-        <h4></h4>
-        <h3>
-</h3>
+      <div class="cardhome">
+<%= image_tag 'time.jpg', class:"timers" %>
+        <h4>Problem</h4>
+        <p>Networking is crucial for entrepreneurs, but it takes time.  Time is crucial for entrepreneurs, so….
+</p>
       </div>
 
-      <div class="card">
-        <%= image_tag 'networking-770.png', alt: "" %>
-        <h4></h4>
-        <h3>
-</h3>
+      <div class="cardhome">
+<%= image_tag 'cafe.jpg', class:"cafe" %>
+        <h4>Solution </h4>
+        <p>Each week, Synergia will strategically organize you a meeting with
+ another entrepreneur in order to talk, unstuck issues and create
+ synergies
+</p>
       </div>
 
-      <div class="card">
-        <%= image_tag 'networking-770.png', alt: "" %>
-        <h4></h4>
-        <h3>
-</h3>
+      <div class="cardhome">
+<%= image_tag 'entrepreneur.jpg', class:"entrepreneur" %>
+        <h4>Target</h4>
+        <p>Busy entrepreneurs who need to extend their network smartly and consistently
+</p>
       </div>
 
     </div>
   </div>
 
-
+<p class= "signature">Made with love by Foundateam</p>

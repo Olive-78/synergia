@@ -1,6 +1,3 @@
-
-   <br>
-   <br>
    <div class="cardsphoto">
    <div class="photouser">
     <%= cl_image_tag @user.photo.key %>
@@ -49,17 +46,19 @@
   Secteur : <%= @user.company_sector %>
   <hr>
 </div>
+<div class= "d-flex flex-direction-row">
+  <div>
 <%= image_tag 'calendar.png', class:"calendarprofile" %>
-<p class="avail"> Disponibilités :</p>
-
-<div class="distance">
-<%= image_tag 'gps.png', class:"gps" %>
-
-  <%= @user.distance%> Km max
 </div>
-<%= link_to availabilities_path  do %>
-    <%= image_tag 'pencil.png', class:"pencil" %>
+<div>
+  <% if @user == current_user %>
+    <%= link_to availabilities_path  do %>
+      <%= image_tag 'pencil.png', class:"pencil" %>
+    <% end %>
   <% end %>
+  </div>
+</div>
+<p class="avail"> Disponibilités :</p>
 <% @user.availabilities.each do |availability| %>
 <div class= "availi">
 <% if availability.breakfast || availability.lunch || availability.afterwork %>
@@ -76,7 +75,16 @@
 </div>
 </div>
 <div class="availi">
-  <br>
-  <br>
+</div>
+<br>
+<div class="distance">
+  <%= image_tag 'gps.png', class:"gps" %>
+  <%= @user.distance%> Km max
+</div>
+<div class="deco mb-3 mt-0">
+  <% if @user == current_user %>
+    <hr>
+    <%= link_to "Déconnexion", new_user_session_path %>
+  <% end %>
 </div>
 
