@@ -60,14 +60,14 @@ text-align: center
 
 }
 .distance {
-  text-align: center;
+  display: inline-block;
 }
 
 .availi {
   text-align: center;
 }
 
-.calendar {
+.calendarprofile {
   width: 25px;
   height: 25px;
   display: block;
@@ -89,4 +89,12 @@ text-align: center
   margin-right: auto;
   margin-bottom: 5px;
 
+}
+.gps {
+   width: 25px;
+  height: 25px;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5px;
 }
