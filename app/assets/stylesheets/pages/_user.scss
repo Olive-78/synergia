@@ -60,7 +60,8 @@ text-align: center
 
 }
 .distance {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
 }
 
 .availi {
@@ -94,7 +95,5 @@ text-align: center
    width: 25px;
   height: 25px;
   display: inline-block;
-  margin-left: auto;
-  margin-right: auto;
   margin-bottom: 5px;
 }
