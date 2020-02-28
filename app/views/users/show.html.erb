@@ -1,3 +1,4 @@
+
    <br>
    <br>
    <div class="cardsphoto">
@@ -48,11 +49,21 @@
   Secteur : <%= @user.company_sector %>
   <hr>
 </div>
+<%= image_tag 'calendar.png', class:"calendarprofile" %>
+<p class="avail"> Disponibilités :</p>
 
-<p class="avail">Availabilities :</p>
+<div class="distance">
+<%= image_tag 'gps.png', class:"gps" %>
+
+  <%= @user.distance%> Km max
+</div>
+<%= link_to availabilities_path  do %>
+    <%= image_tag 'pencil.png', class:"pencil" %>
+  <% end %>
 <% @user.availabilities.each do |availability| %>
+<div class= "availi">
 <% if availability.breakfast || availability.lunch || availability.afterwork %>
-<%= Date::DAYNAMES[availability.week_day] %>
+<%= Date::DAYNAMES[availability.week_day] %> :
 <% if availability.breakfast %>
 <%= "Breakfast" %>
 <% elsif availability.lunch %>
@@ -62,9 +73,10 @@
 <% end %>
 <% end %>
 <% end %>
-<div class="distance">
-  <%= @user.distance%> Km max
 </div>
-
-<%= link_to 'Edit availabilities', availabilities_path %>
+</div>
+<div class="availi">
+  <br>
+  <br>
+</div>
 

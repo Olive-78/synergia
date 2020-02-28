@@ -60,5 +60,40 @@ text-align: center
 
 }
 .distance {
+  display: flex;
+  justify-content: center;
+}
+
+.availi {
   text-align: center;
+}
+
+.calendarprofile {
+  width: 25px;
+  height: 25px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5px;
+}
+
+.dispo {
+  text-align: center;
+  font-size: 16px;
+}
+
+.pencil {
+   width: 25px;
+  height: 25px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5px;
+
+}
+.gps {
+   width: 25px;
+  height: 25px;
+  display: inline-block;
+  margin-bottom: 5px;
 }
