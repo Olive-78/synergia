@@ -1,29 +1,37 @@
 .btn-gradient-validate {
-  color: white;
+  color: white !important;
   padding: 8px 24px;
-  border-radius: 4px;
+  border-radius: 25px;
   font-weight: bold;
-  background: linear-gradient(#0074FC, #0074FC);
+  background: #28A745;
   transition: background 0.3s ease;
-  border: 1px solid #0F60C4;
+  border: 1px solid #208838;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  width: 150px;
 }
 
 .btn-gradient-validate:hover {
-  background: linear-gradient(#147EFF, #0F67DA);
-  color: white;
+    background: #208838;
+    color: white !important;
+}
+
+.fa-check-circle {
+  color: white !important;
 }
 
 .btn-gradient-deny {
   color: white;
   padding: 8px 24px;
-  border-radius: 4px;
+  border-radius: 25px;
   font-weight: bold;
-  background: linear-gradient(#167FFB, #0F60C4);
+  background-color: #C82333;
   transition: background 0.3s ease;
-  border: 1px solid #0F60C4;
+  border: 1px solid #BD2130;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  width: 150px;
 }
 
 .btn-gradient-deny:hover {
-  background: linear-gradient(#147EFF, #0F67DA);
+  background-color: #BD2130;
   color: white;
 }
