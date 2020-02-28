@@ -421,16 +421,40 @@ hugo_dornbierer.save!
 
 
 puts "_______________________"
-puts "2. 10x New Users created 👍"
+puts "2. 20x New Users created 👍"
 puts "_______________________"
 
 meeting_place = [{
-  name: "OZ",
-  address: "13 Boulevard du Temple, 75003 Paris"
+  name: "Inside bar paris",
+  address: "14 Rue Claude Tillier, 75012 Paris"
   },
 {
-  name: "Sullivan",
-  address: "14 Rue Crespin du Gast, 75011 Paris"
+  name: "Le Tagada Bar",
+  address: "40 Rue des Trois Frères, 75018 Paris"
+  },
+{
+  name: "Le Bar Botaniste",
+  address: "10 Avenue d'Iéna, 75116 Paris"
+  },
+{
+  name: "Le Social Bar",
+  address: "25 Rue Villiot, 75012 Paris"
+  },
+{
+  name: "Le Renard Bar",
+  address: "38 Rue de Sambre-et-Meuse, 75010 Paris"
+  },
+{
+  name: "Lulu White Drinking Club",
+  address: "12 Rue Frochot, 75009 Paris"
+  },
+{
+  name: "Le Bar du Plaza Athénée",
+  address: "Hôtel Plazza Athénée, 25 Avenue Montaigne, 75008 Paris"
+  },
+{
+  name: "L'Ours Bar",
+  address: "8 Rue de Paradis, 75010 Paris"
 }]
 
 status = [1, 2, 3]
