@@ -1,11 +1,14 @@
 .content-wrapper {
   min-height: calc(100vh - 64px);
+  margin-bottom: 64px;
 }
 
 .navbar-bottom {
   background-color: white;
-  position: sticky;
+  position: fixed;
+  // position: sticky;
   bottom: 0;
+  width: 100%;
   border-top: solid lightgray 1px;
 }
 .navbar-elements {
