@@ -1,5 +1,3 @@
-
-   <br>
    <br>
    <div class="cardsphoto">
    <div class="photouser">
@@ -57,8 +55,10 @@
 
   <%= @user.distance%> Km max
 </div>
-<%= link_to availabilities_path  do %>
-    <%= image_tag 'pencil.png', class:"pencil" %>
+  <% if @user == current_user %>
+    <%= link_to availabilities_path  do %>
+      <%= image_tag 'pencil.png', class:"pencil" %>
+    <% end %>
   <% end %>
 <% @user.availabilities.each do |availability| %>
 <div class= "availi">
@@ -76,7 +76,11 @@
 </div>
 </div>
 <div class="availi">
-  <br>
-  <br>
+</div>
+<div class="deco mb-3 mt-0">
+  <% if @user == current_user %>
+    <hr>
+    <%= link_to "Déconnexion", new_user_session_path %>
+  <% end %>
 </div>
 
