@@ -9,12 +9,21 @@
     </div>
 
     <div class="avatar-large image-user-2">
-      <% if @user_two != current_user %>
-        <%= cl_image_tag @user_two.photo.key %>
-      <% elsif @user_one != current_user %>
-        <%= cl_image_tag @user_one.photo.key %>
-      <% else %>
-        <%= image_tag("image_not_found.png") %>
+      <%# relation = [@meeting.user_one, @meeting.user_two].delete(current_user) %>
+      <%#= link_to user_path(current_user == @meeting.user_one ? @meeting.user_one : @meeting.user_two) do %>
+      <%= link_to user_path(meeting_relation) do %>
+        <% if meeting_relation.photo.present? %>
+          <%= cl_image_tag meeting_relation.photo.key %>
+        <% else %>
+          <%= image_tag("image_not_found.png") %>
+        <% end %>
+        <%# if @user_two != current_user %>
+          <%#= cl_image_tag @user_two.photo.key %>
+        <%# elsif @user_one != current_user %>
+          <%#= cl_image_tag @user_one.photo.key %>
+        <%# else %>
+          <%#= image_tag("image_not_found.png") %>
+        <%# end %>
       <% end %>
     </div>
   </div>
@@ -56,12 +65,17 @@
     <p><%= @meeting.venue_address %></p>
     <p><%= %>(x km de chez vous)</p>
   </div>
+<<<<<<< HEAD
   <div class="d-flex flex-row justify-content-center">
+=======
+
+  <div class="d-flex flex-row justify-content-between px-3">
+>>>>>>> master
     <div>
-      <%= link_to raw('<i class="far fa-check-circle"></i> Accepter'), "#", class: "btn btn-gradient-validate" %>
+      <button onclick="swal('Votre réponse est enregistrée 👏', 'Vous serez notifié quand le rendez-vous sera validé.', 'success')"><%= link_to raw('<i class="far fa-check-circle"></i> Accepter'), "#", class: "btn btn-gradient-validate" %></button>
     </div>
     <div>
-      <%= link_to raw('<i class="fas fa-ban"></i> Refuser'), "#", class: "btn btn-gradient-deny" %>
+      <button onclick="swal('Votre réponse est enregistrée 😭', 'Un nouveau rendez-vous va vous être proposé.', 'success')"><%= link_to raw('<i class="fas fa-ban"></i> Refuser'), "#", class: "btn btn-gradient-deny" %></button>
     </div>
   </div>
 </div>
