@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
   </head>
   <body id="<%= controller.controller_name %>-<%= action_name %>">
+    <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
     <div class="content-wrapper">
       <%= yield %>

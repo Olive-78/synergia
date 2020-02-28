@@ -14,6 +14,10 @@
   color: $blue;
 }
 
+.calendar {
+  margin-top: 30px;
+}
+
 .tabs {
   width: 55px;
   height: 55px;
@@ -53,6 +57,7 @@
   }
 }
 
-.ava {
-  height: 100%;
+.ava .content-wrapper {
+  height: 100vh;
 }
+
