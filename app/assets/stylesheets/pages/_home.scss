@@ -1,1 +1,63 @@
 // Specific CSS for your home-page
+.banner {
+   background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),url(networking-770.png);
+    background-size: cover;
+    background-position: center;
+    padding: 200px 0;
+}
+
+
+.banner h1 {
+    color: white;
+
+}
+.banner p {
+    color: white;
+    opacity: .7;
+    font-size: 20px;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.cardshome {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+}
+.cardhome {
+  width: 260px;
+  border-radius: 3px;
+  box-shadow: 0 0 5px rgb(230,230,230);
+  text-align: center;
+  padding: 30px;
+  border: 1px solid rgb(230,230,230);
+  margin: 5px;
+}
+
+
+.cardhome img {
+  height:  150px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.signature {
+  text-align: center;
+}
+
+@media (max-width: 720px) {
+  /* For a screen < 720px, this CSS will be read */
+  .container {
+    width: 500px;
+  }
+}
+@media (max-width: 540px) {
+  /* For a screen < 540px, this CSS will be read */
+  .container {
+    width: 300px;
+  }
+}
