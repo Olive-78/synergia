@@ -24,23 +24,22 @@
       </div>
     </div>
 
-      <div class="dashboard-card">
-        <div class="card-title">
-          <h6>Mon dernier rendez-vous</h6>
-        </div>
-        <div class="user-info">
-          <div class="medium-avatar">
+      <div class="dashboard-card-last d-flex flex-column">
+        <h5 class= "last-meet text-center pt-2">Mon dernier rendez-vous</h5>
+        <div class="globallastmeeting d-flex">
+          <div class="medium-avatarr">
             <%= cl_image_tag(@user_last_meeting.photo.key, class: "avatar-large")%>
           </div>
-          <div class="user-details">
-            <p><strong><%= @user_last_meeting.first_name%> <%= @user_last_meeting.last_name %></strong></p>
-            <p><%= @user_last_meeting.company_name %></p>
+          <div class= "lastmeetuser">
+             <p><strong><%= @user_last_meeting.first_name%>
+             <%= @user_last_meeting.last_name %> </strong></p>
+             <p><%= @user_last_meeting.company_name %></p>
           </div>
         </div>
         <div class="center">
           <%= link_to "Laisser un commentaire", new_user_review_path(@last_meeting) %>
         </div>
-    </div>
+      </div>
 
     <div class="dashboard-card text-center">
       <div class="availabilities-title">
@@ -68,7 +67,6 @@
           <div class="icon-avail">
             <% if availability.breakfast %>
               <i class="fas fa-coffee icon-active"></i>
-              <br>
             <% else %>
               <i class="fas fa-coffee icon-inactive"></i>
               <!-- <br> -->

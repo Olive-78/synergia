@@ -1,8 +1,25 @@
 .container {
-  width: auto;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
 }
 
-h1, h2, h3, h4, p {
-  font-family: Nunito;
-  color: #1D1F26;
+h2 {
+  font-size: 32px;
+  font-family: 'Passion One';
+}
+
+h3, h4, h6 {
+  color: #1b262c !important;
+  font-size: 28px !important;
+  font-family: 'Passion One' !important;
+}
+
+p {
+  color: white;
+  font-size: 16px;
+}
+
+h5 {
+    font-size: 18px !important;
+    font-family: 'Passion One' !important;
 }

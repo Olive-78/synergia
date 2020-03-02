@@ -10,6 +10,14 @@ class MeetingsController < ApplicationController
     @user_two = @meeting.user_two
 
     authorize @meeting
+
+    @meeting.geocode
+
+    @markers = [{
+        lat: @meeting.latitude,
+        lng: @meeting.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { meeting: @meeting })
+      }]
   end
 
   def update

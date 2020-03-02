@@ -7,6 +7,7 @@
   background-color: white;
   position: fixed;
   // position: sticky;
+  z-index: 10;
   bottom: 0;
   width: 100%;
   border-top: solid lightgray 1px;
@@ -21,8 +22,8 @@
 }
 
 .navbar-element {
-    width: 20%;
-    text-align: center;
+  width: 20%;
+  text-align: center;
 }
 
 .navbar-element .navbar-icon {
@@ -87,13 +88,13 @@
 .logofound {
   align-items: center;
   text-align: center;
-  width: 100px;
+  width: 50px;
 }
 
 .navbar-brand {
-  margin : 0px;
+  margin : 0 !important;
+  padding: 0 !important;
 }
-
 
 .avatarnav {
   width : 40px;
@@ -101,6 +102,14 @@
   margin-right : 5px;
   margin-top: 3px;
   cursor: pointer;
+}
+
+.navbar {
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+  margin: 0 !important;
+  border-bottom: 5px solid #1b262c;
+  background-color: white;
 }
 
 // .navbar-lewagon {
