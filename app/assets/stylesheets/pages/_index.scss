@@ -25,7 +25,9 @@
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    margin-left: 25px;
+    margin: auto;
+    display: flex;
+    padding-bottom: 5px;
   }
 }
 
@@ -50,8 +52,9 @@
   margin-top: 10px;
   border-radius: 8px;
   // height: 140px;
-  padding: 10px;
+  padding: 16px;
   width: 181px;
+  margin-right: 6px;
   // position: relative;
   i {
     // position:absolute;
@@ -69,6 +72,10 @@
     // width: 14%;
     // flex-grow: 1;
   }
+}
+
+.columndash {
+  padding-top: 0px;
 }
 
 .icon-active {
@@ -154,10 +161,11 @@ right: 5px;
   background-color: #0096ff;
   font-size:12px;
   padding: 8px;
-  margin-top: 15px;
   border-radius: 5px;
+  margin-top: 10px;
   font-weight: bolder;
   text-decoration: none !important;
+  text-align: center;
 }
 
 .center:hover {

@@ -24,21 +24,26 @@
       </div>
     </div>
 
+<div class= "columndash d-flex pt-2">
       <div class="dashboard-card-last d-flex flex-column">
         <h5 class= "last-meet text-center pt-2">Mon dernier rendez-vous</h5>
-        <div class="globallastmeeting d-flex">
           <div class="medium-avatarr">
             <%= cl_image_tag(@user_last_meeting.photo.key, class: "avatar-large")%>
           </div>
           <div class= "lastmeetuser">
-             <p><strong><%= @user_last_meeting.first_name%>
-             <%= @user_last_meeting.last_name %> </strong></p>
+             <p><%= @user_last_meeting.first_name%>
+             <%= @user_last_meeting.last_name %> </p>
           </div>
-        </div>
         <div class="center1">
           <%= link_to "Laisser un commentaire", new_user_review_path(@last_meeting) %>
         </div>
       </div>
+
+        <div class="dashboard-card-last d-flex flex-column">
+        <h5 class= "last-meet text-center pt-2">Nombre de meeting</h5>
+          <%= Meeting.count %>
+      </div>
+  </div>
 
     <div class="dashboard-card text-center">
       <div class="availabilities-title">
