@@ -1,90 +1,89 @@
-   <div class="cardsphoto">
-   <div class="photouser">
-    <%= cl_image_tag @user.photo.key %>
-  <div class="fullname">
-   <%= @user.first_name %>
-   <%= @user.last_name%>
- </div>
+     <div class="cardsphoto">
+       <div class="photouser">
+        <%= cl_image_tag @user.photo.key %>
+        <div class="fullname">
+         <%= @user.first_name %>
+         <%= @user.last_name%>
+       </div>
+     </div>
+   </div>
+   <br>
+   <%= image_tag 'contact.png', class:"imgcontact" %>
+   <h5 class="catecontact">Contact  </h5>
+   <div class="email">
+    <%= @user.email %>
   </div>
+  <div class="phone">
+    <%= @user.phone_number %>
   </div>
-  <br>
-  <%= image_tag 'contact.png', class:"imgcontact" %>
-  <h5 class="catecontact">Contact  </h5>
- <div class="email">
-  <%= @user.email %>
-</div>
-<div class="phone">
-  <%= @user.phone_number %>
-</div>
-<div class="address">
-  <%= @user.address %>
-</div>
-<div class="birth">
-  <%= @user.birth_date%>
-</div>
+  <div class="address">
+    <%= @user.address %>
+  </div>
+  <div class="birth">
+    <%= @user.birth_date%>
+  </div>
   <%= link_to @user.linkedin do %>
-    <%= image_tag 'linkedin.png', class:"linkedin1" %>
+  <%= image_tag 'linkedin.png', class:"linkedin1" %>
   <% end %>
   <hr>
   <%= image_tag 'portfolio.png', class:"portfolio" %>
-
   <h5 class="about">A propos de moi</h5>
-<div class="description">
-  " <%= @user.description %> "
-</div>
-<hr>
+  <div class="description">
+    " <%= @user.description %> "
+  </div>
+  <hr>
   <%= image_tag 'work.png', class:"work" %>
 
   <h5 class="entreprise">Mon entreprise </h5>
-<div class= "sector">
-  <%= @user.company_name %>
-</div>
-<div class="turnover">
-  Chiffre d'affaire : <%= @user.company_ca %> €
-</div>
-<div class= "sector">
-  Secteur : <%= @user.company_sector %>
-  <hr>
-</div>
-<div class= "d-flex flex-direction-row">
-  <div>
-<%= image_tag 'calendar.png', class:"calendarprofile" %>
-</div>
-<div>
-  <% if @user == current_user %>
-    <%= link_to availabilities_path  do %>
-      <%= image_tag 'pencil.png', class:"pencil" %>
-    <% end %>
-  <% end %>
+  <div class= "sector">
+    <%= @user.company_name %>
   </div>
-</div>
-<h5 class="avail"> Disponibilités :</h5>
-<% @user.availabilities.each do |availability| %>
-<div class= "availi">
-<% if availability.breakfast || availability.lunch || availability.afterwork %>
-<%= Date::DAYNAMES[availability.week_day] %> :
-<% if availability.breakfast %>
-<%= "Breakfast" %>
-<% elsif availability.lunch %>
-<%= "Lunch" %>
-<% elsif availability.afterwork%>
-<%= "Afterwork" %>
-<% end %>
-<% end %>
-<% end %>
-</div>
-</div>
-<div class="availi">
-</div>
-<br>
-<div class="distance">
-  <%= image_tag 'gps.png', class:"gps" %>
-  <%= @user.distance%> Km max
-</div>
-<div class="deco mb-3 mt-0">
-  <% if @user == current_user %>
+  <div class="turnover">
+    Chiffre d'affaire : <%= @user.company_ca %> €
+  </div>
+  <div class= "sector">
+    Secteur : <%= @user.company_sector %>
+    <hr>
+  </div>
+  <div class= "d-flex flex-direction-row">
+    <div>
+      <%= image_tag 'calendar.png', class:"calendarprofile" %>
+    </div>
+    <div>
+      <% if @user == current_user %>
+      <%= link_to availabilities_path  do %>
+      <%= image_tag 'pencil.png', class:"pencil" %>
+      <% end %>
+      <% end %>
+    </div>
+  </div>
+  <h5 class="avail"> Disponibilités :</h5>
+  <% @user.availabilities.each do |availability| %>
+  <div class= "availi">
+    <% if availability.breakfast || availability.lunch || availability.afterwork %>
+    <%= Date::DAYNAMES[availability.week_day] %> :
+    <% if availability.breakfast %>
+    <%= "Breakfast" %>
+    <% elsif availability.lunch %>
+    <%= "Lunch" %>
+    <% elsif availability.afterwork%>
+    <%= "Afterwork" %>
+    <% end %>
+    <% end %>
+    <% end %>
+  </div>
+  </div>
+  <div class="availi">
+  </div>
+  <br>
+  <div class="distance">
+    <%= image_tag 'gps.png', class:"gps" %>
+    <%= @user.distance%> Km max
+  </div>
+  <div class="deco mb-3 mt-0">
+    <% if @user == current_user %>
     <hr>
     <%= link_to "Déconnexion", destroy_user_session_path, method: :delete  %>
-  <% end %>
-</div>
+    <% end %>
+  </div>
 
