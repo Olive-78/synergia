@@ -86,4 +86,97 @@
     <%= link_to "Déconnexion", destroy_user_session_path, method: :delete  %>
     <% end %>
   </div>
+<div class="background">
+  <div class="content-wrapper">
+    <div class="dashboard-card">
+      <div class="cardsphoto">
+        <div class="photouser">
+          <%= cl_image_tag @user.photo.key %>
+          <div class="fullname">
+            <p><%= @user.first_name %>
+            <%= @user.last_name %></p>
+          </div>
+        </div>
+      </div>
+      <br>
+      <%= image_tag 'contact.png', class:"imgcontact" %>
+      <h5 class="catecontact"> Contact </h5>
+      <div class="email">
+        <p><%= @user.email %></p>
+      </div>
+      <div class="phone">
+        <p><%= @user.phone_number %></p>
+      </div>
+      <div class="address">
+        <p><%= @user.address %></p>
+      </div>
+      <div class="birth">
+        <p><%= @user.birth_date%></p>
+      </div>
+      <%= link_to @user.linkedin do %>
+        <%= image_tag 'linkedin.png', class:"linkedin1" %>
+      <% end %>
+      <hr>
+      <%= image_tag 'portfolio.png', class:"portfolio" %>
+      <h5 class="about">A propos de moi</h5>
+      <div class="description">
+        <p>" <%= @user.description %> "</p>
+      </div>
+      <hr>
+      <%= image_tag 'work.png', class:"work" %>
+      <h5 class="entreprise"> Mon entreprise </h5>
+      <div class= "sector">
+        <p><%= @user.company_name %></p>
+      </div>
+      <div class="turnover">
+        <p>Chiffre d'affaire : <%= @user.company_ca %> €</p>
+      </div>
+      <div class= "sector">
+        <p>Secteur : <%= @user.company_sector %></p>
+        <hr>
+      </div>
+      <div class= "d-flex flex-direction-row">
+        <div>
+          <%= image_tag 'calendar.png', class:"calendarprofile" %>
+        </div>
+        <div>
+          <% if @user == current_user %>
+            <%= link_to availabilities_path  do %>
+              <%= image_tag 'pencil.png', class:"pencil" %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+      <p class="avail"> Disponibilités :</p>
+      <% @user.availabilities.each do |availability| %>
+      <div class= "availi">
+        <% if availability.breakfast || availability.lunch || availability.afterwork %>
+          <%= Date::DAYNAMES[availability.week_day] %> :
+            <% if availability.breakfast %>
+              <%= "Breakfast" %>
+            <% elsif availability.lunch %>
+              <%= "Lunch" %>
+            <% elsif availability.afterwork%>
+              <%= "Afterwork" %>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+      </div>
+      <div class="availi">
+      </div>
+      <br>
+      <div class="distance">
+        <%= image_tag 'gps.png', class:"gps" %>
+        <p><%= @user.distance%> Km max</p>
+      </div>
+      <div class="deco mb-3 mt-0">
+        <% if @user == current_user %>
+          <hr>
+          <p><%= link_to "Déconnexion", new_user_session_path %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 

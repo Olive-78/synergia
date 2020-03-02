@@ -21,7 +21,7 @@
 }
 
 .dashboard-card {
-  background: white;
+  background: #1b262c;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-top: 10px;
   border-radius: 8px;
@@ -30,6 +30,10 @@
   i {
     // position:absolute;
   }
+}
+
+.dashboard-card p, h6 {
+  color: white !important;
 }
 
 .dashboard-availabilities {
@@ -108,6 +112,20 @@ right: 5px;
 .center {
   display: flex;
   justify-content: center;
+  color: white;
+  background-color: #0096ff;
+  font-size: 16px;
+  padding: 8px;
+  margin-top: 15px;
+  border-radius: 5px;
+  font-weight: bolder;
+  text-decoration: none !important;
+}
+
+.center:hover {
+  background-color: white;
+  color: #1b262c;
+  text-decoration: none !important;
 }
 
 .indextitle {

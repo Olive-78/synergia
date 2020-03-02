@@ -1,53 +1,128 @@
-// Specific CSS for your home-page
 .banner {
-   background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),asset-url("networking-770.png");
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),asset-url("linkedin-new_2");
+    // background-color: #0096ff;
     background-size: cover;
-    background-position: center;
-    padding: 200px 0;
+    // background-position: center;
+    padding: 0 !important;
 }
-
 
 .banner h1 {
-    color: white;
-
+  font-size: 32px;
+  font-family: 'Passion One';
+  color: white !important;
+  background-color: #1b262c;
+  padding: 10px;
+  border-radius: 5px;
 }
+
 .banner p {
-    color: white;
-    opacity: .7;
     font-size: 20px;
     display: block;
     margin-block-start: 1em;
     margin-block-end: 1em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
+    font-family: 'Nunito';
+    color: white !important;
+    opacity: 1 !important;
+    border-radius: 5px;
 }
+
+.fa-calendar-alt, .fa-user-friends, .fa-mug-hot {
+  color: #0296FF;
+  font-size: 96px;
+}
+
+.title-point {
+  background-color: #1B262D;
+  color: white;
+  font-size: 32px;
+  font-family: 'Passion One';
+  padding: 10px;
+  margin-top: 15px;
+}
+
+.icon img {
+  height: 20px;
+}
+
+.cta-create {
+  color: #1b262c;
+  background-color: white;
+  font-size: 32px;
+  font-family: 'Passion One';
+  padding: 10px;
+  margin-top: 15px;
+  border-radius: 5px;
+}
+
+.cta-create:hover {
+  background-color: #1b262c;
+  color: white;
+  text-decoration: none;
+}
+
+
+.cta-create-2 {
+  color: white;
+  background-color: #0096ff;
+  font-size: 24px;
+  font-family: 'Passion One';
+  padding: 8px;
+  margin-top: 15px;
+  border-radius: 5px;
+}
+
+.cta-create:hover {
+  background-color: white;
+  color: #1b262c;
+  text-decoration: none;
+}
+
+.fa-sort-down {
+  color: #1b262c;
+  font-size: 32px;
+//   padding: 10px;
+//   margin-top: 15px;
+}
+
 
 .cardshome {
   display: flex;
   justify-content: space-between;
   margin-bottom: 50px;
   flex-wrap: wrap;
+  margin: auto;
 }
+
 .cardhome {
-  width: 260px;
-  border-radius: 3px;
+  border-radius: 5px;
   box-shadow: 0 0 5px rgb(230,230,230);
   text-align: center;
   padding: 30px;
-  border: 1px solid rgb(230,230,230);
+  background-color: #1b262c;
   margin: 5px;
 }
 
-
-.cardhome img {
-  height:  150px;
-  width: 100%;
-  object-fit: cover;
+.cardhome p {
+  font-size: 24px;
+  color: white;
 }
 
 .signature {
   text-align: center;
 }
+
+.text-vp {
+  background-color: #1b262c;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 20px !important;
+  padding-left: 20px !important;
+  border-radius: 5px;
+  color: white;
+}
+
 
 @media (max-width: 720px) {
   /* For a screen < 720px, this CSS will be read */
