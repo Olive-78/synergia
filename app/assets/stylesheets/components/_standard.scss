@@ -8,13 +8,22 @@ h1, h2 {
   font-family: 'Passion One';
 }
 
-h3, h4, h5, h6 {
+h3, h4, h6 {
   color: #1b262c !important;
   font-size: 28px !important;
   font-family: 'Passion One' !important;
 }
 
 p {
-  color: #1b262c;
+  color: white;
   font-size: 16px;
+}
+
+h5 {
+    font-size: 18px !important;
+    font-family: 'Passion One' !important;
+}
+
+p h4 {
+  margin: 0px !important;
 }

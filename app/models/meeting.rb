@@ -7,5 +7,8 @@ class Meeting < ApplicationRecord
   def users
     [self.user_one, self.user_two]
   end
+  
+  geocoded_by :venue_address
+  after_validation :geocode, if: :will_save_change_to_venue_address?
 
 end
