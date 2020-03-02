@@ -25,7 +25,9 @@
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    margin-left: 25px;
+    margin: auto;
+    display: flex;
+    padding-bottom: 5px;
   }
 }
 
@@ -50,13 +52,27 @@
   margin-top: 10px;
   border-radius: 8px;
   // height: 140px;
-  padding: 10px;
+  padding: 16px;
+  width: 173px;
   // position: relative;
   i {
     // position:absolute;
   }
 }
 
+.dashboard-card-1{
+  background: #1b262c;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-top: 10px;
+  border-radius: 8px;
+  padding: 10px;
+  margin-right: 13px;
+  margin-left: 9px;
+  // position: relative;
+  i {
+    // position:absolute;
+  }
+}
 .dashboard-card p, h6 {
   color: white !important;
 }
@@ -68,6 +84,10 @@
     // width: 14%;
     // flex-grow: 1;
   }
+}
+
+.columndash {
+  padding-top: 0px;
 }
 
 .icon-active {
@@ -115,6 +135,7 @@
 .meeting-info {
   border-top: solid lightgray 1px;
   padding-inline: 10px;
+  text-align: center;
 }
 
 .icon-avail {
@@ -145,6 +166,19 @@ right: 5px;
   border-radius: 5px;
   font-weight: bolder;
   text-decoration: none !important;
+}
+
+.center1 {
+  justify-content: center;
+  color: white;
+  background-color: #0096ff;
+  font-size:12px;
+  padding: 8px;
+  border-radius: 5px;
+  margin-top: 10px;
+  font-weight: bolder;
+  text-decoration: none !important;
+  text-align: center;
 }
 
 .center:hover {
