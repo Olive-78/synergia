@@ -1,7 +1,7 @@
 class MeetingsController < ApplicationController
 
   def index
-    @meetings = policy_scope(Meeting).where(user_two_id: current_user).or(Meeting.where(user_two_id: current_user))
+    @meetings = policy_scope(Meeting).where(user_one_id: current_user).or(Meeting.where(user_two_id: current_user))
   end
 
   def show

@@ -37,6 +37,10 @@ class User < ApplicationRecord
     User.where(id: ids_without_self)
   end
 
+  def all_meetings
+    self.meetings.sort_by(&:date).reverse
+  end
+
   private
 
   def create_availabilities
@@ -47,5 +51,6 @@ class User < ApplicationRecord
       )
     end
   end
+
 
 end

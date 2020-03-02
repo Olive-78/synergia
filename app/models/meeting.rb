@@ -3,4 +3,9 @@ class Meeting < ApplicationRecord
   belongs_to :user_two, class_name: "User", :foreign_key => "user_two_id"
 
   has_many :reviews, dependent: :destroy
+
+  def users
+    [self.user_one, self.user_two]
+  end
+
 end
