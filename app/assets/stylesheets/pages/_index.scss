@@ -20,11 +20,36 @@
   }
 }
 
+.medium-avatarr {
+  img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-left: 25px;
+  }
+}
+
+.comment a {
+  color: white;
+}
+
 .dashboard-card {
   background: #1b262c;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-top: 10px;
   border-radius: 8px;
+  padding: 10px;
+  // position: relative;
+  i {
+    // position:absolute;
+  }
+}
+.dashboard-card-last{
+  background: #1b262c;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-top: 10px;
+  border-radius: 8px;
+  // height: 140px;
   padding: 10px;
   // position: relative;
   i {
