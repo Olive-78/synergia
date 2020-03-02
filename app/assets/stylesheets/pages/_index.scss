@@ -53,14 +53,26 @@
   border-radius: 8px;
   // height: 140px;
   padding: 16px;
-  width: 181px;
-  margin-right: 6px;
+  width: 173px;
   // position: relative;
   i {
     // position:absolute;
   }
 }
 
+.dashboard-card-1{
+  background: #1b262c;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-top: 10px;
+  border-radius: 8px;
+  padding: 10px;
+  margin-right: 13px;
+  margin-left: 9px;
+  // position: relative;
+  i {
+    // position:absolute;
+  }
+}
 .dashboard-card p, h6 {
   color: white !important;
 }
@@ -123,6 +135,7 @@
 .meeting-info {
   border-top: solid lightgray 1px;
   padding-inline: 10px;
+  text-align: center;
 }
 
 .icon-avail {

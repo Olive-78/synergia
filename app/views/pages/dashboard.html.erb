@@ -16,36 +16,42 @@
         </div>
       </div>
       <div class="meeting-info">
-        <p><%= @next_meeting.venue_name %></p>
-        <p><%= @next_meeting.date %></p>
+        <p> Au <%= @next_meeting.venue_name %></p>
+        <p><%= @next_meeting.date.strftime("%d %B %Y") %></p>
+        <%=  @next_meeting.venue_address %>
       </div>
       <div class="center">
         <%= link_to "En savoir plus", meeting_path(@next_meeting) %>
       </div>
     </div>
 
-<div class= "columndash d-flex pt-2">
+<div class= "dash d-flex justify-content-between">
       <div class="dashboard-card-last d-flex flex-column">
         <h5 class= "last-meet text-center pt-2">Mon dernier rendez-vous</h5>
+        <div class="globallastmeeting">
           <div class="medium-avatarr">
             <%= cl_image_tag(@user_last_meeting.photo.key, class: "avatar-large")%>
           </div>
+        </div>
           <div class= "lastmeetuser">
              <p><%= @user_last_meeting.first_name%>
-             <%= @user_last_meeting.last_name %> </p>
+             <%= @user_last_meeting.last_name %></p>
           </div>
         <div class="center1">
           <%= link_to "Laisser un commentaire", new_user_review_path(@last_meeting) %>
         </div>
       </div>
 
-        <div class="dashboard-card-last d-flex flex-column">
-        <h5 class= "last-meet text-center pt-2">Nombre de meeting</h5>
-          <%= Meeting.count %>
+      <div class="dashboard-card-last d-flex. flex-column ">
+        <h5 class= "last-meet text-center pt-2">Mes meetings</h5>
+        <div class= "groupes">
+          <%= image_tag 'group.png', class:"groupescount" %>
+        </div>
+        <br>
+           <p class= "meetcount text-center h2 m-0"> <%= current_user.meetings.count %> </p>
       </div>
-  </div>
-
-    <div class="dashboard-card text-center">
+    </div>
+    <div class="dashboard-card text-center d-flex flex-column">
       <div class="availabilities-title">
         <div class="card-title availabilities-header">
           <h6>Mes disponibilités</h6>
@@ -95,6 +101,8 @@
         <% end %>
       </div>
     </div>
+  </div>
+
 
     <!-- <div class="dashboard-card"> flexbox
       <div>
