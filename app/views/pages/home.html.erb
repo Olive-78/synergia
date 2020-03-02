@@ -4,48 +4,54 @@
   <meta charset="UTF-8">
   <title>Foundaters</title>
   <link rel="shortcut icon" href="data:image/x-icon;" type="image/x-icon">
-  <!-- We need this line below for responsiveness! -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!-- code a Hero / Banner section -->
-  <div class="banner" >
-    <div class="container">
-      <h1> Foundaters, rencontres entre entrepreneurs</h1>
-      <p></p>
-      <a href="Comment ça marche?" class="btn-blue"></a>
+  <div class="banner">
+    <div class="container py-4">
+      <div class="d-flex flex-column align-items-center text-center">
+          <h1>DÉVELOPPE TON RÉSEAU D'ENTREPRENEURS !</h1>
+          <div class="text-vp">
+            <p><b>Le virtuel a ses limites...</b></p>
+            Rencontrez dans la vie réele,
+            des entrepreneurs qui vous correspondent,
+            pour échanger autour d'un verre ! (ou deux 🥂)</p>
+          </div>
+          <%= link_to raw('<i class="fas fa-caret-right"></i> Je crée mon compte'), new_user_registration_path, class: "cta-create"%>
+      </div>
     </div>
   </div>
-
   <div class="container">
-    <h2 class="text-center">How it works</h2>
-    <div class="cardshome">
+    <div class="text-center pt-2">
+      <i class="fas fa-sort-down"></i>
+    </div>
+    <h2 class="text-center" style="color: #1b262c!important;">Comment ça marche ?</h2>
+    <div class="block-points d-flex flex-column align-items-center">
 
-      <div class="cardhome">
-<%= image_tag 'time.jpg', class:"timers" %>
-        <h4>Problem</h4>
-        <p>Networking is crucial for entrepreneurs, but it takes time.  Time is crucial for entrepreneurs, so….
-</p>
+      <div class="cardhome" data-aos="fade-right">
+        <p><i class="far fa-calendar-alt"></i></p>
+        <h3 class="title-point">1. Vos dispos</h4>
+        <p>Renseignez les créneaux qui vous conviennent pour rencontrer des entrepreneurs.</p>
       </div>
 
-      <div class="cardhome">
-<%= image_tag 'cafe.jpg', class:"cafe" %>
-        <h4>Solution </h4>
-        <p>Each week, Synergia will strategically organize you a meeting with
- another entrepreneur in order to talk, unstuck issues and create
- synergies
-</p>
+      <div class="cardhome" data-aos="fade-left">
+        <p><i class="fas fa-user-friends"></i></p>
+        <h3 class="title-point">2. Votre entrepreneur</h4>
+        <p>On vous selectionne uniquement des entrepreneurs qui vous correspondent.</p>
       </div>
 
-      <div class="cardhome">
-<%= image_tag 'entrepreneur.jpg', class:"entrepreneur" %>
-        <h4>Target</h4>
-        <p>Busy entrepreneurs who need to extend their network smartly and consistently
-</p>
+      <div class="cardhome" data-aos="fade-right">
+        <p><i class="fas fa-mug-hot"></i></p>
+        <h3 class="title-point">3. Votre rendez-vous</h4>
+        <p>Le lieu idéal est choisi automatiquement, à mi chemin entre vous deux.
+        </p>
       </div>
 
+      <h3 class="text-center mt-3" style="color: #0096ff !important">Fini la logistique !</h3>
+      <h3 class="text-center mt-3" style="color: #0096ff !important">Vous n'avez qu'a aller à votre prochain rendez-vous.</h3>
+      <%= link_to raw('<i class="fas fa-caret-right"></i> Je crée mon compte'), new_user_registration_path, class: "cta-create-2"%>
+      <br>
     </div>
   </div>
-
-<p class= "signature">Made with love by Foundateam</p>
+</body>
