@@ -10,3 +10,5 @@ import { submit } from '../components/submitform';
 
 ChangeFormatChoice();
 submit();
+
+AOS.init();

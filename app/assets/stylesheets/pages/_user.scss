@@ -1,3 +1,12 @@
+.background {
+  background-color: #1b262c;
+
+}
+
+.background p, h1, h2, h3, h4, h5, h6 {
+  color: white !important;
+}
+
 .firstname {
 text-align: center
 }
@@ -6,6 +15,7 @@ text-align: center
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+
 .imgcontact{
   width: 25px;
   height: 25px;
@@ -19,15 +29,13 @@ text-align: center
   text-align: center;
 }
 
-
 .portfolio {
   width: 25px;
   height: 25px;
   display: block;
   margin-left: auto;
   margin-right: auto;
-    margin-bottom: 5px;
-
+  margin-bottom: 5px;
 }
 
 .work {
@@ -36,8 +44,7 @@ text-align: center
   display: block;
   margin-left: auto;
   margin-right: auto;
-    margin-bottom: 5px;
-
+  margin-bottom: 5px;
 }
 
 .linkedin1 {
@@ -47,18 +54,16 @@ text-align: center
   margin-left: auto;
   margin-right: auto;
   margin-top: 5px;
-
 }
 
 .cardsphoto {
-    display: flex;
-    align-items : flex-end;
-    background-size: cover;
-    background-color: #DADEE5;
-    width: 100%;
-    padding: 10px;
-
+  display: flex;
+  align-items : flex-end;
+  background-size: cover;
+  width: 100%;
+  padding: 10px;
 }
+
 .distance {
   display: flex;
   justify-content: center;
@@ -82,19 +87,25 @@ text-align: center
 }
 
 .pencil-2 {
-   width: 16px;
+  width: 16px;
   height: 16px;
   display: block;
+<<<<<<< HEAD
+=======
+  // margin-left: auto;
+  // margin-right: auto;
+  // margin-bottom: 5px;
+>>>>>>> master
 }
 
 .pencil {
-     width: 16px;
-    height: 16px;
-    margin-left: 141px;
-
+  width: 16px;
+  height: 16px;
+  margin-left: 141px;
 }
+
 .gps {
-   width: 25px;
+  width: 25px;
   height: 25px;
   display: inline-block;
   margin-bottom: 5px;
