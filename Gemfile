@@ -20,6 +20,7 @@ gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.12.0'
 gem 'pundit'
 gem 'geocoder'
+gem 'bipartite_graph_sets'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
