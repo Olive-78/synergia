@@ -1,8 +1,60 @@
-<% @meetings.each do |meeting| %>
-  <h5><%= meeting.date %></h5>
-  <p><%= meeting.venue_name %></p>
-  <p><%= meeting.venue_address %></p>
-  <p><%= meeting.user_one_id %></p>
-  <p><%= meeting.user_two_id %></p>
-<% end %>
+<div class="display-width">
+  <div class="text-center">
+    <h1 class="titre-meeting-index">Mes Rendez-vous</h1>
+    <div class="row">
+      <% current_user.all_meetings.each do |meeting| %>
+        <% user = meeting.users.reject { |user| user == current_user }.first %>
+        <div class="col-12">
+          <div class="meeting-card d-flex justify-content-between align-items-center">
+            <div class="partie-gauche d-flex justify-content-start">
+              <div class="avatar-meeting pr-2">
+                <% if user.photo.present? %>
+                  <%= cl_image_tag user.photo.key %>
+                <% else %>
+                  <%= image_tag("image_not_found.png") %>
+                <% end %>
+              </div>
+
+              <div class="meeting-date">
+                <% @month = meeting.date.strftime("%B") %>
+                <% if @month == "January" %>
+                  <p><%= link_to meeting.date.strftime("%d Jan."), meeting_path(meeting) %></p>
+                <% elsif @month == "February"%>
+                  <p><%= link_to meeting.date.strftime("%d Fév."), meeting_path(meeting) %></p>
+                <% elsif @month == "March"%>
+                  <p><%= link_to meeting.date.strftime("%d Mar."), meetings_path(meeting) %></p>
+                <% elsif @month == "April"%>
+                  <p><%= link_to meeting.date.strftime("%d Avr."), meeting_path(meeting) %></p>
+                <% elsif @month == "May"%>
+                  <p><%= link_to meeting.date.strftime("%d Mai"), meeting_path(meeting) %></p>
+                <% elsif @month == "June"%>
+                  <p><%= link_to meeting.date.strftime("%d Juin"), meeting_path(meeting) %></p>
+                <% elsif @month == "July"%>
+                  <p><%= link_to meeting.date.strftime("%d Juil."), meeting_path(meeting) %></p>
+                <% elsif @month == "August"%>
+                  <p><%= link_to meeting.date.strftime("%d Aout"), meeting_path(meeting) %></p>
+                <% elsif @month == "September"%>
+                  <p><%= link_to meeting.date.strftime("%d Sept."), meeting_path(meeting) %></p>
+                <% elsif @month == "October"%>
+                  <p><%= link_to meeting.date.strftime("%d Oct."), meeting_path(meeting) %></p>
+                <% elsif @month == "November"%>
+                  <p><%= link_to meeting.date.strftime("%d Nov."), meeting_path(meeting) %></p>
+                <% elsif @month == "December"%>
+                  <p><%= link_to meeting.date.strftime("%d Déc."), meeting_path(meeting) %></p>
+                <% else %>
+                  <p><%= @meeting.date.strftime("%d %B %Y") %></p>
+                <% end %>
+              </div>
+            </div>
+
+            <div class="partie-droite d-flex flex-column justify-content-end">
+              <p><%= link_to "#{user.first_name} #{user.last_name}", user_path(user)  %></p>
+              <p><%= user.company_name %></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
 

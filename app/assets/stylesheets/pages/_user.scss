@@ -1,10 +1,9 @@
 .background {
   background-color: #1b262c;
-
 }
 
 .background p, h1, h2, h3, h4, h5, h6 {
-  color: white !important;
+  color: white;
 }
 
 .last-meet h5 {
@@ -129,4 +128,16 @@ text-align: center
 
 .link{
 text-align: center;
+}
+
+.groupescount {
+  width: 50px;
+  height: 50px;
+  display: block;
+  display: block;
+  margin: auto;
+}
+
+.meetcount p {
+  font-size: 15px;
 }

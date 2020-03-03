@@ -3,7 +3,7 @@
   padding-right: 0px !important;
 }
 
-h2 {
+h1, h2 {
   font-size: 32px;
   font-family: 'Passion One';
 }
@@ -22,4 +22,8 @@ p {
 h5 {
     font-size: 18px !important;
     font-family: 'Passion One' !important;
+}
+
+p h4 {
+  margin: 0px !important;
 }
