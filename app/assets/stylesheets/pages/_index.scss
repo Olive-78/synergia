@@ -39,8 +39,9 @@
   background-color: #0296FF;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-top: 10px;
-  border-radius: 8px;
+  border-radius: 25px;
   padding: 10px;
+  background: linear-gradient(66.34deg, #0A3B74 1.84%, #1C6CC9 80.26%, #2186FC 100%);
   h6 {
     color: #90ADD1;
     font-size: 20px;
@@ -52,12 +53,12 @@
 }
 
 .dashboard-card-last {
-  background-color: #0296FF;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-top: 10px;
-  border-radius: 8px;
   padding: 16px;
   width: 173px;
+  background: #E3E4E7;
+  border-radius: 25px;
 }
 
 .dashboard-card-last p {
