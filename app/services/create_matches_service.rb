@@ -1,4 +1,13 @@
 class CreateMatchesService
+
+  # dispo = [true, false]
+  # User.all.each do |user|
+  #   user.availabilities.each do |avail|
+  #     avail.update(breakfast: dispo.sample, lunch: dispo.sample, afterwork: dispo.sample)
+  #   end
+  # end
+
+
   def call
     even_user_count = User.count.even? ? User.count : User.count - 1
     requirement_hash = {
@@ -106,15 +115,33 @@ class CreateMatchesService
       end
     end
     matches = BipartiteGraphSets.get_perfect_match(requirement_hash)
-
-    # meetings = matches.each do |key, value|
-    #   pairs = values_at(key).permutation(2).to_a
-    #   # @user_one = pairs.first
-    #   # @user_two = pairs.last
-    # end
+    meetings = []
+    matches.each do |key, array|
+      array.each_slice(2) do |user_one_id, user_two_id|
+        if user_two_id != nil
+          meeting = Meeting.new(week_day: key[-1].to_i, slot: key[0..-2])
+          meeting.date = Date.parse(Date::DAYNAMES[key[-1].to_i])
+          if meeting.date <= Date.today
+            meeting.date += 7
+          end
+          meeting.user_one_id = user_one_id
+          meeting.user_two_id = user_two_id
+          meeting.save!
+          meetings << meeting
+        end
+      end
+    end
+    # p matches
     # p meetings
-
-    # pairs = matches.values.permutation(2).to_a
-    # p pairs
   end
 end
+
+# {
+#   "breakfast0"=>[10, 17, 14, 18, 15, 12, 5, 19, 9, 8],
+#   "lunch0"=>[20, 21, 16, 7, 6, 13],
+#   "breakfast1"=>[22, 11]
+# }
+
+
+
+
