@@ -1,6 +1,6 @@
 <div class="display-width">
   <div class="text-center">
-    <h1 class="titre-meeting-index">Mes Rendez-vous</h1>
+    <h1 class="titre-meeting-index">MES RENDEZ-VOUS</h1>
     <div class="row">
       <% current_user.all_meetings.each do |meeting| %>
         <% user = meeting.users.reject { |user| user == current_user }.first %>
@@ -18,38 +18,38 @@
               <div class="meeting-date">
                 <% @month = meeting.date.strftime("%B") %>
                 <% if @month == "January" %>
-                  <p><%= link_to meeting.date.strftime("%d Jan."), meeting_path(meeting) %></p>
+                  <p><strong><i class="far fa-calendar-alt"></i><%= link_to meeting.date.strftime(" %d Jan."), meeting_path(meeting) %></strong></p>
                 <% elsif @month == "February"%>
-                  <p><%= link_to meeting.date.strftime("%d Fév."), meeting_path(meeting) %></p>
+                  <p><strong><i class="far fa-calendar-alt"></i><%= link_to meeting.date.strftime(" %d Fév."), meeting_path(meeting) %></strong></p>
                 <% elsif @month == "March"%>
-                  <p><%= link_to meeting.date.strftime("%d Mar."), meetings_path(meeting) %></p>
+                  <p><strong><i class="far fa-calendar-alt"></i><%= link_to meeting.date.strftime(" %d Mar."), meetings_path(meeting) %></strong></p>
                 <% elsif @month == "April"%>
-                  <p><%= link_to meeting.date.strftime("%d Avr."), meeting_path(meeting) %></p>
+                  <p><strong><i class="far fa-calendar-alt"></i><%= link_to meeting.date.strftime(" %d Avr."), meeting_path(meeting) %></strong></p>
                 <% elsif @month == "May"%>
-                  <p><%= link_to meeting.date.strftime("%d Mai"), meeting_path(meeting) %></p>
+                  <p><strong><i class="far fa-calendar-alt"></i><%= link_to meeting.date.strftime(" %d Mai"), meeting_path(meeting) %></strong></p>
                 <% elsif @month == "June"%>
-                  <p><%= link_to meeting.date.strftime("%d Juin"), meeting_path(meeting) %></p>
+                  <p><strong><i class="far fa-calendar-alt"></i><%= link_to meeting.date.strftime(" %d Juin"), meeting_path(meeting) %></strong></p>
                 <% elsif @month == "July"%>
-                  <p><%= link_to meeting.date.strftime("%d Juil."), meeting_path(meeting) %></p>
+                  <p><strong><i class="far fa-calendar-alt"></i><%= link_to meeting.date.strftime(" %d Juil."), meeting_path(meeting) %></strong></p>
                 <% elsif @month == "August"%>
-                  <p><%= link_to meeting.date.strftime("%d Aout"), meeting_path(meeting) %></p>
+                  <p><strong><i class="far fa-calendar-alt"></i><%= link_to meeting.date.strftime(" %d Aout"), meeting_path(meeting) %></strong></p>
                 <% elsif @month == "September"%>
-                  <p><%= link_to meeting.date.strftime("%d Sept."), meeting_path(meeting) %></p>
+                  <p><strong><i class="far fa-calendar-alt"></i><%= link_to meeting.date.strftime(" %d Sept."), meeting_path(meeting) %></strong></p>
                 <% elsif @month == "October"%>
-                  <p><%= link_to meeting.date.strftime("%d Oct."), meeting_path(meeting) %></p>
+                  <p><strong><i class="far fa-calendar-alt"></i><%= link_to meeting.date.strftime(" %d Oct."), meeting_path(meeting) %></strong></p>
                 <% elsif @month == "November"%>
-                  <p><%= link_to meeting.date.strftime("%d Nov."), meeting_path(meeting) %></p>
+                  <p><strong><i class="far fa-calendar-alt"></i><%= link_to meeting.date.strftime(" %d Nov."), meeting_path(meeting) %></strong></p>
                 <% elsif @month == "December"%>
-                  <p><%= link_to meeting.date.strftime("%d Déc."), meeting_path(meeting) %></p>
+                  <p><strong><i class="far fa-calendar-alt"></i><%= link_to meeting.date.strftime(" %d Déc."), meeting_path(meeting) %></strong></p>
                 <% else %>
                   <p><%= @meeting.date.strftime("%d %B %Y") %></p>
                 <% end %>
               </div>
             </div>
 
-            <div class="partie-droite d-flex flex-column justify-content-end">
-              <p><%= link_to "#{user.first_name} #{user.last_name}", user_path(user)  %></p>
-              <p><%= user.company_name %></p>
+            <div class="partie-droite d-flex flex-column align-items-end">
+              <p class="text-right"><strong><%= link_to "#{user.first_name} #{user.last_name}", user_path(user)  %></strong></p>
+              <p class="text-right"><%= user.company_name %></p>
             </div>
           </div>
         </div>
