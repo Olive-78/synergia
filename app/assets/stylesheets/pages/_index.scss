@@ -36,28 +36,28 @@
 }
 
 .dashboard-card {
-  background: #1b262c;
+  background-color: #0296FF;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-top: 10px;
   border-radius: 8px;
   padding: 10px;
-  // position: relative;
-  i {
-    // position:absolute;
-  }
 }
-.dashboard-card-last{
-  background: #1b262c;
+
+.dashboard-card p, h2, h3, h4, h5 {
+  color: #1b262c !important;
+}
+
+.dashboard-card-last {
+  background-color: #0296FF;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-top: 10px;
   border-radius: 8px;
-  // height: 140px;
   padding: 16px;
   width: 173px;
-  // position: relative;
-  i {
-    // position:absolute;
-  }
+}
+
+.dashboard-card-last p {
+ color: #1b262c;
 }
 
 .dashboard-card-1{
@@ -68,14 +68,8 @@
   padding: 10px;
   margin-right: 13px;
   margin-left: 9px;
-  // position: relative;
-  i {
-    // position:absolute;
-  }
 }
-.dashboard-card p, h6 {
-  color: white !important;
-}
+
 
 .dashboard-availabilities {
   display: flex;
@@ -92,12 +86,10 @@
 
 .icon-active {
   color: #0096ff;
-  // background-color: #001f3f;
 }
 
 .icon-inactive {
   color: white;
-  // background-color: #FFC65A;
 }
 
 .fa-check-circle {
@@ -136,6 +128,7 @@
   border-top: solid lightgray 1px;
   padding-inline: 10px;
   text-align: center;
+  color: #1b262c;
 }
 
 .icon-avail {
@@ -158,8 +151,7 @@ right: 5px;
 .center {
   display: flex;
   justify-content: center;
-  color: white;
-  background-color: #0096ff;
+  background-color: #1b262c;
   font-size: 16px;
   padding: 8px;
   margin-top: 15px;
@@ -168,10 +160,13 @@ right: 5px;
   text-decoration: none !important;
 }
 
+.center a {
+  color: white;
+}
+
 .center1 {
   justify-content: center;
-  color: white;
-  background-color: #0096ff;
+  background-color: #1b262c;
   font-size:12px;
   padding: 8px;
   border-radius: 5px;
@@ -179,6 +174,10 @@ right: 5px;
   font-weight: bolder;
   text-decoration: none !important;
   text-align: center;
+}
+
+.center1 a {
+  color: white;
 }
 
 .center:hover {
