@@ -9,8 +9,3 @@ const loadDynamicBannerText = () => {
   });
 };
 export { loadDynamicBannerText };
-
-
-        // <p style="color: #000000 !important;"> Engaging countdown </p>
-        // <p style="color: #000000 !important;"> Engines one </p>
-        // <p style="color: #000000 !important;"> And it's a match! </p>
