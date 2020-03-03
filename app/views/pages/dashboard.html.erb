@@ -8,7 +8,9 @@
       </div>
       <div class="user-info">
         <div class="medium-avatar">
+            <%= link_to meeting_path(@next_meeting) do %>
           <%= cl_image_tag(@user_next_meeting.photo.key, class: "avatar-large")%>
+        <% end %>
         </div>
         <div class="user-details">
           <p><strong><%= @user_next_meeting.first_name%> <%= @user_next_meeting.last_name %></strong></p>
