@@ -5,13 +5,13 @@
 
 h1, h2 {
   font-size: 32px;
-  font-family: 'Passion One';
+  font-family: $headers-font;
 }
 
 h3, h4, h6 {
   color: #1b262c !important;
   font-size: 28px !important;
-  font-family: 'Passion One' !important;
+  font-family: $headers-font !important;
 }
 
 p {
@@ -21,7 +21,7 @@ p {
 
 h5 {
     font-size: 18px !important;
-    font-family: 'Passion One' !important;
+    font-family: $headers-font !important;
 }
 
 p h4 {
