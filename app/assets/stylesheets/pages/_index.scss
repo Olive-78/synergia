@@ -289,3 +289,21 @@ p {
   border-radius: 8px;
   margin-bottom: 20px;
 }
+
+.email {
+  margin: 0 !important;
+}
+
+.login {
+  background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)),asset-url("linkedin-new_2");
+  background-size: cover;
+  height: 100vh;
+}
+
+.form-inputs {
+  color: #1b262c !important;
+}
+
+.form-actions {
+  color: #1b262c !important;
+}
