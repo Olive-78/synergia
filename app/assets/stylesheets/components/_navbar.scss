@@ -35,19 +35,19 @@
 }
 
 .navbar-calendar .navbar-icon {
-  background-image: url(asset_path('calendar.svg'));
+  background-image: url(asset_path('calendar_2.png'));
 }
 
 .navbar-dashboard .navbar-icon {
-  background-image: url(asset_path('home.svg'));
+  background-image: url(asset_path('home.png'));
 }
 
 .navbar-network .navbar-icon {
-  background-image: url(asset_path('avatar.svg'));
+  background-image: url(asset_path('avatar.png'));
 }
 
 .navbar-search .navbar-icon {
-  background-image: url(asset_path('graph.svg'));
+  background-image: url(asset_path('graph.png'));
 }
 
 .navbar-element p {
@@ -60,7 +60,7 @@
 
 #meetings-index .navbar-calendar {
   .navbar-icon {
-    background-image: url(asset_path('calendar-icon-highlight.svg'));
+    background-image: url(asset_path('calendar_2.png'));
   }
   p {
     color: #001f3f;
@@ -69,7 +69,7 @@
 
 #pages-dashboard .navbar-dashboard {
   .navbar-icon {
-    background-image: url(asset_path('home-icon-highlight.svg'));
+    background-image: url(asset_path('home.png'));
   }
  p {
    color: #001f3f;
@@ -78,7 +78,7 @@
 
 #networks-index .navbar-network {
   .navbar-icon {
-    background-image: url(asset_path('network-icon-highlight.svg'));
+    background-image: url(asset_path('avatar.png'));
   }
   p {
    color: #001f3f;

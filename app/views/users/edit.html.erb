@@ -1,0 +1,25 @@
+<div class="bg-edit">
+  <div class="container">
+    <div class="col-12">
+      <div class="formulaire text-center py-5">
+        <h1>Modifier mes infos personnelles</h1>
+
+        <%= simple_form_for(@user) do |f| %>
+          <%= f.input :first_name, placeholder: "Prénom", label: "Prénom" %>
+          <%= f.input :last_name, placeholder: "Nom", label: "Nom" %>
+          <%= f.input :phone_number, placeholder: "Numéro de téléphone", label: "Numéro de téléphone" %>
+          <%= f.input :address, placeholder: "Adresse", label: "Adresse" %>
+          <%= f.input :description, placeholder: "Bio", label: "Bio" %>
+          <%= f.input :birth_date, placeholder: "Date de naissance", label: "Date de naissance" %>
+          <%= f.input :linkedin, placeholder: "URL Linkedin", label: "URL Linkedin" %>
+          <%= f.input :distance, placeholder: "Distance max des rendez-vous", label: "Distance max des rendez-vous", collection: [10, 20, 30, 50, 100, 200] %>
+          <%= f.input :company_name, placeholder: "Nom de l'entreprise", label: "Nom de l'entreprise" %>
+          <%= f.input :company_ca, placeholder: "Chiffre d'affaires par an", label: "Chiffre d'affaires par an" %>
+          <%= f.input :company_sector, placeholder: "Secteur d'activité", label: "Secteur d'activité", collection: ["Agroalimentaire", "Banque / Assurance", " BTP / Matériaux de construction", "Chimie / Parachimie", "Commerce / Négoce / Distribution", "Édition / Communication / Multimédia", "Électronique / Électricité", "Études et conseils", "Industrie pharmaceutique", "Informatique / Télécoms", "Machines et équipements / Automobile", "Métallurgie / Travail du métal", "Plastique / Caoutchouc", "Services aux entreprises", "Textile / Habillement / Chaussure", "Transports / Logistique"], prompt: false %>
+
+          <%= f.submit "Sauvegarder", class: "sauvegarder" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -27,6 +27,13 @@ class MeetingsController < ApplicationController
     authorize @meeting
   end
 
+  def createmeetings
+    CreateMatchesService.new.call
+    sleep 3
+    skip_authorization
+    redirect_to dashboard_path
+  end
+
   private
   def meeting_params
     params.require(:meeting).permit(:status)
