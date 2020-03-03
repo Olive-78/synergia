@@ -1,11 +1,11 @@
 class CreateMatchesService
 
-  # dispo = [true, false]
-  # User.all.each do |user|
-  #   user.availabilities.each do |avail|
-  #     avail.update(breakfast: dispo.sample, lunch: dispo.sample, afterwork: dispo.sample)
-  #   end
-  # end
+  dispo = [true, false]
+  User.all.each do |user|
+    user.availabilities.each do |avail|
+      avail.update(breakfast: dispo.sample, lunch: dispo.sample, afterwork: dispo.sample)
+    end
+  end
 
 
   def call

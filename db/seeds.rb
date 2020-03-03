@@ -465,7 +465,7 @@ user_2 = [paul_de_thore, hugo_dornbierer, virgini_atenza, astrid_aubert, claire_
 
 50.times do
   meeting = Meeting.new
-  meeting.date = Faker::Date.in_date_period(month: 3)
+  meeting.date = Faker::Date.in_date_period(month: 2)
 
   place = meeting_place.sample
 
