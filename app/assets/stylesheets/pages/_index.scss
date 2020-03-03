@@ -14,9 +14,14 @@
 
 .medium-avatar {
   img {
-    width: 80px;
-    height: 80px;
+     width: 87px;
+    height: 87px;
     border-radius: 50%;
+    top: 54px;
+    position: absolute;
+    left: 255.5px;
+    margin-top: 17px;
+
   }
 }
 
@@ -28,6 +33,9 @@
     margin: auto;
     display: flex;
     padding-bottom: 5px;
+    position: absolute;
+    top: 302px;
+    left: 73px;
   }
 }
 
@@ -42,14 +50,24 @@
   border-radius: 25px;
   padding: 10px;
   background: linear-gradient(66.34deg, #0A3B74 1.84%, #1C6CC9 80.26%, #2186FC 100%);
-  h6 {
+  left: 18px;
+  top: 90px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  padding-bottom: 81px;
+
+  h5 {
     color: #90ADD1;
-    font-size: 20px;
+    font-size: 7px;
+    margin-top: -36px;
+    margin-bottom: 20px;
+
+
   }
 }
 
 .dashboard-card p, h2, h3, h4, h5 {
-  color: #1b262c !important;
+  margin: 0px;
 }
 
 .dashboard-card-last {
@@ -63,6 +81,7 @@
 
 .dashboard-card-last p {
  color: #1b262c;
+
 }
 
 .dashboard-card-1{
@@ -123,10 +142,15 @@
 
 .user-info {
   display: flex;
+  margin-top: -21px;
+
 }
 
 .user-details {
   margin-left: 15px;
+  margin-top: 18px;
+  font-color: #DADADA;
+
 }
 
 .meeting-info {

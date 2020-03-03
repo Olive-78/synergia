@@ -1,37 +1,33 @@
 <div>
   <div class="display-width">
-    <div class="dashboard-card">
-      <!-- <i class="fas fa-check-circle"></i>
-      <i class="fas fa-times-circle"></i> -->
-      <div class="card-title">
-        </div>
+      <div class="dashboard-card">
+        <!-- <i class="fas fa-check-circle"></i>
+        <i class="fas fa-times-circle"></i> -->
         <% if @next_meeting %>
-          <h6>MON PROCHAIN RENDEZ-VOUS</h6>
-        <div class="user-info">
           <div class="medium-avatar">
-              <%= link_to user_path(@user_next_meeting) do %>
-            <%= cl_image_tag(@user_next_meeting.photo.key, class: "avatar-large")%>
+            <%= link_to user_path(@user_next_meeting) do %>
+              <%= cl_image_tag(@user_next_meeting.photo.key, class: "avatar-large")%>
+            <% end %>
+          </div>
+          <%= link_to meeting_path(@next_meeting) do %>
+            <h5>Prochain RDV</h5>
+            <div class="user-info">
+              <div class="user-details">
+                <p><strong><%= @user_next_meeting.first_name%> <%= @user_next_meeting.last_name %></strong></p>
+                <p><%= @user_next_meeting.company_name %></p>
+              </div>
+            </div>
+            <div class="meeting-info">
+              <p> Au <%= @next_meeting.venue_name %></p>
+              <p><%= @next_meeting.date.strftime("%d Mars %Y") %></p>
+              <%=  @next_meeting.venue_address %>
+            </div>
           <% end %>
-          </div>
-          <div class="user-details">
-            <p><strong><%= @user_next_meeting.first_name%> <%= @user_next_meeting.last_name %></strong></p>
-            <p><%= @user_next_meeting.company_name %></p>
-          </div>
-        </div>
-        <div class="meeting-info">
-          <p> Au <%= @next_meeting.venue_name %></p>
-          <p><%= @next_meeting.date.strftime("%d Mars %Y") %></p>
-          <%=  @next_meeting.venue_address %>
-        </div>
-        <div class="center">
-          <%= link_to "En savoir plus", meeting_path(@next_meeting) %>
-        </div>
+        <% end %>
       </div>
-    <% end %>
 
 <div class= "dash d-flex justify-content-between">
       <div class="dashboard-card-last d-flex flex-column">
-        <h5 class= "last-meet text-center pt-2">MON DERNIER RENDEZ-VOUS</h5>
         <div class="globallastmeeting">
           <div class="medium-avatarr">
             <%= link_to user_path(@user_last_meeting) do %>
@@ -40,12 +36,16 @@
           </div>
         </div>
           <div class= "lastmeetuser">
-             <p><%= @user_last_meeting.first_name%>
-             <%= @user_last_meeting.last_name %></p>
+             <p><%= @user_last_meeting.first_name%> </p>
+             <p> <%= @user_last_meeting.last_name %> </p>
+              <p><%= @user_last_meeting.company_name %> </p>
           </div>
-        <div class="center1">
-          <%= link_to "Laisser un commentaire", new_user_review_path(@last_meeting) %>
+        <div>
+          <%= link_to new_user_review_path(@last_meeting) do %>
+        <%= image_tag 'like.png', class:"linkedin1" %>
+      <% end %>
         </div>
+        <p class= "last-meet text-center pt-2">Dernier RDV</p>
       </div>
       <div class="dashboard-card-last d-flex. flex-column ">
         <h5 class= "last-meet text-center pt-2">MES MEETINGS</h5>
