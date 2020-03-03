@@ -1,9 +1,9 @@
 .background {
-  background-color: #1b262c;
+  background-color: white;
 }
 
 .background p, h1, h2, h3, h4, h5, h6 {
-  color: white;
+  color: black;
 }
 
 .last-meet h5 {
@@ -12,8 +12,24 @@
 
 .lastmeetuser p {
   margin: 0px !important;
+}
 
+.mesinfos p{
+  margin: 0px;
+}
+.photouser {
+  img {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    top: 54px;
+    position: absolute;
+    left: 237.5px;
+    margin-top: 17px;
 
+  }
+  text-align: center;
+  width: 100%;
 }
 
 .lastmeetuser {
@@ -71,13 +87,63 @@ text-align: center
 }
 
 .cardsphoto {
-  display: flex;
-  align-items : flex-end;
-  background-size: cover;
-  width: 100%;
+ background-color: #0296FF;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  margin-top: 10px;
+  border-radius: 25px;
   padding: 10px;
+  background: linear-gradient(66.34deg, #0A3B74 1.84%, #1C6CC9 80.26%, #2186FC 100%);
+  left: 18px;
+  top: 90px;
+  margin-top: 40px;
+  margin-bottom: -49px;
+  padding-bottom: 48px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
+.cardprofil2 {
+  background-color: #E3E4E7;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  margin-top: 10px;
+  border-radius: 25px;
+  padding: 10px;
+  left: 18px;
+  top: 90px;
+  margin-top: 40px;
+  margin-bottom: 35px;
+  padding-bottom: 12px;
+  margin-left: 40px;
+  margin-right: 17px;
+  padding-right: 33px;
+  padding-left: 33px;
+}
+
+.cardprofil3 {
+  background-color: #E3E4E7;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  margin-top: 10px;
+  border-radius: 25px;
+  padding: 10px;
+  left: 18px;
+  top: 90px;
+  margin-top: 40px;
+  margin-bottom: 35px;
+  padding-bottom: 12px;
+  margin-left: 11px;
+  margin-right: 40px;
+  padding-right: 33px;
+  padding-left: 33px;
+}
+
+.cardprofil3 p{
+margin: 0px;
+text-align: left;
+}
+
+.entreprise {
+  text-align: left;
+}
 .distance {
   display: flex;
   justify-content: center;
