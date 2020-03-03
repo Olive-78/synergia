@@ -34,7 +34,7 @@
     display: flex;
     padding-bottom: 5px;
     position: absolute;
-    top: 302px;
+    top: 286px;
     left: 73px;
   }
 }
@@ -53,8 +53,8 @@
   left: 18px;
   top: 90px;
   margin-top: 40px;
-  margin-bottom: 20px;
-  padding-bottom: 81px;
+  margin-bottom: 25px;
+  padding-bottom: 64px;
 
   h5 {
     color: #90ADD1;
@@ -74,10 +74,13 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-top: 10px;
   padding: 16px;
-  width: 173px;
+  width: 168px;
   background: #E3E4E7;
   border-radius: 25px;
+  margin-right: 10px;
+  margin-left: 10px;
 }
+
 
 .dashboard-card-last p {
  color: #1b262c;
@@ -98,15 +101,14 @@
 .dashboard-availabilities {
   display: flex;
   justify-content: space-around;
+  padding: 10px;
   > div {
     // width: 14%;
     // flex-grow: 1;
   }
 }
 
-.columndash {
-  padding-top: 0px;
-}
+
 
 .icon-active {
   color: #0096ff;
@@ -121,6 +123,7 @@
   top: 12px;
   color:green;
   font-size: 20px;
+margin-bottom: 10px;
 }
 
 .fa-times-circle {
@@ -154,10 +157,18 @@
 }
 
 .meeting-info {
-  border-top: solid lightgray 1px;
   padding-inline: 10px;
   text-align: center;
   color: #1b262c;
+  display: flex;
+  margin-left: 190px;
+  position: absolute;
+  margin-top: 15px;
+}
+
+.adressmeeting {
+  display: flex;
+  position: absolute;
 }
 
 .icon-avail {

@@ -15,18 +15,23 @@
               <div class="user-details">
                 <p><strong><%= @user_next_meeting.first_name%> <%= @user_next_meeting.last_name %></strong></p>
                 <p><%= @user_next_meeting.company_name %></p>
+                <br>
+                <br>
+              <%=  @next_meeting.venue_address %>
               </div>
             </div>
-            <div class="meeting-info">
+            <div class="adressmeeting">
               <p> Au <%= @next_meeting.venue_name %></p>
+            </div>
+            <div class="meeting-info">
+              <br>
               <p><%= @next_meeting.date.strftime("%d Mars %Y") %></p>
-              <%=  @next_meeting.venue_address %>
             </div>
           <% end %>
         <% end %>
       </div>
 
-<div class= "dash d-flex justify-content-between">
+    <div class= "dash d-flex justify-content-between">
       <div class="dashboard-card-last d-flex flex-column">
         <div class="globallastmeeting">
           <div class="medium-avatarr">
@@ -48,24 +53,30 @@
         <p class= "last-meet text-center pt-2">Dernier RDV</p>
       </div>
       <div class="dashboard-card-last d-flex. flex-column ">
-        <h5 class= "last-meet text-center pt-2">MES MEETINGS</h5>
         <br>
-        <div class= "groupes">
+        <div class= "group">
               <%= link_to networks_path do %>
-          <%= image_tag 'group.png', class:"groupescount" %>
+          <%= image_tag 'groupshow.png', class:"groupescount" %>
         </div>
-           <p class= "meetcount text-center h2 m-0"> <%= current_user.meetings.count %> </p>
-           <% end %>
-
+        <div class=" text-center pt-2">
+           <p> <%= current_user.meetings.count %></p>
+           <br>
+           <br>
+           <h5>RDVs</h5>
+        </div>
+    <% end %>
       </div>
     </div>
+
     <div class="dashboard-card text-center d-flex flex-column">
       <div class="availabilities-title">
         <div class="card-title availabilities-header">
-          <h6>Mes disponibilités</h6>
-          <%= link_to availabilities_path, class:'pencil-icon'  do %>
-            <%= image_tag 'pencil.png', class:"pencil-2" %>
+          <div class="dispodash">
+          <h5>Disponibilités</h56>
+          <%= link_to availabilities_path  do %>
+            <%= image_tag 'pen.png', class:"pencil-2" %>
           <% end %>
+          </div>
         </div>
       </div>
       <div class="dashboard-availabilities">
@@ -110,17 +121,4 @@
       </div>
     </div>
   </div>
-​
-​
-    <!-- <div class="dashboard-card"> flexbox
-      <div>
-        <i class="fas fa-users"></i>
-        <p>coucou</p>
-      </div>
-      <div>
-        <i class="fas fa-handshake"></i>
-        <p>Coucou</p>
-      </div>
-    </div>
-  </div> -->
 </div>
