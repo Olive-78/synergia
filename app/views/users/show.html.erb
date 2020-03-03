@@ -86,7 +86,7 @@
       <div class="deco mb-3 mt-0">
         <% if @user == current_user %>
           <hr>
-          <p><%= link_to "Déconnexion",   destroy_user_session_path %></p>
+          <p><%= link_to "Déconnexion",   destroy_user_session_path, method: :delete %></p>
         <% end %>
       </div>
     </div>

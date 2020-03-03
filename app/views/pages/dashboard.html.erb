@@ -8,7 +8,7 @@
       </div>
       <div class="user-info">
         <div class="medium-avatar">
-            <%= link_to meeting_path(@next_meeting) do %>
+            <%= link_to user_path(@user_next_meeting) do %>
           <%= cl_image_tag(@user_next_meeting.photo.key, class: "avatar-large")%>
         <% end %>
         </div>
@@ -32,7 +32,9 @@
         <h5 class= "last-meet text-center pt-2">MON DERNIER RENDEZ-VOUS</h5>
         <div class="globallastmeeting">
           <div class="medium-avatarr">
+            <%= link_to user_path(@user_last_meeting) do %>
             <%= cl_image_tag(@user_last_meeting.photo.key, class: "avatar-large")%>
+            <% end %>
           </div>
         </div>
           <div class= "lastmeetuser">
