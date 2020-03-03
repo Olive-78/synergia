@@ -133,6 +133,13 @@ class CreateMatchesService
     end
     # p matches
     # p meetings
+
+    distance = meetings.each do |meeting|
+      Geocoder::Calculations.distance_between(meeting.user_one_id.address.geocode, meeting.user_two_id.address.geocode, units: :km)
+    end
+
+    p distance
+
   end
 end
 
