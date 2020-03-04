@@ -1,11 +1,11 @@
 class CreateMatchesService
 
-  dispo = [true, false]
-  User.all.each do |user|
-    user.availabilities.each do |avail|
-      avail.update(breakfast: dispo.sample, lunch: dispo.sample, afterwork: dispo.sample)
-    end
-  end
+  # dispo = [true, false]
+  # User.all.each do |user|
+  #   user.availabilities.each do |avail|
+  #     avail.update(breakfast: dispo.sample, lunch: dispo.sample, afterwork: dispo.sample)
+  #   end
+  # end
 
 
   def call
@@ -134,12 +134,12 @@ class CreateMatchesService
     # p matches
     # p meetings
 
-    distance = meetings.each do |meeting|
-      Geocoder::Calculations.distance_between(meeting.user_one_id.address.geocode, meeting.user_two_id.address.geocode, units: :km)
+    meetings.each do |meeting|
+      point = Geocoder::Calculations.geographic_center([User.find(meeting.user_one_id).geocode, User.find(meeting.user_two_id).geocode])
+        meeting.latitude = point[0]
+        meeting.longitude = point[1]
+        meeting.save!
     end
-
-    p distance
-
   end
 end
 
