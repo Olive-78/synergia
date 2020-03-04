@@ -1,57 +1,83 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>Foundaters</title>
-  <link rel="shortcut icon" href="data:image/x-icon;" type="image/x-icon">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-  <div class="banner">
-    <div class="container py-4">
-      <div class="d-flex flex-column align-items-center text-center">
-          <h1>DÉVELOPPE TON RÉSEAU D'ENTREPRENEURS !</h1>
-          <div class="text-vp">
-            <p><b>Le virtuel a ses limites...</b></p>
-            Rencontrez dans la vie réelle,
-            des entrepreneurs qui vous correspondent,
-            pour échanger autour d'un verre ! (ou deux 🥂)</p>
-          </div>
-          <%= link_to raw('<i class="fas fa-caret-right"></i> Je crée mon compte'), new_user_registration_path, class: "cta-create"%>
-      </div>
+<div class="banner">
+  <div class="container py-4">
+    <div class="d-flex flex-column align-items-center text-center">
+        <h1>DÉVELOPPE TON RÉSEAU D'ENTREPRENEURS !</h1>
+        <div class="text-vp">
+          <p><b>Le virtuel a ses limites...</b></p>
+          Rencontrez dans la vie réelle,
+          des entrepreneurs qui vous correspondent,
+          pour échanger autour d'un verre ! (ou deux 🥂)</p>
+        </div>
+        <%= link_to raw('<i class="fas fa-caret-right"></i> Je crée mon compte'), new_user_registration_path, class: "cta-create"%>
     </div>
   </div>
-  <div class="container">
-    <div class="text-center pt-2">
-      <i class="fas fa-sort-down"></i>
+</div>
+<div class="container">
+  <div class="text-center pt-2">
+    <i class="fas fa-sort-down"></i>
+  </div>
+  <h2 class="text-center" style="color: #1b262c!important;">Comment ça marche ?</h2>
+  <div class="block-points d-flex flex-column align-items-center">
+
+    <div class="cardhome" data-aos="fade-right">
+      <p><i class="far fa-calendar-alt"></i></p>
+      <h3 class="title-point">1. Vos dispos</h4>
+      <p>Renseignez votre profil professionnel, vos centres d'intérêts ainsi que vos disponibilités</p>
     </div>
-    <h2 class="text-center" style="color: #1b262c!important;">Comment ça marche ?</h2>
-    <div class="block-points d-flex flex-column align-items-center">
 
-      <div class="cardhome" data-aos="fade-right">
-        <p><i class="far fa-calendar-alt"></i></p>
-        <h3 class="title-point">1. Vos dispos</h4>
-        <p>Renseignez votre profil professionnel, vos centres d'intérêts ainsi que vos disponibilités</p>
-      </div>
+    <div class="cardhome" data-aos="fade-left">
+      <p><i class="fas fa-user-friends"></i></p>
+      <h3 class="title-point">2. Votre entrepreneur</h4>
+      <p>Foundaters se charge d'organiser chaque semaine un rendez-vous avec un fondateur d'entreprise</p>
+    </div>
 
-      <div class="cardhome" data-aos="fade-left">
-        <p><i class="fas fa-user-friends"></i></p>
-        <h3 class="title-point">2. Votre entrepreneur</h4>
-        <p>Foundaters se charge d'organiser chaque semaine un rendez-vous avec un fondateur d'entreprise</p>
-      </div>
+    <div class="cardhome" data-aos="fade-right">
+      <p><i class="fas fa-mug-hot"></i></p>
+      <h3 class="title-point">3. Votre rendez-vous</h4>
+      <p>Le lieu idéal est choisi automatiquement, à mi chemin entre vous deux, dans un endroit recommandé par notre algorithme.
+      </p>
+    </div>
 
-      <div class="cardhome" data-aos="fade-right">
-        <p><i class="fas fa-mug-hot"></i></p>
-        <h3 class="title-point">3. Votre rendez-vous</h4>
-        <p>Le lieu idéal est choisi automatiquement, à mi chemin entre vous deux, dans un endroit recommandé par notre algorithme.
-        </p>
-      </div>
+    <h3 class="text-center mt-3" style="color: #0096ff !important">Fini la logistique, nous optimisons votre temps !</h3>
+    <h3 class="text-center mt-3" style="color: #0096ff !important">Bon networking ;)</h3>
+    <%= link_to raw('<i class="fas fa-caret-right"></i> Je crée mon compte'), new_user_registration_path, class: "cta-create-2"%>
+    <br>
+  </div>
+</div>
 
-      <h3 class="text-center mt-3" style="color: #0096ff !important">Fini la logistique, nous optimisons votre temps !</h3>
-      <h3 class="text-center mt-3" style="color: #0096ff !important">Bon networking ;)</h3>
-      <%= link_to raw('<i class="fas fa-caret-right"></i> Je crée mon compte'), new_user_registration_path, class: "cta-create-2"%>
-      <br>
+
+<!-- ### Caroussel des selfies des users (au cas où...) : -->
+
+
+<!--
+<div class="container text-center mt-3" style="color: #0096ff !important">
+  <h4>Rejoint les Foundaters !</h3>
+</div>
+
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <#%= image_tag 'selfie_1.jpg', style: "width: 100%;" %>
+    </div>
+    <div class="carousel-item">
+      <#%= image_tag 'selfie_2.jpg', style: "width: 100%;" %>
+    </div>
+    <div class="carousel-item">
+      <#%= image_tag 'selfie_1.jpg', style: "width: 100%;" %>
     </div>
   </div>
-</body>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+ -->
