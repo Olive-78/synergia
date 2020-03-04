@@ -1,7 +1,7 @@
 <div class="cardsphotomeeting">
   <div class="image-chevauchement">
     <div class="avatar-large image-user-1">
-      <% if current_user.photo.key.present? %>
+      <% if current_user.photo.attached? && current_user.photo.key.present? %>
         <%= cl_image_tag current_user.photo.key %>
       <% else %>
         <%= image_tag("image_not_found.png") %>

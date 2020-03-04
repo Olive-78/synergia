@@ -31,7 +31,9 @@
         <% end %>
       </div>
 
-    <div class= "dash d-flex justify-content-between">
+
+<div class= "dash d-flex justify-content-between">
+  <% if @last_meeting %>
       <div class="dashboard-card-last d-flex flex-column">
         <div class="globallastmeeting">
           <div class="medium-avatarr">
@@ -52,7 +54,10 @@
         </div>
         <p class= "last-meet text-center pt-2">Dernier RDV</p>
       </div>
-      <div class="dashboard-card-last1 d-flex. flex-column ">
+
+  <% end %>
+      <div class="dashboard-card-last d-flex. flex-column ">
+        <h5 class= "last-meet text-center pt-2">MES MEETINGS</h5>
         <br>
         <div class= "group">
               <%= link_to networks_path do %>

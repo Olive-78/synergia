@@ -12,9 +12,12 @@ $fontColor : #fff; // #fff
 //   font-family: 'Comfortaa', cursive;
 // }
 
-loader-text {
+#loader-text {
   // color: blue;
   // font-size: 30px;
+  display: flex;
+  justify-content: center;
+  padding-top: 15px;
 }
 
 .loader {
