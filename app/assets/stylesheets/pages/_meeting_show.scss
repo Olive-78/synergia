@@ -6,11 +6,42 @@
 }
 
 .image-chevauchement {
-  padding: 20px;
-  display: flex;
-  align-items: center;
+position: relative;
 }
 
 .image-user-1 img {
   margin-right: -12px;
+    width: 87px;
+    height: 87px;
+    border-radius: 50%;
+    top: 54px;
+    position: absolute;
+    left: 91px;
+    margin-top:-100px;
+}
+
+.image-user-2 img {
+  margin-right: -12px;
+    width: 87px;
+    height: 87px;
+    border-radius: 50%;
+    top: 54px;
+    position: absolute;
+       left: 166.5px;
+    margin-top: -100px;
+}
+
+.cardsphotomeeting {
+ background-color: #0A3B74;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  margin-top: 10px;
+  border-radius: 25px;
+  padding: 10px;
+  left: 18px;
+  top: 90px;
+  margin-top: 40px;
+  margin-bottom: -240px;
+  padding-bottom: 280px;
+  margin-left: 10px;
+  margin-right: 10px;
 }

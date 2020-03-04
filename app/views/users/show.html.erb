@@ -1,68 +1,48 @@
 <div class="background">
   <div class="content-wrapper">
-    <div class="dashboard-card">
-      <div class="cardsphoto">
-        <div class="photouser">
-          <% if current_user.photo.attached? && current_user.photo.key.present? %>
-            <%= cl_image_tag current_user.photo.key %>
-          <% else %>
-            <%= image_tag("image_not_found.png") %>
-          <% end %>
-          <div class="fullname">
-            <p><%= @user.first_name %>
-            <%= @user.last_name %></p>
-          </div>
+    <div class="cardsphoto">
+      <div class="photouser">
+        <%= cl_image_tag @user.photo.key %>
+
+      </div>
+    <div class="mesinfos">
+        <h5><%= @user.first_name %>
+        <%= @user.last_name %></h5>
+        <p><%= @user.company_name %></p>
+        <br>
+        <p><%= @user.email %></p>
+        <p><%= @user.phone_number %></p>
+        <div class="infosuser">
+        <p><%= @user.birth_date%></p>
+        <br>
+        <p><%= @user.address %></p>
+        <br>
+        <p><%= @user.distance%> Km max</p>
         </div>
       </div>
-      <br>
-      <%= image_tag 'contact.png', class:"imgcontact" %>
-      <h5 class="catecontact"> Contact </h5>
-      <div class="email">
-        <p><%= @user.email %></p>
-      </div>
-      <div class="phone">
-        <p><%= @user.phone_number %></p>
-      </div>
-      <div class="address">
-        <p><%= @user.address %></p>
-      </div>
-      <div class="birth">
-        <p><%= @user.birth_date%></p>
-      </div>
+    </div>
+
       <%= link_to @user.linkedin do %>
-        <%= image_tag 'linkedin.png', class:"linkedin1" %>
+        <%= image_tag 'linkedin.png', class:"linkedin3" %>
       <% end %>
-      <hr>
-      <%= image_tag 'portfolio.png', class:"portfolio" %>
-      <h5 class="about">A propos de moi</h5>
-      <div class="description">
+      <div class="cardprofil2">
         <p>" <%= @user.description %> "</p>
       </div>
-      <hr>
-      <%= image_tag 'work.png', class:"work" %>
-      <h5 class="entreprise"> Mon entreprise </h5>
-      <div class= "sector">
-        <p><%= @user.company_name %></p>
-      </div>
-      <div class="turnover">
-        <p>Chiffre d'affaire : <%= @user.company_ca %> €</p>
-      </div>
-      <div class= "sector">
-        <p>Secteur : <%= @user.company_sector %></p>
-        <hr>
-      </div>
-      <div class= "d-flex flex-direction-row">
-        <div>
-          <%= image_tag 'calendar.png', class:"calendarprofile" %>
-        </div>
+
+<div class="cardprofil3">
+  <h5 class="entreprise"> Mon entreprise </h5>
+  <br>
+    <p><%= @user.company_name %></p>
+    <p>Chiffre d'affaire : <%= @user.company_ca %> €</p>
+    <p>Secteur : <%= @user.company_sector %></p>
+  </div>
         <div>
           <% if @user == current_user %>
             <%= link_to availabilities_path  do %>
-              <%= image_tag 'pencil.png', class:"pencil" %>
+              <%= image_tag 'pen.png', class:"pencil" %>
             <% end %>
           <% end %>
         </div>
-      </div>
       <p class="avail"> Disponibilités :</p>
       <% @user.availabilities.each do |availability| %>
       <div class= "availi">
@@ -78,8 +58,6 @@
           <% end %>
         <% end %>
       </div>
-      </div>
-      <br>
       <div class="availi">
       </div>
         <%= image_tag 'gps.png', class:"gps" %>
@@ -93,5 +71,6 @@
           <p><%= link_to "Déconnexion", destroy_user_session_path, method: :delete %></p>
         <% end %>
       </div>
-    </div>
   </div>
+</div>
+

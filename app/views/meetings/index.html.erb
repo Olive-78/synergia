@@ -1,12 +1,11 @@
 <div class="display-width">
-  <div class="text-center">
-    <h1 class="titre-meeting-index">MES RENDEZ-VOUS</h1>
+    <h1 class="titre-meeting-index">Mes RDVs</h1>
     <div class="row">
       <% current_user.all_meetings.each do |meeting| %>
         <% user = meeting.users.reject { |user| user == current_user }.first %>
         <%= link_to meeting_path(meeting) do %>
         <div class="col-12">
-          <div class="meeting-card d-flex justify-content-between align-items-center">
+          <div class="cardprofilindex">
             <div class="partie-gauche d-flex justify-content-start">
               <div class="avatar-meeting pr-2">
                 <% if current_user.photo.attached? && current_user.photo.key.present? %>
@@ -14,6 +13,10 @@
                 <% else %>
                   <%= image_tag("image_not_found.png") %>
                 <% end %>
+              </div>
+              <div class="meetinginfouser">
+              <p><strong><%= "#{user.first_name} #{user.last_name}" %></strong></p>
+              <p><%= user.company_name %></p>
               </div>
 
               <div class="meeting-date">
@@ -49,14 +52,11 @@
             </div>
 
             <div class="partie-droite d-flex flex-column align-items-end">
-              <p class="text-right"><strong><%= "#{user.first_name} #{user.last_name}" %></strong></p>
-              <p class="text-right"><%= user.company_name %></p>
             </div>
           </div>
         </div>
         <% end %>
       <% end %>
     </div>
-  </div>
 </div>
 

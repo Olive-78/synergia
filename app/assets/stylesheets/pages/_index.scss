@@ -14,9 +14,16 @@
 
 .medium-avatar {
   img {
-    width: 80px;
-    height: 80px;
+     width: 87px;
+    height: 87px;
     border-radius: 50%;
+    top: 54px;
+    position: absolute;
+    left: 255.5px;
+    margin-top: 17px;
+    border: 1px solid white;
+
+
   }
 }
 
@@ -28,6 +35,9 @@
     margin: auto;
     display: flex;
     padding-bottom: 5px;
+    position: absolute;
+    top: 286px;
+    left: 73px;
   }
 }
 
@@ -36,32 +46,88 @@
 }
 
 .dashboard-card {
-  background-color: #0296FF;
+  background-color: #0A3B74;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-top: 10px;
-  border-radius: 8px;
+  border-radius: 25px;
   padding: 10px;
-  h6 {
+  left: 18px;
+  top: 90px;
+  margin-top: 40px;
+  margin-bottom: 25px;
+  padding-bottom: 64px;
+
+  h5 {
+    color: #011e3f;
+    font-size: 7px;
+    margin-top: -36px;
+    margin-bottom: 20px;
+  }
+}
+
+.dashboard-card1 {
+  background-color: #0A3B74;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-top: 10px;
+  border-radius: 25px;
+  padding: 10px;
+  left: 18px;
+  top: 90px;
+  margin-top: 40px;
+  margin-bottom: 25px;
+  padding-bottom: 64px;
+
+  h5 {
     color: #90ADD1;
-    font-size: 20px;
+    font-size: 7px;
+    margin-top: -36px;
+    margin-bottom: 20px;
   }
 }
 
 .dashboard-card p, h2, h3, h4, h5 {
-  color: #1b262c !important;
+  margin: 0px;
 }
 
 .dashboard-card-last {
-  background-color: #0296FF;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-top: 10px;
-  border-radius: 8px;
   padding: 16px;
-  width: 173px;
+  width: 168px;
+  background: #d6d8dc;
+  border-radius: 25px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.dashboard-card-last1 {
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-top: 10px;
+  padding: 16px;
+  width: 168px;
+  background: #d6d8dc;
+  border-radius: 25px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.dashboard-card-last1 p {
+  transform: translatex(36px);
+  font-size: 50px;
+  margin: 0px;
+  margin-top: 3px;
+  position: absolute;
+}
+.dashboard-card-last1 h5 {
+color: black;
+margin-top: 65px;
 }
 
 .dashboard-card-last p {
- color: #1b262c;
+color: #1b262c;
+transform: translatey(16px);
+font-weight: bold;
+
 }
 
 .dashboard-card-1{
@@ -78,15 +144,15 @@
 .dashboard-availabilities {
   display: flex;
   justify-content: space-around;
+  padding: 10px;
+  transform: translate(2px, 17px);
   > div {
     // width: 14%;
     // flex-grow: 1;
   }
 }
 
-.columndash {
-  padding-top: 0px;
-}
+
 
 .icon-active {
   color: #0096ff;
@@ -101,6 +167,7 @@
   top: 12px;
   color:green;
   font-size: 20px;
+  margin-bottom: 13px;
 }
 
 .fa-times-circle {
@@ -122,17 +189,30 @@
 
 .user-info {
   display: flex;
+  margin-top: -21px;
+
 }
 
 .user-details {
   margin-left: 15px;
+  margin-top: 18px;
+  font-color: #DADADA;
+
 }
 
 .meeting-info {
-  border-top: solid lightgray 1px;
   padding-inline: 10px;
   text-align: center;
   color: #1b262c;
+  display: flex;
+  margin-left: 190px;
+  position: absolute;
+  margin-top: 15px;
+}
+
+.adressmeeting {
+  display: flex;
+  position: absolute;
 }
 
 .icon-avail {
@@ -275,18 +355,7 @@ p {
     margin-inline-end: 0px;
 }
 
-.photouser {
-  img {
-    width: 50%;
-    background-size: cover;
-    border-radius: 9px;
-    border-radius: 50%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  text-align: center;
-  width: 100%;
-}
+
 
 #map {
   margin-top: 20px;
@@ -310,4 +379,8 @@ p {
 
 .form-actions {
   color: #1b262c !important;
+}
+
+body{
+  background-color: white !important;
 }

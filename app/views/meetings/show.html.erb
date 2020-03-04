@@ -1,4 +1,4 @@
-<div class="users">
+<div class="cardsphotomeeting">
   <div class="image-chevauchement">
     <div class="avatar-large image-user-1">
       <% if current_user.photo.attached? && current_user.photo.key.present? %>
@@ -29,8 +29,8 @@
   </div>
 </div>
 <div class="container">
-  <div class="justify-content-center text-center bg-black p-2 my-3 border rounded">
-    <p>Rendez-vous avec <%= @user_one == current_user ? "#{@user_two.first_name} #{@user_two.last_name}" : "#{@user_one.first_name} #{@user_one.last_name}" %></p>
+  <div class="justify-content-center text-center bg-black p-2 my-3 ">
+    <p>Rendez-vous avec <%= @user_one == current_user ? "#{@user_two.first_name} #{@user_two.last_name}" : "#{@user_one.first_name} #{@user_one.last_name} #{@user_one.company_name}" %></p>
     <div class="h3">
       <% @month = @meeting.date.strftime("%B") %>
       <% if @month == "January" %>
@@ -67,14 +67,6 @@
   </div>
 
   <div class="d-flex flex-row justify-content-center">
-
-    <div>
-      <button onclick="swal('Votre réponse est enregistrée 👏', 'Vous serez notifié quand le rendez-vous sera validé.', 'success')"><%= link_to raw('<i class="far fa-check-circle"></i> Accepter'), "#", class: "btn btn-gradient-validate" %></button>
-    </div>
-    <div>
-      <button onclick="swal('Votre réponse est enregistrée 😭', 'Un nouveau rendez-vous va vous être proposé.', 'success')"><%= link_to raw('<i class="fas fa-ban"></i> Refuser'), "#", class: "btn btn-gradient-deny" %></button>
-    </div>
-  </div>
 
   <div id="map"
      style="width: 100%;
