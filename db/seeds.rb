@@ -463,22 +463,22 @@ user_1 = [olivier_godard, guillaume_protard, tom_levy, paul_couzinet, karim_azib
 
 user_2 = [paul_de_thore, hugo_dornbierer, astrid_aubert, claire_bauduin, eugenie_coisne, julie_dakoure, swann_culioli, fabien_davy]
 
-50.times do
-  meeting = Meeting.new
-  meeting.date = Faker::Date.in_date_period(month: 2)
+# 50.times do
+#   meeting = Meeting.new
+#   meeting.date = Faker::Date.in_date_period(month: 2)
 
-  place = meeting_place.sample
+#   place = meeting_place.sample
 
-  meeting.venue_name = place[:name]
-  meeting.venue_address = place[:address]
+#   meeting.venue_name = place[:name]
+#   meeting.venue_address = place[:address]
 
-  meeting.status = status.sample
+#   meeting.status = status.sample
 
-  meeting.user_one = user_1.sample
-  meeting.user_two = user_2.sample
+#   meeting.user_one = user_1.sample
+#   meeting.user_two = user_2.sample
 
-  meeting.save!
-end
+#   meeting.save!
+# end
 
 puts "_______________________"
 puts "2. 50x New Meetings created 👍"
@@ -505,7 +505,7 @@ reviews = [
 
 "A self-starter – someone who always finds out the right thing to do and gets on with the job. If a manager has given no guidance he will still take appropriate action. If the required tools are unavailable, he is able to improvise. Always contributes vigorously to the efforts of the team, whether as a leader or a team member. Understands own weaknesses ond others’ strengths and goes to the right people for help. Sympathetically helps others to address their weaknesses."]
 
-  meeting_ids = (Meeting.first.id..Meeting.last.id).to_a
+  #meeting_ids = (Meeting.first.id..Meeting.last.id).to_a
 
   users = [olivier_godard, guillaume_protard, tom_levy, paul_couzinet, karim_azib, xavier_blanchy, nicolas_chardeau, benjamin_crot, paul_de_thore, hugo_dornbierer, astrid_aubert, claire_bauduin, eugenie_coisne, julie_dakoure,swann_culioli, fabien_davy]
 
@@ -527,15 +527,15 @@ puts "3. User availabilities created 👍"
 puts "_______________________"
 
 
-50.times do
-  review = Review.new
-  review.content = reviews.sample
-  review.rating = rand(1..5)
-  review.meeting = Meeting.find(meeting_ids.first)
-  meeting_ids.delete_at(0)
-  review.user = users.sample
-  review.save!
-end
+# 50.times do
+#   review = Review.new
+#   review.content = reviews.sample
+#   review.rating = rand(1..5)
+#   review.meeting = Meeting.find(meeting_ids.first)
+#   meeting_ids.delete_at(0)
+#   review.user = users.sample
+#   review.save!
+# end
 
 puts "_______________________"
 puts "4. 50x New Reviews created 👍"

@@ -8,8 +8,8 @@
           <div class="cardprofilindex">
             <div class="partie-gauche d-flex justify-content-start">
               <div class="avatar-meeting pr-2">
-                <% if current_user.photo.attached? && current_user.photo.key.present? %>
-                  <%= cl_image_tag current_user.photo.key %>
+                <% if user.photo.attached? && user.photo.key.present? %>
+                  <%= cl_image_tag user.photo.key %>
                 <% else %>
                   <%= image_tag("image_not_found.png") %>
                 <% end %>

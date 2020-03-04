@@ -23,15 +23,15 @@ $fontColor : #fff; // #fff
 .loader {
   display: flex;
   justify-content: center;
+  svg {
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    display:inline-block;
+    margin-top: 150px;
+  }
 }
 
-svg{
-  width: 200px;
-  height: 200px;
-  margin: 20px;
-  display:inline-block;
-  margin-top: 150px;
-}
 // h1{
 //   text-align: center;
 //   color: $fontColor;
