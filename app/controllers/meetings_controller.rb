@@ -10,7 +10,6 @@ class MeetingsController < ApplicationController
     @user_two = @meeting.user_two
 
     authorize @meeting
-
     @meeting.geocode
 
     @markers = [{
@@ -29,7 +28,7 @@ class MeetingsController < ApplicationController
 
   def createmeetings
     CreateMatchesService.new.call
-    sleep 3
+    sleep 5
     skip_authorization
     redirect_to dashboard_path
   end
