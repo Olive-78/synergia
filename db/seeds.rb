@@ -100,24 +100,24 @@ paul_couzinet.photo.attach(io: file, filename: "#{paul_couzinet.first_name}#{pau
 paul_couzinet.save!
 
 
-file = URI.open('https://res.cloudinary.com/dqyyujlp1/image/upload/v1582637434/Virginia_Atenza_kqahpz.jpg')
-virgini_atenza = User.new({
-  first_name: "Virginia",
-  last_name: "Atenza",
-  email: "virginia@foundaters.com",
-  password: "aqwzsx",
-  address: "7, Place Gambetta Face Mairie du, 75020 Paris",
-  phone_number: "07 98 36 56 32",
-  description: "En parallèle de mes études Universitaires en Lettres et Arts, j'ai suivi une formation de l'Acteur aux Cours Florent. Pendant un certain temps, j'ai allié mon métier de comédienne et divers emplois (Assistante d'Education, Professeure de théâtre, Conseillère en Insertion Professionnelle). Depuis 1 an j'ai entamé une reconversion professionnelle en tant que Développeuse Web.",
-  birth_date: Faker::Date.in_date_period(year: 1987, month: 6),
-  linkedin: "https://www.linkedin.com/in/virginia-atenza/",
-  company_name: Faker::Company.name,
-  company_ca: money.sample,
-  company_sector: sectors.sample,
-  distance: distance.sample,
-})
-virgini_atenza.photo.attach(io: file, filename: "#{virgini_atenza.first_name}#{virgini_atenza.last_name}.jpg", content_type: 'image/jpg')
-virgini_atenza.save!
+# file = URI.open('https://res.cloudinary.com/dqyyujlp1/image/upload/v1582637434/Virginia_Atenza_kqahpz.jpg')
+# virgini_atenza = User.new({
+#   first_name: "Virginia",
+#   last_name: "Atenza",
+#   email: "virginia@foundaters.com",
+#   password: "aqwzsx",
+#   address: "7, Place Gambetta Face Mairie du, 75020 Paris",
+#   phone_number: "07 98 36 56 32",
+#   description: "En parallèle de mes études Universitaires en Lettres et Arts, j'ai suivi une formation de l'Acteur aux Cours Florent. Pendant un certain temps, j'ai allié mon métier de comédienne et divers emplois (Assistante d'Education, Professeure de théâtre, Conseillère en Insertion Professionnelle). Depuis 1 an j'ai entamé une reconversion professionnelle en tant que Développeuse Web.",
+#   birth_date: Faker::Date.in_date_period(year: 1987, month: 6),
+#   linkedin: "https://www.linkedin.com/in/virginia-atenza/",
+#   company_name: Faker::Company.name,
+#   company_ca: money.sample,
+#   company_sector: sectors.sample,
+#   distance: distance.sample,
+# })
+# virgini_atenza.photo.attach(io: file, filename: "#{virgini_atenza.first_name}#{virgini_atenza.last_name}.jpg", content_type: 'image/jpg')
+# virgini_atenza.save!
 
 
 file = URI.open('https://res.cloudinary.com/dqyyujlp1/image/upload/v1582637432/Astrid_Aubert_buddmf.jpg')
@@ -461,7 +461,7 @@ status = [1, 2, 3]
 
 user_1 = [olivier_godard, guillaume_protard, tom_levy, paul_couzinet, karim_azib, xavier_blanchy, nicolas_chardeau, benjamin_crot]
 
-user_2 = [paul_de_thore, hugo_dornbierer, virgini_atenza, astrid_aubert, claire_bauduin, eugenie_coisne, julie_dakoure,swann_culioli, fabien_davy]
+user_2 = [paul_de_thore, hugo_dornbierer, astrid_aubert, claire_bauduin, eugenie_coisne, julie_dakoure, swann_culioli, fabien_davy]
 
 50.times do
   meeting = Meeting.new
@@ -507,7 +507,25 @@ reviews = [
 
   meeting_ids = (Meeting.first.id..Meeting.last.id).to_a
 
-  users = [olivier_godard, guillaume_protard, tom_levy, paul_couzinet, karim_azib, xavier_blanchy, nicolas_chardeau, benjamin_crot, paul_de_thore, hugo_dornbierer, virgini_atenza, astrid_aubert, claire_bauduin, eugenie_coisne, julie_dakoure,swann_culioli, fabien_davy]
+  users = [olivier_godard, guillaume_protard, tom_levy, paul_couzinet, karim_azib, xavier_blanchy, nicolas_chardeau, benjamin_crot, paul_de_thore, hugo_dornbierer, astrid_aubert, claire_bauduin, eugenie_coisne, julie_dakoure,swann_culioli, fabien_davy]
+
+
+
+  dispo = [true, false]
+  User.all.each do |user|
+    user.availabilities.each do |avail|
+      avail.update(breakfast: true, lunch: true, afterwork: true)
+    end
+  end
+
+  User.find_by(email: 'tom@foundaters.com').availabilities.each do |avail|
+    avail.update(breakfast: dispo.sample, lunch: dispo.sample, afterwork: dispo.sample)
+  end
+
+puts "_______________________"
+puts "3. User availabilities created 👍"
+puts "_______________________"
+
 
 50.times do
   review = Review.new
@@ -520,7 +538,7 @@ reviews = [
 end
 
 puts "_______________________"
-puts "3. 50x New Reviews created 👍"
+puts "4. 50x New Reviews created 👍"
 puts "_______________________"
 
 puts "x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x"
