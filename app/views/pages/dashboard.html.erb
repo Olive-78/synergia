@@ -5,7 +5,9 @@
         <i class="fas fa-times-circle"></i> -->
         <% if @next_meeting %>
           <div class="medium-avatar">
+            <% raise %>
             <%= link_to user_path(@user_next_meeting) do %>
+
               <%= cl_image_tag(@user_next_meeting.photo.key, class: "avatar-large")%>
             <% end %>
           </div>
