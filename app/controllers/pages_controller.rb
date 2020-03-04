@@ -6,7 +6,7 @@ class PagesController < ApplicationController
 
   def dashboard
     @user = current_user
-    @most_recent_meeting = Meeting.where(user_two_id: current_user).or(Meeting.where(user_one_id: current_user)).order("id DESC").first
+    @most_recent_meeting = Meeting.where(user_two_id: current_user).or(Meeting.where(user_one_id: current_user)).order("date DESC").first
 
     if @most_recent_meeting
       @most_recent_meeting.date >= Date.today ? @next_meeting = @most_recent_meeting : @next_meeting = nil
