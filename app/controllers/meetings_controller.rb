@@ -28,7 +28,7 @@ class MeetingsController < ApplicationController
 
   def createmeetings
     CreateMatchesService.new.call
-    sleep 5
+    sleep 3
     skip_authorization
     redirect_to dashboard_path
   end
