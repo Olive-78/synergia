@@ -35,6 +35,6 @@ class MeetingsController < ApplicationController
 
   private
   def meeting_params
-    params.require(:meeting).permit(:status)
+    params.require(:meeting).permit(:status, :date, :venue_name, :user_one_id, :user_two_id, :venue_address, :latitude, :longitude, :week_day, :venue_latitude, :venue_longitude, :venue_city, :slot )
   end
 end
