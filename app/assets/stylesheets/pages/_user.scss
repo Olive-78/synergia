@@ -35,7 +35,9 @@
 .lastmeetuser {
   margin-left: 5px;
   padding-left: 5px;
+  transform: translatey(-14px);
   margin: auto;
+  text-align: center;
 }
 .firstname {
 text-align: center
@@ -78,21 +80,36 @@ text-align: center
 }
 
 .linkedin1 {
-  width: 25px;
-  height: 25px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 5px;
+    position: absolute;
+    padding-top: -6px;
+    width: 25px;
+    height: 25px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 6px;
+    transform: translatex(51px);
 }
 
+.linkedin3{
+   position: absolute;
+    padding-top: -6px;
+    width: 25px;
+    height: 25px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 6px;
+    transform: translatex(176px);
+}
+
+
 .cardsphoto {
- background-color: #0296FF;
+ background-color: #0A3B74;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   margin-top: 10px;
   border-radius: 25px;
   padding: 10px;
-  background: linear-gradient(66.34deg, #0A3B74 1.84%, #1C6CC9 80.26%, #2186FC 100%);
   left: 18px;
   top: 90px;
   margin-top: 40px;
@@ -103,13 +120,13 @@ text-align: center
 }
 
 .cardprofil2 {
-  background-color: #E3E4E7;
+  background-color: #d6d8dc;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   margin-top: 10px;
   border-radius: 25px;
   padding: 10px;
   left: 18px;
-  top: 90px;
+  top: 62px;
   margin-top: 40px;
   margin-bottom: 35px;
   padding-bottom: 12px;
@@ -117,10 +134,11 @@ text-align: center
   margin-right: 17px;
   padding-right: 33px;
   padding-left: 33px;
+  margin-top: 83px;
 }
 
 .cardprofil3 {
-  background-color: #E3E4E7;
+  background-color: #d6d8dc;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   margin-top: 10px;
   border-radius: 25px;
@@ -136,9 +154,18 @@ text-align: center
   padding-left: 33px;
 }
 
+.cardsphoto p, h5 {
+  color: lightgray;
+}
 .cardprofil3 p{
 margin: 0px;
 text-align: left;
+}
+
+.cardprofil3 h5{
+margin: 0px;
+text-align: left;
+color: black
 }
 
 .entreprise {

@@ -1,6 +1,7 @@
 .titre-meeting-index {
   color: #1b262c !important;
   padding-top: 15px !important;
+  text-align: center;
 }
 
 .meeting-card {
@@ -13,17 +14,21 @@
   height: 100px;
 }
 
-.meeting-card p, a {
-  font-size: 16px;
-  color: #1b262c;
-  z-index: 4;
-  text-decoration: none !important;
+.meeting-date {
+  margin-left: 164px;
+  position: absolute;
+  margin-top: 30px;
+  transform: translateX(10px);
 }
 
 .avatar-meeting img {
   width: 60px;
   border-radius: 50%;
   border: white 2px solid;
+  position: absolute;
+  left: -23px;
+  top: 50%;
+  transform: translatey(-50%);
 }
 
 .partie-droite p {
@@ -36,3 +41,24 @@
   color: #1b262c;
 }
 
+.cardprofilindex {
+  background-color: #d6d8dc;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  margin-top: 10px;
+  border-radius: 25px;
+  padding: 10px;
+  left: 23px;
+  margin-top: 13px;
+  /* margin-bottom: 35px; */
+  /* padding-bottom: 12px; */
+  margin-left: 3px;
+  margin-right: -10px;
+  padding-right: 82px;
+  padding-left: 57px;
+  width: 333px;
+  position: relative;
+  height: 89px;
+}
+.cardprofilindex p {
+  margin: 0px;
+}

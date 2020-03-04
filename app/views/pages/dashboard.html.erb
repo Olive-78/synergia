@@ -52,14 +52,16 @@
         </div>
         <p class= "last-meet text-center pt-2">Dernier RDV</p>
       </div>
-      <div class="dashboard-card-last d-flex. flex-column ">
+      <div class="dashboard-card-last1 d-flex. flex-column ">
         <br>
         <div class= "group">
               <%= link_to networks_path do %>
           <%= image_tag 'groupshow.png', class:"groupescount" %>
         </div>
         <div class=" text-center pt-2">
+          <div>
            <p> <%= current_user.meetings.count %></p>
+          </div>
            <br>
            <br>
            <h5>RDVs</h5>

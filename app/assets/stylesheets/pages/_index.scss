@@ -21,6 +21,8 @@
     position: absolute;
     left: 255.5px;
     margin-top: 17px;
+    border: 1px solid white;
+
 
   }
 }
@@ -44,12 +46,31 @@
 }
 
 .dashboard-card {
-  background-color: #0296FF;
+  background-color: #0A3B74;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-top: 10px;
   border-radius: 25px;
   padding: 10px;
-  background: linear-gradient(66.34deg, #0A3B74 1.84%, #1C6CC9 80.26%, #2186FC 100%);
+  left: 18px;
+  top: 90px;
+  margin-top: 40px;
+  margin-bottom: 25px;
+  padding-bottom: 64px;
+
+  h5 {
+    color: #011e3f;
+    font-size: 7px;
+    margin-top: -36px;
+    margin-bottom: 20px;
+  }
+}
+
+.dashboard-card1 {
+  background-color: #0A3B74;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-top: 10px;
+  border-radius: 25px;
+  padding: 10px;
   left: 18px;
   top: 90px;
   margin-top: 40px;
@@ -61,8 +82,6 @@
     font-size: 7px;
     margin-top: -36px;
     margin-bottom: 20px;
-
-
   }
 }
 
@@ -75,15 +94,39 @@
   margin-top: 10px;
   padding: 16px;
   width: 168px;
-  background: #E3E4E7;
+  background: #d6d8dc;
   border-radius: 25px;
   margin-right: 10px;
   margin-left: 10px;
 }
 
+.dashboard-card-last1 {
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-top: 10px;
+  padding: 16px;
+  width: 168px;
+  background: #d6d8dc;
+  border-radius: 25px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.dashboard-card-last1 p {
+  transform: translatex(36px);
+  font-size: 50px;
+  margin: 0px;
+  margin-top: 3px;
+  position: absolute;
+}
+.dashboard-card-last1 h5 {
+color: black;
+margin-top: 65px;
+}
 
 .dashboard-card-last p {
- color: #1b262c;
+color: #1b262c;
+transform: translatey(16px);
+font-weight: bold;
 
 }
 
@@ -102,6 +145,7 @@
   display: flex;
   justify-content: space-around;
   padding: 10px;
+  transform: translate(2px, 17px);
   > div {
     // width: 14%;
     // flex-grow: 1;
@@ -335,4 +379,8 @@ p {
 
 .form-actions {
   color: #1b262c !important;
+}
+
+body{
+  background-color: white !important;
 }
