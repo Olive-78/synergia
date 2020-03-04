@@ -1,7 +1,7 @@
 <div class="ava col-sm-12">
   <div class="calendar">
     <% @availabilities.sort_by{|d| d[:week_day]}.rotate(1).each do |availability| %>
-    <div class='m-3'>
+    <div class='m-2' >
       <%= simple_form_for((availability), remote: true) do |f| %>
         <div class="d-flex direction row">
           <div class="days col-3 mr-4">
@@ -50,7 +50,7 @@
   </div>
 </div>
   <div class="divdash">
-    <%= link_to 'ENREGISTRER', createmeetings_path, class:"btn btndash" %>
+    <%= link_to 'GENERER UN RDV', createmeetings_path, class:"btn btndash" %>
   </div>
 
 

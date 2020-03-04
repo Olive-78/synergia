@@ -1,3 +1,7 @@
+#availabilities-index .content-wrapper {
+  margin-bottom: 0px;
+}
+
 .choice {
   background-color: #F4F4F4;
   color: #011E3F;
@@ -15,8 +19,15 @@
 }
 
 .calendar {
-  margin-top: 30px;
+  margin-top: -10px; // previously 30px
 }
+
+// previously nothing:
+// .slot-line {
+//   margin-top: 8px !important;
+//   margin-left: 1rem !important;
+//   margin-right: 1rem !important;
+// }
 
 .tabs {
   width: 55px;
@@ -62,7 +73,7 @@
 }
 
 .btndash {
-  width: 150px;
+  width: 180px;
   padding: 7px;
   border-radius: 25px;
   color: white;
@@ -72,5 +83,5 @@
 .divdash {
   display: flex;
   justify-content: center;
-  margin-top: 30px;
+  margin-top: 18px;
 }

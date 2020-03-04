@@ -14,18 +14,6 @@ class CreateMatchesService
   def call
     even_user_count = User.count.even? ? User.count : User.count - 1
     requirement_hash = {
-      'breakfast0' => {
-        options: [],
-        selection: even_user_count
-      },
-      'lunch0' => {
-        options: [],
-        selection: even_user_count
-      },
-      'afterwork0' => {
-        options: [],
-        selection: even_user_count
-      },
       'breakfast1' => {
         options: [],
         selection: even_user_count
@@ -95,6 +83,18 @@ class CreateMatchesService
         selection: even_user_count
       },
       'afterwork6' => {
+        options: [],
+        selection: even_user_count
+      },
+      'breakfast0' => {
+        options: [],
+        selection: even_user_count
+      },
+      'lunch0' => {
+        options: [],
+        selection: even_user_count
+      },
+      'afterwork0' => {
         options: [],
         selection: even_user_count
       }
