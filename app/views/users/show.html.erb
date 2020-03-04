@@ -3,7 +3,11 @@
     <div class="dashboard-card">
       <div class="cardsphoto">
         <div class="photouser">
-          <%= cl_image_tag @user.photo.key %>
+          <% if current_user.photo.attached? && current_user.photo.key.present? %>
+            <%= cl_image_tag current_user.photo.key %>
+          <% else %>
+            <%= image_tag("image_not_found.png") %>
+          <% end %>
           <div class="fullname">
             <p><%= @user.first_name %>
             <%= @user.last_name %></p>

@@ -1,7 +1,7 @@
 <div class="users">
   <div class="image-chevauchement">
     <div class="avatar-large image-user-1">
-      <% if current_user.photo.key.present? %>
+      <% if current_user.photo.attached? && current_user.photo.key.present? %>
         <%= cl_image_tag current_user.photo.key %>
       <% else %>
         <%= image_tag("image_not_found.png") %>
@@ -29,7 +29,7 @@
   </div>
 </div>
 <div class="container">
-  <div class="justify-content-center text-center bg-white p-2 my-3 border rounded">
+  <div class="justify-content-center text-center bg-black p-2 my-3 border rounded">
     <p>Rendez-vous avec <%= @user_one == current_user ? "#{@user_two.first_name} #{@user_two.last_name}" : "#{@user_one.first_name} #{@user_one.last_name}" %></p>
     <div class="h3">
       <% @month = @meeting.date.strftime("%B") %>
