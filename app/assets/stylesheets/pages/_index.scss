@@ -29,15 +29,15 @@
 
 .medium-avatarr {
   img {
-    width: 50px;
-    height: 50px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
     margin: auto;
     display: flex;
     padding-bottom: 5px;
     position: absolute;
-    top: 286px;
-    left: 73px;
+    top: 316px;
+    left: 66px;
   }
 }
 
@@ -46,7 +46,7 @@
 }
 
 .dashboard-card {
-  background-color: #0A3B74;
+  background-color: #001858;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-top: 10px;
   border-radius: 25px;
@@ -56,6 +56,53 @@
   margin-top: 40px;
   margin-bottom: 25px;
   padding-bottom: 64px;
+  height: 205px;
+
+
+  h5 {
+    color: #011e3f;
+    font-size: 7px;
+    margin-top: -36px;
+    margin-bottom: 20px;
+  }
+}
+
+.dashboard-cardif {
+  background-color:#001858;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-top: 10px;
+  border-radius: 25px;
+  padding: 10px;
+  left: 18px;
+  top: 90px;
+  margin-top: 40px;
+  margin-bottom: 25px;
+  padding-bottom: 64px;
+  height: 205px;
+
+  h5 {
+    color: #011e3f;
+    font-size: 7px;
+    margin-top: -36px;
+    margin-bottom: 20px;
+  }
+  p{
+    margin: 0px;
+    transform: translate(5px, 70px);
+  }
+}
+.dashboard-cardav {
+  background-color: #001858;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-top: 10px;
+  border-radius: 25px;
+  padding: 10px;
+  left: 18px;
+  top: 90px;
+  margin-top: 40px;
+  margin-bottom: 25px;
+  padding-bottom: 64px;
+  height: 173px;
 
   h5 {
     color: #011e3f;
@@ -66,7 +113,7 @@
 }
 
 .dashboard-card1 {
-  background-color: #0A3B74;
+  background-color: #001858;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-top: 10px;
   border-radius: 25px;
@@ -76,6 +123,7 @@
   margin-top: 40px;
   margin-bottom: 25px;
   padding-bottom: 64px;
+
 
   h5 {
     color: #90ADD1;
@@ -109,18 +157,21 @@
   border-radius: 25px;
   margin-right: 10px;
   margin-left: 10px;
+  height: 215px;
+
 }
 
 .dashboard-card-last1 p {
-  transform: translatex(36px);
-  font-size: 50px;
+  font-size: 79px;
   margin: 0px;
   margin-top: 3px;
   position: absolute;
+  transform: translate(43px, 14px);
 }
+
 .dashboard-card-last1 h5 {
 color: black;
-margin-top: 65px;
+margin-top: 105px;
 }
 
 .dashboard-card-last p {
@@ -144,8 +195,8 @@ font-weight: bold;
 .dashboard-availabilities {
   display: flex;
   justify-content: space-around;
-  padding: 10px;
-  transform: translate(2px, 17px);
+  padding: 1px;
+  transform: translate(2px, -15px);
   > div {
     // width: 14%;
     // flex-grow: 1;
@@ -189,13 +240,13 @@ font-weight: bold;
 
 .user-info {
   display: flex;
-  margin-top: -21px;
+  margin-top: -6px;
 
 }
 
 .user-details {
   margin-left: 15px;
-  margin-top: 18px;
+  margin-top: -69px;
   font-color: #DADADA;
 
 }
