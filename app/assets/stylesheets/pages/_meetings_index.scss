@@ -18,7 +18,7 @@
   margin-left: 164px;
   position: absolute;
   margin-top: 30px;
-  transform: translate(24px,22px);
+  transform: translate(5px,22px);
   }
 
 .avatar-meeting img {
@@ -71,4 +71,26 @@
 .cardprofilindex p {
   margin: 0px;
   transform: translate(17px, -5px);
+}
+
+.white {
+  color: white;
+}
+
+.meetinginfouser2 {
+  width: 131px;
+  text-align: center;
+  transform: translate(-40px, 5px) !important;
+
+}
+
+.past {
+  background-color: #d6d8dc;
+  p {
+    color: black;
+    i {
+      color: black;
+
+    }
+  }
 }
