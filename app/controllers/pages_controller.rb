@@ -6,11 +6,12 @@ class PagesController < ApplicationController
 
   def dashboard
     @user = current_user
-    @most_recent_meeting = Meeting.where(user_two_id: current_user).or(Meeting.where(user_one_id: current_user)).order("date DESC").first
+    @meetings = Meeting.where(user_two_id: current_user).or(Meeting.where(user_one_id: current_user))
+    @most_recent_meeting_really = @meetings.to_a.delete_if { |m| m.date >= Date.today }
+    @most_recent_meeting = @most_recent_meeting_really.sort_by(&:date).last
 
-    if @most_recent_meeting
-      @most_recent_meeting.date >= Date.today ? @next_meeting = @most_recent_meeting : @next_meeting = nil
-    end
+    @next_meeting_really = @meetings.to_a.delete_if { |m| m.date < Date.today }
+    @next_meeting = @next_meeting_really.sort_by(&:date).first
 
     if @next_meeting
       if @next_meeting.user_one == current_user
@@ -20,13 +21,13 @@ class PagesController < ApplicationController
       end
     end
 
-    @last_meeting = Meeting.where(user_two_id: current_user).or(Meeting.where(user_one_id: current_user)).order("id DESC").offset(1).first
+    # @last_meeting = Meeting.where(user_two_id: current_user).or(Meeting.where(user_one_id: current_user)).order("id DESC").offset(1).first
 
-    if @last_meeting
-      if @last_meeting.user_one == current_user
-        @user_last_meeting = @last_meeting.user_two
+    if @most_recent_meeting
+      if @most_recent_meeting.user_one == current_user
+        @user_most_recent_meeting = @most_recent_meeting.user_two
       else
-        @user_last_meeting = @last_meeting.user_one
+        @user_most_recent_meeting = @most_recent_meeting.user_one
       end
     else
     end
