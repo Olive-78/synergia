@@ -426,35 +426,52 @@ puts "_______________________"
 
 meeting_place = [{
   name: "Inside bar paris",
-  address: "14 Rue Claude Tillier, 75012 Paris"
+  address: "14 Rue Claude Tillier, 75012 Paris",
+  latitude: 48.862725,
+  longitude: 2.287592
   },
 {
   name: "Le Tagada Bar",
-  address: "40 Rue des Trois Frères, 75018 Paris"
+  address: "40 Rue des Trois Frères, 75018 Paris",
+  latitude: 48.88524,
+  longitude: 2.3396729
   },
 {
   name: "Le Bar Botaniste",
-  address: "10 Avenue d'Iéna, 75116 Paris"
+  address: "10 Avenue d'Iéna, 75116 Paris",
+  latitude: 48.8637194,
+  longitude: 2.2934262
   },
 {
   name: "Le Social Bar",
-  address: "25 Rue Villiot, 75012 Paris"
+  address: "25 Rue Villiot, 75012 Paris",
+  latitude: 48.8418037,
+  longitude: 2.3755198
   },
 {
   name: "Le Renard Bar",
-  address: "38 Rue de Sambre-et-Meuse, 75010 Paris"
+  address: "38 Rue de Sambre-et-Meuse, 75010 Paris",
+  latitude: 48.8745045,
+  longitude: 2.3729738
   },
 {
   name: "Lulu White Drinking Club",
-  address: "12 Rue Frochot, 75009 Paris"
+  address: "12 Rue Frochot, 75009 Paris",
+  latitude: 48.881636,
+  longitude: 2.3374527
   },
 {
   name: "Le Bar du Plaza Athénée",
-  address: "Hôtel Plazza Athénée, 25 Avenue Montaigne, 75008 Paris"
+  address: "Hôtel Plazza Athénée, 25 Avenue Montaigne, 75008 Paris",
+  latitude: 48.86627960205078,
+  longitude: 2.3042855262756348
   },
 {
   name: "L'Ours Bar",
-  address: "8 Rue de Paradis, 75010 Paris"
+  address: "8 Rue de Paradis, 75010 Paris",
+  latitude: 48.8745922,
+  longitude: 2.3545035
+
 }]
 
 status = [1, 2, 3]
@@ -463,22 +480,24 @@ user_1 = [olivier_godard, guillaume_protard, tom_levy, paul_couzinet, karim_azib
 
 user_2 = [paul_de_thore, hugo_dornbierer, astrid_aubert, claire_bauduin, eugenie_coisne, julie_dakoure, swann_culioli, fabien_davy]
 
-# 50.times do
-#   meeting = Meeting.new
-#   meeting.date = Faker::Date.in_date_period(month: 2)
+50.times do
+  meeting = Meeting.new
+  meeting.date = Faker::Date.in_date_period(month: 2)
 
-#   place = meeting_place.sample
+  place = meeting_place.sample
 
-#   meeting.venue_name = place[:name]
-#   meeting.venue_address = place[:address]
+  meeting.venue_name = place[:name]
+  meeting.venue_address = place[:address]
+  meeting.venue_latitude = place[:latitude]
+  meeting.venue_longitude = place[:longitude]
 
-#   meeting.status = status.sample
+  meeting.status = status.sample
 
-#   meeting.user_one = user_1.sample
-#   meeting.user_two = user_2.sample
+  meeting.user_one = user_1.sample
+  meeting.user_two = user_2.sample
 
-#   meeting.save!
-# end
+  meeting.save!
+end
 
 puts "_______________________"
 puts "2. 50x New Meetings created 👍"
@@ -505,7 +524,7 @@ reviews = [
 
 "A self-starter – someone who always finds out the right thing to do and gets on with the job. If a manager has given no guidance he will still take appropriate action. If the required tools are unavailable, he is able to improvise. Always contributes vigorously to the efforts of the team, whether as a leader or a team member. Understands own weaknesses ond others’ strengths and goes to the right people for help. Sympathetically helps others to address their weaknesses."]
 
-  #meeting_ids = (Meeting.first.id..Meeting.last.id).to_a
+  meeting_ids = (Meeting.first.id..Meeting.last.id).to_a
 
   users = [olivier_godard, guillaume_protard, tom_levy, paul_couzinet, karim_azib, xavier_blanchy, nicolas_chardeau, benjamin_crot, paul_de_thore, hugo_dornbierer, astrid_aubert, claire_bauduin, eugenie_coisne, julie_dakoure,swann_culioli, fabien_davy]
 
