@@ -17,12 +17,19 @@ $fontColor : #fff; // #fff
   // font-size: 30px;
   display: flex;
   justify-content: center;
-  padding-top: 15px;
+  z-index: 5;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 75%;
+  left: 50%;
+  width: 100vw;
 }
 
 .loader {
   display: flex;
   justify-content: center;
+  height: calc(100vh - 142px);
+  position: relative;
   svg {
     width: 200px;
     height: 200px;

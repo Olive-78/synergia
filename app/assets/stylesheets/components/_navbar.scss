@@ -1,6 +1,8 @@
 .content-wrapper {
   margin-bottom: 80px;
-  min-height: calc(100vh - 220px);
+  min-height: calc(100vh - 142px);
+  // min-height: calc(100vh - 220px);
+  // height: calc(100vh - 142px);
   width: 98vw;
 }
 
@@ -12,7 +14,7 @@
 .navbar-bottom {
   height: 72px;
   width: 100%;
-  position: sticky;
+  position: fixed;
   bottom: 0;
   background-color: white;
   z-index: 10;
