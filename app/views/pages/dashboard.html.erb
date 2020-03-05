@@ -25,9 +25,9 @@
                 <% if @next_meeting.slot.slice(0..-1) == "breakfast" %>
                   <p><%= @next_meeting.date.strftime("%d Mars %Y") %><i class="fas fa-coffee" style="color: white; margin-left: 10px;"></i></p>
                 <% elsif @next_meeting.slot.slice(0..-1) == "lunch" %>
-                  <p><%= @next_meeting.date.strftime("%d Mars %Y") %><i class="fas fa-hamburger" style="color: white"></i></p>
+                  <p><%= @next_meeting.date.strftime("%d Mars %Y") %><i class="fas fa-hamburger" style="color: white; margin-left: 10px"></i></p>
                 <% elsif @next_meeting.slot.slice(0..-1) == "afterwork" %>
-                  <p><%= @next_meeting.date.strftime("%d Mars %Y") %><i class="fas fa-beer" style="color: white"></i></p>
+                  <p><%= @next_meeting.date.strftime("%d Mars %Y") %><i class="fas fa-beer" style="color: white; margin-left: 10px"></i></p>
                 <% end %>
             </div>
           <% end %>
@@ -80,7 +80,7 @@
         </div>
     <% end %>
       </div>
-    </div>
+</div>
 
     <div class="dashboard-cardav text-center d-flex flex-column">
       <div class="availabilities-title">
@@ -117,7 +117,7 @@
               </div>
               </div>
           <% else %>
-            <%= d = Date::DAYNAMES[availability.week_day][0..1] %>
+            <% d = Date::DAYNAMES[availability.week_day][0..1] %>
             <% if d == 'Mo' %>
               <p><%= d = 'Lu' %></p>
             <% elsif d == "Tu" %>
