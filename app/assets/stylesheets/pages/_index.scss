@@ -1,4 +1,3 @@
-// Import page-specific CSS files here.
 @import "home";
 
 .profile-avatar-ban {
@@ -9,7 +8,7 @@
 
 .display-width {
   width: 95%;
-  margin: 0 auto
+  margin: auto;
 }
 
 .medium-avatar {
@@ -22,11 +21,8 @@
     left: 255.5px;
     margin-top: 17px;
     border: 1px solid white;
-
-
   }
 }
-
 
 .medium-avatarr {
   img {
@@ -92,6 +88,7 @@
     transform: translate(5px, 70px);
   }
 }
+
 .dashboard-cardav {
   background-color: #001858;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -398,11 +395,8 @@ right: 5px;
 }
 
 .containerperso {
-    width: 100vw;
-    margin: auto;
-    // display: inline-flex;
-    // flex-direction: row;
-
+  width: 100%;
+  margin: auto;
 }
 
 p {
@@ -412,8 +406,6 @@ p {
     margin-inline-start: 0px;
     margin-inline-end: 0px;
 }
-
-
 
 #map {
   margin-top: 20px;
@@ -439,6 +431,7 @@ p {
   color: #1b262c !important;
 }
 
-body{
+body {
   background-color: white !important;
+  position: relative;
 }

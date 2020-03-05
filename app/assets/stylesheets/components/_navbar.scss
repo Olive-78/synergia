@@ -1,17 +1,24 @@
 .content-wrapper {
-  min-height: calc(100vh - 64px);
-  margin-bottom: 64px;
+  margin-bottom: 80px;
+  min-height: calc(100vh - 220px);
+  width: 98vw;
+}
+
+.navbar {
+  height: 70px;
+  background-color: white;
 }
 
 .navbar-bottom {
-  background-color: white;
-  position: fixed;
-  // position: sticky;
-  z-index: 10;
-  bottom: 0;
+  height: 72px;
   width: 100%;
+  position: sticky;
+  bottom: 0;
+  background-color: white;
+  z-index: 10;
   border-top: solid lightgray 1px;
 }
+
 .navbar-elements {
   display: flex;
   justify-content: space-around;
@@ -103,24 +110,3 @@
   margin-top: 3px;
   cursor: pointer;
 }
-
-.navbar {
-  padding-left: 10px !important;
-  padding-right: 10px !important;
-  margin: 0 !important;
-  background-color: white;
-}
-
-// .navbar-lewagon {
-//   justify-content: space-between;
-//   background: white;
-// }
-
-// .navbar-lewagon .navbar-collapse {
-//   flex-grow: 0;
-// }
-
-// .navbar-lewagon .navbar-brand img {
-//   width: 130px;
-//   height: 40px;
-// }
