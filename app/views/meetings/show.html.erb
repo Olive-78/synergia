@@ -1,7 +1,7 @@
 <div class="cardsphotomeeting">
   <div class="image-chevauchement">
     <div class="avatar-large image-user-1">
-      <% if current_user.photo.key.present? %>
+      <% if current_user.photo.attached? && current_user.photo.key.present? %>
         <%= cl_image_tag current_user.photo.key %>
       <% else %>
         <%= image_tag("image_not_found.png") %>
@@ -71,6 +71,6 @@
   <div id="map"
      style="width: 100%;
      height: 300px;"
-     data-markers="<%= @markers.to_json %>"
+     data-markers="<%= @marker.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 </div>

@@ -1,28 +1,19 @@
 class CreateMatchesService
 
-  dispo = [true, false]
-  User.all.each do |user|
-    user.availabilities.each do |avail|
-      avail.update(breakfast: dispo.sample, lunch: dispo.sample, afterwork: dispo.sample)
-    end
-  end
+  require 'json'
+  require 'open-uri'
+
+  # dispo = [true, false]
+  # User.all.each do |user|
+  #   user.availabilities.each do |avail|
+  #     avail.update(breakfast: dispo.sample, lunch: dispo.sample, afterwork: dispo.sample)
+  #   end
+  # end
 
 
   def call
     even_user_count = User.count.even? ? User.count : User.count - 1
     requirement_hash = {
-      'breakfast0' => {
-        options: [],
-        selection: even_user_count
-      },
-      'lunch0' => {
-        options: [],
-        selection: even_user_count
-      },
-      'afterwork0' => {
-        options: [],
-        selection: even_user_count
-      },
       'breakfast1' => {
         options: [],
         selection: even_user_count
@@ -94,6 +85,18 @@ class CreateMatchesService
       'afterwork6' => {
         options: [],
         selection: even_user_count
+      },
+      'breakfast0' => {
+        options: [],
+        selection: even_user_count
+      },
+      'lunch0' => {
+        options: [],
+        selection: even_user_count
+      },
+      'afterwork0' => {
+        options: [],
+        selection: even_user_count
       }
     }
 
@@ -131,8 +134,36 @@ class CreateMatchesService
         end
       end
     end
-    # p matches
-    # p meetings
+    p matches
+    p meetings
+    meetings.each do |meeting|
+
+      user_1 = User.find(meeting.user_one_id).geocode
+      user_2 = User.find(meeting.user_two_id).geocode
+      latitude = (user_1[0] + user_2[0])/2
+      longitude = (user_1[1] + user_2[1])/2
+      # point = Geocoder::Calculations.geographic_center([User.find(meeting.user_one_id).geocode, User.find(meeting.user_two_id).geocode])
+      # meeting.latitude = point[0]
+      # meeting.longitude = point[1]
+      meeting.latitude = latitude
+      meeting.longitude = longitude
+      meeting.save!
+      # meeting.save!
+
+      url = "https://api.foursquare.com/v2/venues/explore?ll=#{latitude},#{longitude}&client_id=JCJOJRZ0D2AYOBDQ4AMRGOTRACTZTVU5GHWW1JFYAY23THFK&client_secret=VCFVMZO1GM3GWCYF2TH1PWILOK0ZRAVBXDTACJR2KFZHXQLJ&v=20200304&section=drinks&radius=500&sortByPopularity=1"
+      venues_serialized = open(url).read
+      venues = JSON.parse(venues_serialized)
+      # p venues['response']['groups'][0]['items'][0]['venue']['name']
+      # binding.pry
+      meeting.venue_name = venues['response']['groups'][0]['items'][0]['venue']['name']
+      meeting.venue_address = venues['response']['groups'][0]['items'][0]['venue']['location']['address']
+      meeting.venue_postcode = venues['response']['groups'][0]['items'][0]['venue']['location']['postalCode']
+      meeting.venue_city = venues['response']['groups'][0]['items'][0]['venue']['location']['city']
+      meeting.venue_latitude = venues['response']['groups'][0]['items'][0]['venue']['location']['lat']
+      meeting.venue_longitude = venues['response']['groups'][0]['items'][0]['venue']['location']['lng']
+      meeting.save!
+      # meeting.update(venue_name: venue_name, venue_address: venue_address, venue_postcode: venue_postcode, venue_city: venue_city, venue_latitude: venue_latitude, venue_longitude: venue_longitude)
+    end
   end
 end
 

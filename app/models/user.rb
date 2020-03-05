@@ -10,6 +10,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  geocoded_by :address
+  after_validation :geocode
   after_create :create_availabilities
 
   # Méthode qui permet d'identifier dans la liste de tous les meetings, uniquement les meeting
@@ -18,6 +20,13 @@ class User < ApplicationRecord
   def meetings
     Meeting.where(user_one: self).or(Meeting.where(user_two: self))
   end
+
+  # def geocode
+  #   @users = User.all
+  #   @users.each do |user|
+  #     user.geocode
+  #   end
+  # end
 
   # Permet d'afficher seulement the other guy du meeting
   #

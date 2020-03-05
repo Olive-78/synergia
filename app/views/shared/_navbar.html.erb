@@ -8,7 +8,11 @@
     <div class="navbar-nav">
       <% if user_signed_in? %>
         <%= link_to user_path(current_user) do %>
-          <%= cl_image_tag current_user.photo.key, class: "avatarnav" %>
+          <% if current_user.photo.attached? && current_user.photo.key.present? %>
+            <%= cl_image_tag current_user.photo.key, class: "avatarnav" %>
+          <% else %>
+            <%= image_tag("image_not_found.png", class: "avatarnav" ) %>
+          <% end %>
         <% end %>
       <% else %>
         <div class="nav-item">

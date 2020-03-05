@@ -36,21 +36,24 @@
 
 
 <div class= "dash d-flex justify-content-between">
-  <% if @last_meeting %>
+
+  <% if @most_recent_meeting %>
       <div class="dashboard-card-last d-flex flex-column">
         <div class="globallastmeeting">
           <div class="medium-avatarr">
-            <%= link_to user_path(@user_last_meeting) do %>
-            <%= cl_image_tag(@user_last_meeting.photo.key, class: "avatar-large")%>
+            <%= link_to user_path(@user_most_recent_meeting) do %>
+            <%= cl_image_tag(@user_most_recent_meeting.photo.key, class: "avatar-large")%>
             <% end %>
           </div>
         </div>
           <div class= "lastmeetuser">
-             <p><%= @user_last_meeting.first_name%> </p>
-             <p> <%= @user_last_meeting.last_name %> </p>
-              <p><%= @user_last_meeting.company_name %> </p>
+             <p><%= @user_most_recent_meeting.first_name%> </p>
+             <p> <%= @user_most_recent_meeting.last_name %> </p>
+              <p><%= @user_most_recent_meeting.company_name %> </p>
           </div>
         <div>
+
+          <%= link_to new_user_review_path(@most_recent_meeting) do %>
         <%= image_tag 'like.png', class:"linkedin1" %>
         </div>
         <p class= "last-meet text-center pt-2">Dernier RDV</p>

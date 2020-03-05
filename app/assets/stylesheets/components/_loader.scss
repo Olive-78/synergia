@@ -15,20 +15,23 @@ $fontColor : #fff; // #fff
 #loader-text {
   // color: blue;
   // font-size: 30px;
+  display: flex;
+  justify-content: center;
+  padding-top: 15px;
 }
 
 .loader {
   display: flex;
   justify-content: center;
+  svg {
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    display:inline-block;
+    margin-top: 150px;
+  }
 }
 
-svg{
-  width: 200px;
-  height: 200px;
-  margin: 20px;
-  display:inline-block;
-  margin-top: 150px;
-}
 // h1{
 //   text-align: center;
 //   color: $fontColor;

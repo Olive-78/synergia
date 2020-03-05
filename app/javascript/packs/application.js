@@ -10,6 +10,7 @@ import { submit } from '../components/submitform';
 import { initMapbox } from '../plugins/init_mapbox';
 import { loadDynamicBannerText } from '../components/load';
 
+
 initMapbox();
 ChangeFormatChoice();
 submit();

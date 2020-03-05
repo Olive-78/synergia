@@ -100,24 +100,24 @@ paul_couzinet.photo.attach(io: file, filename: "#{paul_couzinet.first_name}#{pau
 paul_couzinet.save!
 
 
-file = URI.open('https://res.cloudinary.com/dqyyujlp1/image/upload/v1582637434/Virginia_Atenza_kqahpz.jpg')
-virgini_atenza = User.new({
-  first_name: "Virginia",
-  last_name: "Atenza",
-  email: "virginia@foundaters.com",
-  password: "aqwzsx",
-  address: "7, Place Gambetta Face Mairie du, 75020 Paris",
-  phone_number: "07 98 36 56 32",
-  description: "En parallèle de mes études Universitaires en Lettres et Arts, j'ai suivi une formation de l'Acteur aux Cours Florent. Pendant un certain temps, j'ai allié mon métier de comédienne et divers emplois (Assistante d'Education, Professeure de théâtre, Conseillère en Insertion Professionnelle). Depuis 1 an j'ai entamé une reconversion professionnelle en tant que Développeuse Web.",
-  birth_date: Faker::Date.in_date_period(year: 1987, month: 6),
-  linkedin: "https://www.linkedin.com/in/virginia-atenza/",
-  company_name: Faker::Company.name,
-  company_ca: money.sample,
-  company_sector: sectors.sample,
-  distance: distance.sample,
-})
-virgini_atenza.photo.attach(io: file, filename: "#{virgini_atenza.first_name}#{virgini_atenza.last_name}.jpg", content_type: 'image/jpg')
-virgini_atenza.save!
+# file = URI.open('https://res.cloudinary.com/dqyyujlp1/image/upload/v1582637434/Virginia_Atenza_kqahpz.jpg')
+# virgini_atenza = User.new({
+#   first_name: "Virginia",
+#   last_name: "Atenza",
+#   email: "virginia@foundaters.com",
+#   password: "aqwzsx",
+#   address: "7, Place Gambetta Face Mairie du, 75020 Paris",
+#   phone_number: "07 98 36 56 32",
+#   description: "En parallèle de mes études Universitaires en Lettres et Arts, j'ai suivi une formation de l'Acteur aux Cours Florent. Pendant un certain temps, j'ai allié mon métier de comédienne et divers emplois (Assistante d'Education, Professeure de théâtre, Conseillère en Insertion Professionnelle). Depuis 1 an j'ai entamé une reconversion professionnelle en tant que Développeuse Web.",
+#   birth_date: Faker::Date.in_date_period(year: 1987, month: 6),
+#   linkedin: "https://www.linkedin.com/in/virginia-atenza/",
+#   company_name: Faker::Company.name,
+#   company_ca: money.sample,
+#   company_sector: sectors.sample,
+#   distance: distance.sample,
+# })
+# virgini_atenza.photo.attach(io: file, filename: "#{virgini_atenza.first_name}#{virgini_atenza.last_name}.jpg", content_type: 'image/jpg')
+# virgini_atenza.save!
 
 
 file = URI.open('https://res.cloudinary.com/dqyyujlp1/image/upload/v1582637432/Astrid_Aubert_buddmf.jpg')
@@ -426,42 +426,59 @@ puts "_______________________"
 
 meeting_place = [{
   name: "Inside bar paris",
-  address: "14 Rue Claude Tillier, 75012 Paris"
+  address: "14 Rue Claude Tillier, 75012 Paris",
+  latitude: 48.862725,
+  longitude: 2.287592
   },
 {
   name: "Le Tagada Bar",
-  address: "40 Rue des Trois Frères, 75018 Paris"
+  address: "40 Rue des Trois Frères, 75018 Paris",
+  latitude: 48.88524,
+  longitude: 2.3396729
   },
 {
   name: "Le Bar Botaniste",
-  address: "10 Avenue d'Iéna, 75116 Paris"
+  address: "10 Avenue d'Iéna, 75116 Paris",
+  latitude: 48.8637194,
+  longitude: 2.2934262
   },
 {
   name: "Le Social Bar",
-  address: "25 Rue Villiot, 75012 Paris"
+  address: "25 Rue Villiot, 75012 Paris",
+  latitude: 48.8418037,
+  longitude: 2.3755198
   },
 {
   name: "Le Renard Bar",
-  address: "38 Rue de Sambre-et-Meuse, 75010 Paris"
+  address: "38 Rue de Sambre-et-Meuse, 75010 Paris",
+  latitude: 48.8745045,
+  longitude: 2.3729738
   },
 {
   name: "Lulu White Drinking Club",
-  address: "12 Rue Frochot, 75009 Paris"
+  address: "12 Rue Frochot, 75009 Paris",
+  latitude: 48.881636,
+  longitude: 2.3374527
   },
 {
   name: "Le Bar du Plaza Athénée",
-  address: "Hôtel Plazza Athénée, 25 Avenue Montaigne, 75008 Paris"
+  address: "Hôtel Plazza Athénée, 25 Avenue Montaigne, 75008 Paris",
+  latitude: 48.86627960205078,
+  longitude: 2.3042855262756348
   },
 {
   name: "L'Ours Bar",
-  address: "8 Rue de Paradis, 75010 Paris"
+  address: "8 Rue de Paradis, 75010 Paris",
+  latitude: 48.8745922,
+  longitude: 2.3545035
+
 }]
 
 status = [1, 2, 3]
 
 user_1 = [olivier_godard, guillaume_protard, tom_levy, paul_couzinet, karim_azib, xavier_blanchy, nicolas_chardeau, benjamin_crot]
 
-user_2 = [paul_de_thore, hugo_dornbierer, virgini_atenza, astrid_aubert, claire_bauduin, eugenie_coisne, julie_dakoure,swann_culioli, fabien_davy]
+user_2 = [paul_de_thore, hugo_dornbierer, astrid_aubert, claire_bauduin, eugenie_coisne, julie_dakoure, swann_culioli, fabien_davy]
 
 50.times do
   meeting = Meeting.new
@@ -471,6 +488,8 @@ user_2 = [paul_de_thore, hugo_dornbierer, virgini_atenza, astrid_aubert, claire_
 
   meeting.venue_name = place[:name]
   meeting.venue_address = place[:address]
+  meeting.venue_latitude = place[:latitude]
+  meeting.venue_longitude = place[:longitude]
 
   meeting.status = status.sample
 
@@ -507,20 +526,38 @@ reviews = [
 
   meeting_ids = (Meeting.first.id..Meeting.last.id).to_a
 
-  users = [olivier_godard, guillaume_protard, tom_levy, paul_couzinet, karim_azib, xavier_blanchy, nicolas_chardeau, benjamin_crot, paul_de_thore, hugo_dornbierer, virgini_atenza, astrid_aubert, claire_bauduin, eugenie_coisne, julie_dakoure,swann_culioli, fabien_davy]
+  users = [olivier_godard, guillaume_protard, tom_levy, paul_couzinet, karim_azib, xavier_blanchy, nicolas_chardeau, benjamin_crot, paul_de_thore, hugo_dornbierer, astrid_aubert, claire_bauduin, eugenie_coisne, julie_dakoure,swann_culioli, fabien_davy]
 
-50.times do
-  review = Review.new
-  review.content = reviews.sample
-  review.rating = rand(1..5)
-  review.meeting = Meeting.find(meeting_ids.first)
-  meeting_ids.delete_at(0)
-  review.user = users.sample
-  review.save!
-end
+
+
+  dispo = [true, false]
+  User.all.each do |user|
+    user.availabilities.each do |avail|
+      avail.update(breakfast: true, lunch: true, afterwork: true)
+    end
+  end
+
+  User.find_by(email: 'tom@foundaters.com').availabilities.each do |avail|
+    avail.update(breakfast: dispo.sample, lunch: dispo.sample, afterwork: dispo.sample)
+  end
 
 puts "_______________________"
-puts "3. 50x New Reviews created 👍"
+puts "3. User availabilities created 👍"
+puts "_______________________"
+
+
+# 50.times do
+#   review = Review.new
+#   review.content = reviews.sample
+#   review.rating = rand(1..5)
+#   review.meeting = Meeting.find(meeting_ids.first)
+#   meeting_ids.delete_at(0)
+#   review.user = users.sample
+#   review.save!
+# end
+
+puts "_______________________"
+puts "4. 50x New Reviews created 👍"
 puts "_______________________"
 
 puts "x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x"

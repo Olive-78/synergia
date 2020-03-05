@@ -10,14 +10,13 @@ class MeetingsController < ApplicationController
     @user_two = @meeting.user_two
 
     authorize @meeting
-
     @meeting.geocode
 
-    @markers = [{
-        lat: @meeting.latitude,
-        lng: @meeting.longitude,
+    @marker = {
+        lat: @meeting.venue_latitude,
+        lng: @meeting.venue_longitude,
         infoWindow: render_to_string(partial: "info_window", locals: { meeting: @meeting })
-      }]
+      }
   end
 
   def update
@@ -36,6 +35,6 @@ class MeetingsController < ApplicationController
 
   private
   def meeting_params
-    params.require(:meeting).permit(:status)
+    params.require(:meeting).permit(:status, :date, :venue_name, :user_one_id, :user_two_id, :venue_address, :latitude, :longitude, :week_day, :venue_latitude, :venue_longitude, :venue_city, :slot )
   end
 end
