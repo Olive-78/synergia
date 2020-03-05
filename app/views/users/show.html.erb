@@ -35,35 +35,8 @@
     <p>Chiffre d'affaire : <%= @user.company_ca %> €</p>
     <p>Secteur : <%= @user.company_sector %></p>
   </div>
-        <div>
-          <% if @user == current_user %>
-            <%= link_to availabilities_path  do %>
-              <%= image_tag 'pen.png', class:"pencil" %>
-            <% end %>
-          <% end %>
-        </div>
-      <p class="avail"> Disponibilités :</p>
-      <% @user.availabilities.each do |availability| %>
-      <div class= "availi">
-        <% if availability.breakfast || availability.lunch || availability.afterwork %>
-          <%= Date::DAYNAMES[availability.week_day] %> :
-            <% if availability.breakfast %>
-              <%= "Breakfast" %>
-            <% elsif availability.lunch %>
-              <%= "Lunch" %>
-            <% elsif availability.afterwork%>
-              <%= "Afterwork" %>
-            <% end %>
-          <% end %>
-        <% end %>
-      </div>
-      <div class="availi">
-      </div>
-        <%= image_tag 'gps.png', class:"gps" %>
-      <div class="distance">
-        <p><%= @user.distance%> Km max</p>
-      </div>
-      <div class="deco mb-3 mt-0">
+
+      <div class="deco mb-3 mt-0 text-center">
         <p><%= link_to "Editer mes infos", edit_user_path(current_user) %></p>
         <% if @user == current_user %>
           <hr>
