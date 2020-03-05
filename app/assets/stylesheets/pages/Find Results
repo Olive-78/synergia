@@ -1,0 +1,76 @@
+Searching 218 files for ".meetinginfouser"
+
+/Users/guillaumeprotard/code/guillaumelwg/synergia/app/assets/stylesheets/pages/_mynetwork.scss:
+   24  }
+   25
+   26: .meetinginfouser {
+   27      width: 131px;
+   28      transform: translate(-48px, 19px) !important;
+
+1 match in 1 file
+
+
+Searching 218 files for "meeting-date"
+
+/Users/guillaumeprotard/code/guillaumelwg/synergia/app/assets/stylesheets/pages/_meetings_index.scss:
+   15  }
+   16
+   17: .meeting-date {
+   18    margin-left: 164px;
+   19    position: absolute;
+
+/Users/guillaumeprotard/code/guillaumelwg/synergia/app/views/meetings/index.html.erb:
+   20                </div>
+   21
+   22:               <div class="meeting-date">
+   23                  <% @month = meeting.date.strftime("%B") %>
+   24                  <% if @month == "January" %>
+
+2 matches across 2 files
+
+
+Searching 219 files for "linkedin-new_é"
+
+0 matches
+
+Searching 219 files for "linkedin-new_2"
+
+/Users/guillaumeprotard/code/guillaumelwg/synergia/app/assets/stylesheets/pages/_home.scss:
+    1  .banner {
+    2:     background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),asset-url("linkedin-new_2");
+    3      background-size: cover;
+    4      padding: 0 !important;
+
+/Users/guillaumeprotard/code/guillaumelwg/synergia/app/assets/stylesheets/pages/_index.scss:
+  427
+  428  .login {
+  429:   background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)),asset-url("linkedin-new_2");
+  430    background-size: cover;
+  431    height: 100vh;
+
+2 matches across 2 files
+
+
+Searching 219 files for "linkedin-new"
+
+/Users/guillaumeprotard/code/guillaumelwg/synergia/app/assets/stylesheets/pages/_home.scss:
+    1  .banner {
+    2:     background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),asset-url("linkedin-new_2");
+    3      background-size: cover;
+    4      padding: 0 !important;
+
+/Users/guillaumeprotard/code/guillaumelwg/synergia/app/assets/stylesheets/pages/_index.scss:
+  427
+  428  .login {
+  429:   background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)),asset-url("linkedin-new_2");
+  430    background-size: cover;
+  431    height: 100vh;
+
+/Users/guillaumeprotard/code/guillaumelwg/synergia/config/meta.yml:
+    2  meta_title: "Foundaters - Network does work"
+    3  meta_description: "Le virtuel a ses limites. Rencontrez dans la vie réelle des entrepreneurs qui vous correspondent pour échanger autour d'un verre ! (ou deux)"
+    4: meta_image: "linkedin-new-fb.png" # should exist in `app/assets/images/`
+    5  twitter_account: "@foundaters_twitter_account"   # required for Twitter Cards
+    6
+
+3 matches across 3 files
