@@ -2,8 +2,12 @@
   <div class="content-wrapper">
     <div class="cardsphoto">
       <div class="photouser">
-        <%= cl_image_tag @user.photo.key %>
-
+        <%#= cl_image_tag @user.photo.key %>
+        <% if @user.photo.attached? && @user.photo.key.present? %>
+          <%= cl_image_tag @user.photo.key %>
+        <% else %>
+          <%= image_tag("image_not_found.png") %>
+        <% end %>
       </div>
     <div class="mesinfos">
         <h5><%= @user.first_name %>
