@@ -42,8 +42,8 @@
   </div>
 
       <div class="deco mb-3 mt-0 text-center">
-        <p><%= link_to "Editer mes infos", edit_user_path(current_user) %></p>
         <% if @user == current_user %>
+          <p><%= link_to "Editer mes infos", edit_user_path(current_user) %></p>
           <hr>
           <p><%= link_to "Déconnexion", destroy_user_session_path, method: :delete %></p>
         <% end %>
