@@ -16,21 +16,24 @@
                 <p><strong><%= @user_next_meeting.first_name%> <%= @user_next_meeting.last_name %></strong></p>
                 <p><%= @user_next_meeting.company_name %></p>
                 <br>
-                <br>
-              <%=  @next_meeting.venue_address %>
+                <p><%= @next_meeting.venue_name %></p>
+                <p style="font-size: 14px;"><%=  @next_meeting.venue_address %></p>
+                <p style="font-size: 14px;"><%= @next_meeting.venue_postcode %> <%= @next_meeting.venue_city.upcase %> </p>
               </div>
             </div>
-            <div class="adressmeeting">
-              <p> Au <%= @next_meeting.venue_name %></p>
-            </div>
             <div class="meeting-info">
-              <br>
-              <p><%= @next_meeting.date.strftime("%d Mars %Y") %></p>
+                <% if @next_meeting.slot.slice(0..-1) == "breakfast" %>
+                  <p><%= @next_meeting.date.strftime("%d Mars %Y") %><i class="fas fa-coffee" style="color: white; margin-left: 10px;"></i></p>
+                <% elsif @next_meeting.slot.slice(0..-1) == "lunch" %>
+                  <p><%= @next_meeting.date.strftime("%d Mars %Y") %><i class="fas fa-hamburger" style="color: white"></i></p>
+                <% elsif @next_meeting.slot.slice(0..-1) == "afterwork" %>
+                  <p><%= @next_meeting.date.strftime("%d Mars %Y") %><i class="fas fa-beer" style="color: white"></i></p>
+                <% end %>
             </div>
           <% end %>
       <% else %>
-      <p> Renseignez vos disponbilités afin de rencontrer d'autres entrepreneurs, et créer des synergies</p>
-        <% end %>
+        <p> Renseignez vos disponbilités afin de rencontrer d'autres entrepreneurs, et créer des synergies</p>
+      <% end %>
       </div>
 
 
