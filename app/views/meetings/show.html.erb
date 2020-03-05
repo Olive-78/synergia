@@ -61,7 +61,6 @@
       <% end %>
     </div>
     <h5><%= @user_one == current_user ? "#{@user_two.first_name} #{@user_two.last_name}" : "#{@user_one.first_name} #{@user_one.last_name}" %></h5>
-    <p><%= "#{@user_one.company_name}" %></p>
           <%= image_tag 'gps.png', class:"gpsshow" %>
     <p class="h5"><%= @meeting.venue_name %></p>
     <p><%= @meeting.venue_address %></p>
