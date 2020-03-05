@@ -475,6 +475,7 @@ meeting_place = [{
 }]
 
 status = [1, 2, 3]
+slot = ['breakfast', 'lunch', 'afterwork']
 
 user_1 = [olivier_godard, guillaume_protard, tom_levy, paul_couzinet, eugenie_coisne, karim_azib, xavier_blanchy, benjamin_crot]
 
@@ -490,6 +491,7 @@ user_2 = [paul_de_thore, hugo_dornbierer, astrid_aubert, claire_bauduin, julie_d
   meeting.venue_address = place[:address]
   meeting.venue_latitude = place[:latitude]
   meeting.venue_longitude = place[:longitude]
+  meeting.slot = slot.sample
 
   meeting.status = status.sample
 
