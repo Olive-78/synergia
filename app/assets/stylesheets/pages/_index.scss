@@ -27,6 +27,7 @@
   }
 }
 
+
 .medium-avatarr {
   img {
     width: 50px;
@@ -287,6 +288,10 @@ right: 5px;
   font-weight: bold;
 }
 
+.disposition a {
+  text-decoration: none;
+}
+
 #network{
   text-align:center;
 }
@@ -314,14 +319,16 @@ right: 5px;
 }
 
 .cards {
-    height: 150px;
-    width: 150px;
+    height: 160px;
+    width: 160px;
     display: flex;
-    align-items : flex-end;
+    align-items: flex-end;
     background-size: cover;
     border-radius: 9px;
-    margin : 17px;
+    margin: auto;
+    margin-bottom: 10px;
     padding-left: 14px;
+    position: relative;
 }
 
 .card {

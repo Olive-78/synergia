@@ -1,16 +1,21 @@
-<div class="text-center">
-    <h1 class="titre-meeting-index">Mes Foundates</h1><div class="containerperso">
-  <div class="disposition">
-    <% @contacts.each do |contact| %>
-      <%= link_to user_path(contact) do %>
-        <div class="cards" style="background-image: url('<%= cl_image_path contact.photo.key %>');">
-          <div class="networkname">
-            <%= contact.first_name %>
-            <%= contact.last_name %>
+<div class="display-width">
+  <h1 class="titre-meeting-index">Mes Foundates</h1>
+  <div class="containerperso">
+    <div class="disposition">
+      <% @contacts.each do |contact| %>
+        <div class="cardprofilnetwork">
+          <%= link_to user_path(contact) do %>
+          <div class="avatar-network pr-2">
+            <%= cl_image_tag contact.photo.key %>
+          </div>
+          <div class="meetinginfouser">
+            <p class="text-center"><strong><%= "#{contact.first_name} #{contact.last_name}" %></strong></p>
+            <p><%= contact.company_name %></p>
+          <% end %>
           </div>
         </div>
       <% end %>
-    <% end %>
+    </div>
   </div>
 </div>
 

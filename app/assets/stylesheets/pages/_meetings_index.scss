@@ -31,6 +31,16 @@
   transform: translatey(-50%);
 }
 
+.avatar-network img {
+  border-radius: 50%;
+  border: white 2px solid;
+  position: absolute;
+  left: -23px;
+  top: 50%;
+  transform: translate(28px, -171px);
+  width: 140px;
+}
+
 .partie-droite p {
   margin: 0;
   width: 165px;
@@ -49,8 +59,6 @@
   padding: 10px;
   left: 23px;
   margin-top: 13px;
-  /* margin-bottom: 35px; */
-  /* padding-bottom: 12px; */
   margin-left: 3px;
   margin-right: -10px;
   padding-right: 82px;
@@ -59,6 +67,8 @@
   position: relative;
   height: 89px;
 }
+
 .cardprofilindex p {
   margin: 0px;
+  transform: translate(17px, -5px);
 }
