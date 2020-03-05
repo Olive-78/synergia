@@ -42,8 +42,37 @@ position: relative;
   left: 18px;
   top: 90px;
   margin-top: 40px;
-  margin-bottom: -240px;
+  margin-bottom: -273px;
   padding-bottom: 280px;
   margin-left: 10px;
   margin-right: 10px;
+}
+
+
+.container p {
+  margin: 0px;
+  transform: translate(6px, 59px);
+}
+.container h5 {
+margin: 0px;
+transform: translate(6px, 2px);
+}
+
+#map.mapboxgl-map {
+  margin-top: 50px;
+}
+
+.gpsshow {
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  margin-bottom: 5px;
+  transform: translate(-108px, 109px);
+}
+
+.meeting-infoshow {
+  padding-inline: 10px;
+  text-align: center;
+  transform: translate(42px, -153px);
+  position: absolute;
 }

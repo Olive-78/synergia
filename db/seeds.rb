@@ -544,7 +544,7 @@ reviews = [
   end
 
   User.find_by(email: 'tom@foundaters.com').availabilities.each do |avail|
-    avail.update(breakfast: dispo.sample, lunch: dispo.sample, afterwork: dispo.sample)
+    avail.update(breakfast: false, lunch: dispo.sample, afterwork: dispo.sample)
   end
 
 puts "_______________________"

@@ -33,6 +33,9 @@
           <% end %>
       <% else %>
         <p> Renseignez vos disponbilités afin de rencontrer d'autres entrepreneurs, et créer des synergies</p>
+        <div class="d-flex justify-content-center">
+          <%= link_to 'Disponibilités', availabilities_path(current_user), class:"btn btndash", style:"margin-top: 80px;" %>
+        </div>
       <% end %>
       </div>
 
@@ -94,11 +97,42 @@
         <% @availabilities.each do |availability|%>
           <% if availability.breakfast || availability.lunch || availability.afterwork %>
             <div>
-              <div>
-                <p><strong><%= Date::DAYNAMES[availability.week_day][0..1] %></strong></p></div>
+              <div class="daysdash">
+                <% day = Date::DAYNAMES[availability.week_day][0..1] %>
+                <% if day == 'Mo' %>
+                  <p><strong><%= day = 'Lu' %></strong></p>
+                <% elsif day == "Tu" %>
+                  <p><strong><%= day = 'Ma' %></strong></p>
+                <% elsif day == "We" %>
+                  <p><strong><%= day = 'Me' %></strong></p>
+                <% elsif day == "Th" %>
+                  <p><strong><%= day = 'Je' %></strong></p>
+                <% elsif day == "Fr" %>
+                  <p><strong><%= day = 'Ve' %></strong></p>
+                <% elsif day == "Sa" %>
+                  <p><strong><%= day = 'Sa' %></strong></p>
+                <% elsif day == "Su" %>
+                  <p><strong><%= day = 'Di' %></strong></p>
+                <% end %>
+              </div>
               </div>
           <% else %>
-          <div><p><%= Date::DAYNAMES[availability.week_day][0..1] %></p></div>
+            <%= d = Date::DAYNAMES[availability.week_day][0..1] %>
+            <% if d == 'Mo' %>
+              <p><%= d = 'Lu' %></p>
+            <% elsif d == "Tu" %>
+              <p><%= d = 'Ma' %></p>
+            <% elsif d == "We" %>
+              <p><%= d = 'Me' %></p>
+            <% elsif d == "Th" %>
+              <p><%= d = 'Je' %></p>
+            <% elsif d == "Fr" %>
+              <p><%= d = 'Ve' %></p>
+            <% elsif d == "Sa" %>
+              <p><%= d = 'Sa' %></p>
+            <% elsif d == "Su" %>
+              <p><%= d = 'Di' %></p>
+            <% end %>
           <% end %>
         <% end %>
       </div>
@@ -106,23 +140,23 @@
         <% @availabilities.each do |availability|%>
           <div class="icon-avail">
             <% if availability.breakfast %>
-              <i class="fas fa-coffee icon-active"></i>
+              <i class="fas fa-coffee icon-active" style="color: white"></i>
             <% else %>
-              <i class="fas fa-coffee icon-inactive"></i>
+              <i class="fas fa-coffee icon-inactive" style="opacity: 0.2;"></i>
               <!-- <br> -->
             <% end %>
             <% if availability.lunch %>
-              <i class="fas fa-hamburger icon-active"></i>
+              <i class="fas fa-hamburger icon-active" style="color: white"></i>
               <!-- <br> -->
             <% else %>
-              <i class="fas fa-hamburger icon-inactive"></i>
+              <i class="fas fa-hamburger icon-inactive" style="opacity: 0.2;"></i>
               <!-- <br> -->
             <% end %>
             <% if availability.afterwork %>
-              <i class="fas fa-beer icon-active"></i>
+              <i class="fas fa-beer icon-active" style="color: white"></i>
               <!-- <br> -->
             <% else %>
-              <i class="fas fa-beer icon-inactive"></i>
+              <i class="fas fa-beer icon-inactive" style="opacity: 0.2;"></i>
               <!-- <br> -->
             <% end %>
             <%#= availability.lunch %>

@@ -1,55 +1,56 @@
 <div class="display-width">
-  <h1 class="titre-meeting-index">Mes RDVs</h1>
-  <div class="row">
-    <% current_user.all_meetings.each do |meeting| %>
-      <% user = meeting.users.reject { |user| user == current_user }.first %>
-      <%= link_to meeting_path(meeting) do %>
-      <div class="col-12">
-        <div class="cardprofilindex">
-          <div class="partie-gauche d-flex justify-content-start">
-            <div class="avatar-meeting pr-2">
-              <% if user.photo.attached? && user.photo.key.present? %>
-                <%= cl_image_tag user.photo.key %>
-              <% else %>
-                <%= image_tag("image_not_found.png") %>
-              <% end %>
-            </div>
-            <div class="meetinginfouser">
-            <p><strong><%= "#{user.first_name} #{user.last_name}" %></strong></p>
-            <p><%= user.company_name %></p>
-            </div>
+    <h1 class="titre-meeting-index">Mes RDVs</h1>
+    <div class="row">
+      <% current_user.all_meetings.each do |meeting| %>
+        <% user = meeting.users.reject { |user| user == current_user }.first %>
+        <%= link_to meeting_path(meeting) do %>
+        <div class="col-12">
+          <% past_css = (meeting.date < Date.today) ? "past" : "" %>
+          <div class="cardprofilindex <%= past_css %>">
+            <div class="partie-gauche d-flex justify-content-start">
+              <div class="avatar-meeting pr-2">
+                <% if user.photo.attached? && user.photo.key.present? %>
+                  <%= cl_image_tag user.photo.key %>
+                <% else %>
+                  <%= image_tag("image_not_found.png") %>
+                <% end %>
+              </div>
+              <div class="meetinginfouser2">
+              <p><strong><%= "#{user.first_name} #{user.last_name}" %></strong></p>
+              <p><%= user.company_name %></p>
+              </div>
 
-            <div class="meeting-date">
-              <% @month = meeting.date.strftime("%B") %>
-              <% if @month == "January" %>
-                <p><strong><i class="far fa-calendar-alt"></i><%= meeting.date.strftime(" %d Jan.") %></strong></p>
-              <% elsif @month == "February"%>
-                <p><strong><i class="far fa-calendar-alt"></i><%= meeting.date.strftime(" %d Fév.") %></strong></p>
-              <% elsif @month == "March"%>
-                <p><strong><i class="far fa-calendar-alt"></i><%= meeting.date.strftime(" %d Mar.") %></strong></p>
-              <% elsif @month == "April"%>
-                <p><strong><i class="far fa-calendar-alt"></i><%= meeting.date.strftime(" %d Avr.") %></strong></p>
-              <% elsif @month == "May"%>
-                <p><strong><i class="far fa-calendar-alt"></i><%= meeting.date.strftime(" %d Mai") %></strong></p>
-              <% elsif @month == "June"%>
-                <p><strong><i class="far fa-calendar-alt"></i><%= meeting.date.strftime(" %d Juin") %></strong></p>
-              <% elsif @month == "July"%>
-                <p><strong><i class="far fa-calendar-alt"></i><%= meeting.date.strftime(" %d Juil.") %></strong></p>
-              <% elsif @month == "August"%>
-                <p><strong><i class="far fa-calendar-alt"></i><%= meeting.date.strftime(" %d Aout") %></strong></p>
-              <% elsif @month == "September"%>
-                <p><strong><i class="far fa-calendar-alt"></i><%= meeting.date.strftime(" %d Sept.") %></strong></p>
-              <% elsif @month == "October"%>
-                <p><strong><i class="far fa-calendar-alt"></i><%= meeting.date.strftime(" %d Oct.") %></strong></p>
-              <% elsif @month == "November"%>
-                <p><strong><i class="far fa-calendar-alt"></i><%= meeting.date.strftime(" %d Nov.") %></strong></p>
-              <% elsif @month == "December"%>
-                <p><strong><i class="far fa-calendar-alt"></i><%= meeting.date.strftime(" %d Déc.") %></strong></p>
-              <% else %>
-                <p><%= @meeting.date.strftime("%d %B %Y") %></p>
-              <% end %>
+              <div class="meeting-date <%= past_css %>">
+                <% @month = meeting.date.strftime("%B") %>
+                <% if @month == "January" %>
+                  <p><strong><i class="far fa-calendar-alt white"></i><%= meeting.date.strftime(" %d Jan.") %></strong></p>
+                <% elsif @month == "February"%>
+                  <p><strong><i class="far fa-calendar-alt white"></i><%= meeting.date.strftime(" %d Fév.") %></strong></p>
+                <% elsif @month == "March"%>
+                  <p><strong><i class="far fa-calendar-alt white"></i><%= meeting.date.strftime(" %d Mar.") %></strong></p>
+                <% elsif @month == "April"%>
+                  <p><strong><i class="far fa-calendar-alt white"></i><%= meeting.date.strftime(" %d Avr.") %></strong></p>
+                <% elsif @month == "May"%>
+                  <p><strong><i class="far fa-calendar-alt white"></i><%= meeting.date.strftime(" %d Mai") %></strong></p>
+                <% elsif @month == "June"%>
+                  <p><strong><i class="far fa-calendar-alt white"></i><%= meeting.date.strftime(" %d Juin") %></strong></p>
+                <% elsif @month == "July"%>
+                  <p><strong><i class="far fa-calendar-alt white"></i><%= meeting.date.strftime(" %d Juil.") %></strong></p>
+                <% elsif @month == "August"%>
+                  <p><strong><i class="far fa-calendar-alt white"></i><%= meeting.date.strftime(" %d Aout") %></strong></p>
+                <% elsif @month == "September"%>
+                  <p><strong><i class="far fa-calendar-alt white"></i><%= meeting.date.strftime(" %d Sept.") %></strong></p>
+                <% elsif @month == "October"%>
+                  <p><strong><i class="far fa-calendar-alt white"></i><%= meeting.date.strftime(" %d Oct.") %></strong></p>
+                <% elsif @month == "November"%>
+                  <p><strong><i class="far fa-calendar-alt white"></i><%= meeting.date.strftime(" %d Nov.") %></strong></p>
+                <% elsif @month == "December"%>
+                  <p><strong><i class="far fa-calendar-alt white"></i><%= meeting.date.strftime(" %d Déc.") %></strong></p>
+                <% else %>
+                  <p><%= @meeting.date.strftime("%d %B %Y") %></p>
+                <% end %>
+              </div>
             </div>
-          </div>
 
           <div class="partie-droite d-flex flex-column align-items-end">
           </div>
