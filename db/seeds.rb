@@ -476,11 +476,11 @@ meeting_place = [{
 
 status = [1, 2, 3]
 
-user_1 = [olivier_godard, guillaume_protard, tom_levy, paul_couzinet, karim_azib, xavier_blanchy, nicolas_chardeau, benjamin_crot]
+user_1 = [olivier_godard, guillaume_protard, tom_levy, paul_couzinet, eugenie_coisne, karim_azib, xavier_blanchy, benjamin_crot]
 
-user_2 = [paul_de_thore, hugo_dornbierer, astrid_aubert, claire_bauduin, eugenie_coisne, julie_dakoure, swann_culioli, fabien_davy]
+user_2 = [paul_de_thore, hugo_dornbierer, astrid_aubert, claire_bauduin, julie_dakoure, swann_culioli, fabien_davy, nicolas_chardeau]
 
-50.times do
+3.times do
   meeting = Meeting.new
   meeting.date = Faker::Date.in_date_period(month: 2)
 
@@ -493,7 +493,7 @@ user_2 = [paul_de_thore, hugo_dornbierer, astrid_aubert, claire_bauduin, eugenie
 
   meeting.status = status.sample
 
-  meeting.user_one = user_1.sample
+  meeting.user_one = User.find_by(email: 'tom@foundaters.com')
   meeting.user_two = user_2.sample
 
   meeting.save!
@@ -533,8 +533,12 @@ reviews = [
   dispo = [true, false]
   User.all.each do |user|
     user.availabilities.each do |avail|
-      avail.update(breakfast: true, lunch: true, afterwork: true)
+      avail.update(breakfast: false, lunch: dispo.sample, afterwork: dispo.sample)
     end
+  end
+
+  User.find_by(email: 'eugenie@foundaters.com').availabilities.each do |avail|
+    avail.update(breakfast: true, lunch: dispo.sample, afterwork: dispo.sample)
   end
 
   User.find_by(email: 'tom@foundaters.com').availabilities.each do |avail|

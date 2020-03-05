@@ -1,5 +1,5 @@
-meta_product_name: "Product Name"
-meta_title: "Product name - Product tagline"
-meta_description: "Relevant description"
-meta_image: "cover.png" # should exist in `app/assets/images/`
-twitter_account: "@product_twitter_account"   # required for Twitter Cards
+meta_product_name: "Foundaters"
+meta_title: "Foundaters - Network does work"
+meta_description: "Le virtuel a ses limites. Rencontrez dans la vie réelle des entrepreneurs qui vous correspondent pour échanger autour d'un verre ! (ou deux)"
+meta_image: "linkedin-new.png" # should exist in `app/assets/images/`
+twitter_account: "@foundaters_twitter_account"   # required for Twitter Cards
