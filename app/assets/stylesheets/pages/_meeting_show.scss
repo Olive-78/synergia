@@ -33,6 +33,79 @@ position: relative;
     margin-top: -100px;
 }
 
+.card-info-meeting {
+  background-color:  #001858;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  border-radius: 25px;
+  position: relative;
+  display: flex;
+  width: 90%;
+  margin: 60px auto 10px;
+  text-align: center;
+  padding: 60px 10px 30px;
+  color: white;
+}
+
+.avatars {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: absolute;
+  top: -50px;
+  left: 0;
+  img:first-child {
+    margin-right: -7px;
+  }
+  img:last-child {
+    margin-left: -7px;
+  }
+}
+
+.name-address {
+  div:first-child {
+    font-size: 1.3em;
+    font-weight: 600;
+  }
+  div:last-child {
+    color: white;
+    i {
+      font-weight: 0.8em;
+      margin: 0;
+      margin-right: 5px;
+    }
+  }
+}
+
+.meeting-infos {
+  margin-top: 62px;
+  width: 90%;
+  margin: auto;
+  text-align: center;
+  .address {
+    margin-top: 20px;
+    div:first-child {
+      font-size: 1.3em;
+      font-weight: 600;
+    }
+    div:last-child {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    img {
+      height: 20px;
+      margin-right: 5px;
+    }
+  }
+}
+
+#meetings-show {
+  #map {
+    margin: 0 auto;
+  }
+}
+
 .cardsphotomeeting {
  background-color:  #001858;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
@@ -59,7 +132,8 @@ transform: translate(6px, 2px);
 }
 
 #map.mapboxgl-map {
-  margin-top: 50px;
+margin-top: 113px;
+
 }
 
 .gpsshow {
@@ -73,6 +147,6 @@ transform: translate(6px, 2px);
 .meeting-infoshow {
   padding-inline: 10px;
   text-align: center;
-  transform: translate(42px, -153px);
   position: absolute;
+  transform: translate(52px, -129px);
 }
