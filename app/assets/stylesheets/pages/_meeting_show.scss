@@ -42,7 +42,39 @@ position: relative;
   width: 90%;
   margin: 60px auto 10px;
   text-align: center;
-  padding-top: 60px;
+  padding: 60px 10px 30px;
+  color: white;
+}
+
+.avatars {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: absolute;
+  top: -50px;
+  left: 0;
+  img:first-child {
+    margin-right: -7px;
+  }
+  img:last-child {
+    margin-left: -7px;
+  }
+}
+
+.name-address {
+  div:first-child {
+    font-size: 1.3em;
+    font-weight: 600;
+  }
+  div:last-child {
+    color: white;
+    i {
+      font-weight: 0.8em;
+      margin: 0;
+      margin-right: 5px;
+    }
+  }
 }
 
 .meeting-infos {
@@ -50,6 +82,28 @@ position: relative;
   width: 90%;
   margin: auto;
   text-align: center;
+  .address {
+    margin-top: 20px;
+    div:first-child {
+      font-size: 1.3em;
+      font-weight: 600;
+    }
+    div:last-child {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    img {
+      height: 20px;
+      margin-right: 5px;
+    }
+  }
+}
+
+#meetings-show {
+  #map {
+    margin: 0 auto;
+  }
 }
 
 .cardsphotomeeting {

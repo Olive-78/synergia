@@ -1,13 +1,13 @@
   <div class="card-info-meeting">
     <div class="avatars">
-      <div class="avatar-large image-user-1">
+      <div class="avatar-large">
         <% if current_user.photo.attached? && current_user.photo.key.present? %>
           <%= cl_image_tag current_user.photo.key %>
         <% else %>
           <%= image_tag("image_not_found.png") %>
         <% end %>
       </div>
-      <div class="avatar-large image-user-2">
+      <div class="avatar-large">
         <%= link_to user_path(meeting_relation) do %>
           <% if meeting_relation.photo.present? %>
             <%= cl_image_tag meeting_relation.photo.key %>
@@ -22,11 +22,11 @@
         <div><%= @user_one == current_user ? "#{@user_two.first_name} #{@user_two.last_name}" : "#{@user_one.first_name} #{@user_one.last_name}" %></div>
         <div>
           <% if @meeting.slot.slice(0..-1) == "breakfast" %>
-            <i class="fas fa-coffee" style="color: white; margin-left: 10px;"></i>
+            <i class="fas fa-coffee"></i>
           <% elsif @meeting.slot.slice(0..-1) == "lunch" %>
-            <i class="fas fa-hamburger" style="color: white"></i>
+            <i class="fas fa-hamburger"></i>
           <% elsif @meeting.slot.slice(0..-1) == "afterwork" %>
-            <i class="fas fa-beer" style="color: white"></i>
+            <i class="fas fa-beer"></i>
           <% end %>
           <% @month = @meeting.date.strftime("%B") %>
           <% if @month == "January" %>
@@ -59,9 +59,11 @@
         </div>
       </div>
       <div class="address">
-        <%= image_tag 'gps.png', class:"gpsshow" %>
-        <p><%= @meeting.venue_name %></p>
-        <p><%= @meeting.venue_address %></p>
+        <div><%= @meeting.venue_name %></div>
+        <div class="d-flex">
+          <%= image_tag 'gps.png' %>
+          <%= @meeting.venue_address %>
+        </div>
       </div>
     </div>
   </div>
