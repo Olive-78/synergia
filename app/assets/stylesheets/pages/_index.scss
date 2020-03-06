@@ -1,9 +1,18 @@
 @import "home";
 
+a {
+  text-decoration: none;
+}
+
 .profile-avatar-ban {
   display: flex;
   justify-content: center;
   padding-top: 6px;
+}
+
+
+#meetings-index .display-width {
+  width: 90%;
 }
 
 .display-width {
@@ -33,10 +42,11 @@
     display: flex;
     padding-bottom: 5px;
     position: absolute;
-    top: 316px;
-    left: 66px;
+    top: 321px;
+    left: 62px;
   }
 }
+
 
 .comment a {
   color: white;
@@ -76,16 +86,19 @@
   margin-bottom: 25px;
   padding-bottom: 64px;
   height: 205px;
+  text-decoration: none;
 
   h5 {
     color: #011e3f;
     font-size: 7px;
     margin-top: -36px;
     margin-bottom: 20px;
+    text-decoration: none;
   }
   p{
     margin: 0px;
-    transform: translate(5px, 70px);
+    transform: translate(15px, 70px);
+    text-decoration: none;
   }
 }
 
@@ -255,9 +268,9 @@ font-weight: bold;
   text-align: center;
   color: #1b262c;
   display: flex;
-  margin-left: 190px;
+  margin-left: 180px;
   position: absolute;
-  margin-top: 15px;
+  margin-top: -10px;
 }
 
 .adressmeeting {

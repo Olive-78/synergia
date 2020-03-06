@@ -34,12 +34,18 @@
     <meta name="twitter:image:src" content="<%= meta_image %>">
   </head>
   <body id="<%= controller.controller_name %>-<%= action_name %>">
-    <%= render 'shared/navbar' %>
-    <%= render 'shared/flashes' %>
+
+    <% unless action_name == 'home' %>
+      <%= render 'shared/navbar' %>
+    <% end %>
+
+    <%#= render 'shared/flashes' %>
     <div class="content-wrapper">
       <%= yield %>
     </div>
-    <%= render 'shared/navbar_bottom' %>
+    <% unless action_name == 'home' %>
+      <%= render 'shared/navbar_bottom' %>
+    <% end %>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

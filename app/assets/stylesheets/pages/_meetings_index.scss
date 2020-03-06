@@ -15,9 +15,11 @@
 }
 
 .meeting-date {
-  margin-left: 164px;
+  // margin-left: 164px;
   position: absolute;
-  margin-top: 30px;
+  bottom: 25px;
+  right: 45px;
+  // margin-top: 30px;
   transform: translate(5px,22px);
   }
 
@@ -52,18 +54,20 @@
 }
 
 .cardprofilindex {
+  width: 95%;
+  margin-left: auto;
   background-color: #001858;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   margin-top: 10px;
   border-radius: 25px;
   padding: 10px;
-  left: 23px;
+  // left: 23px;
   margin-top: 13px;
-  margin-left: 3px;
-  margin-right: -10px;
+  // margin-left: 3px;
+  // margin-right: -10px;
   padding-right: 82px;
   padding-left: 57px;
-  width: 333px;
+  // width: 333px;
   position: relative;
   height: 89px;
 }

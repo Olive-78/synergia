@@ -46,7 +46,7 @@ text-align: center
 .disposition {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  transform: translate(6px, 10px);
+  // transform: translate(6px, 10px);
 }
 
 .imgcontact{
@@ -93,7 +93,7 @@ text-align: center
 }
 
 .linkedin3{
-   position: absolute;
+    position: absolute;
     padding-top: -6px;
     width: 25px;
     height: 25px;
@@ -101,21 +101,21 @@ text-align: center
     margin-left: auto;
     margin-right: auto;
     margin-top: 6px;
-    transform: translatex(176px);
+    // transform: translatex(176px);
 }
 
 
 .cardsphoto {
- background-color: #001858;
+  background-color: #001858;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  margin-top: 10px;
   border-radius: 25px;
-  padding: 10px;
   left: 18px;
   top: 90px;
+  padding-bottom: 50px;
+  padding-left: 33px;
+  padding-top: 15px;
+  padding-right: 20px;
   margin-top: 40px;
-  margin-bottom: -49px;
-  padding-bottom: 48px;
   margin-left: 10px;
   margin-right: 10px;
 }
@@ -123,36 +123,32 @@ text-align: center
 .cardprofil2 {
   background-color: #d6d8dc;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  margin-top: 10px;
   border-radius: 25px;
   padding: 10px;
   left: 18px;
   top: 62px;
-  margin-top: 40px;
   margin-bottom: 35px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 40px;
   padding-bottom: 12px;
-  margin-left: 40px;
-  margin-right: 17px;
   padding-right: 33px;
   padding-left: 33px;
-  margin-top: 83px;
 }
 
 .cardprofil3 {
   background-color: #d6d8dc;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  margin-top: 10px;
   border-radius: 25px;
-  padding: 10px;
   left: 18px;
   top: 90px;
+  margin-left: 10px;
   margin-top: 40px;
-  margin-bottom: 35px;
-  padding-bottom: 12px;
-  margin-left: 11px;
-  margin-right: 40px;
+  margin-right: 10px;
+  padding: 10px;
   padding-right: 33px;
   padding-left: 33px;
+  padding-bottom: 12px;
 }
 
 .cardsphoto p, h5 {
@@ -232,7 +228,7 @@ text-align: center;
   display: -webkit-box;
   display: flex;
   padding-bottom: 5px;
-  top: 325px;
+  top: 327px;
   left: 250px;
   position : absolute;
 }
