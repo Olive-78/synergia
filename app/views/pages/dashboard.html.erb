@@ -1,6 +1,6 @@
 <div>
   <div class="display-width">
-      <div class="dashboard-cardif">
+      <div class="dashboard-cardif" style="text-decoration: none">
         <!-- <i class="fas fa-check-circle"></i>
         <i class="fas fa-times-circle"></i> -->
         <% if @next_meeting %>
@@ -9,16 +9,17 @@
               <%= cl_image_tag(@user_next_meeting.photo.key, classtts: "avatar-large")%>
             <% end %>
           </div>
-          <%= link_to meeting_path(@next_meeting) do %>
+          <%= link_to meeting_path(@next_meeting), style:"text-decoration: none;" do %>
             <h5>Prochain RDV</h5>
             <div class="user-info">
               <div class="user-details">
-                <p><strong><%= @user_next_meeting.first_name%> <%= @user_next_meeting.last_name %></strong></p>
-                <p><%= @user_next_meeting.company_name %></p>
+                <p style="font-size: 20px; transform: translate(0%, 220%)"><strong><%= @user_next_meeting.first_name%> <%= @user_next_meeting.last_name %></strong></p>
+                <p style="transform: translate(0%, 260%)"><%= @user_next_meeting.company_name %></p>
                 <br>
                 <p><%= @next_meeting.venue_name %></p>
                 <p style="font-size: 14px;"><%=  @next_meeting.venue_address %></p>
                 <p style="font-size: 14px;"><%= @next_meeting.venue_postcode %> <%= @next_meeting.venue_city.upcase %> </p>
+                <%= image_tag 'gps.png', class:"gpsshow", style:"transform: translate(-60%, 10%)" %>
               </div>
             </div>
             <div class="meeting-info">
@@ -32,7 +33,7 @@
             </div>
           <% end %>
       <% else %>
-        <p> Renseignez vos disponbilités afin de rencontrer d'autres entrepreneurs, et créer des synergies</p>
+        <p style="transform: translate(0%, 94%); text-align: center"> Renseignez vos disponbilités afin de rencontrer d'autres entrepreneurs, et créer des synergies</p>
         <div class="d-flex justify-content-center">
           <%= link_to 'Disponibilités', availabilities_path(current_user), class:"btn btndash", style:"margin-top: 80px;" %>
         </div>
@@ -52,14 +53,14 @@
           </div>
         </div>
           <div class= "lastmeetuser">
-             <p><%= @user_most_recent_meeting.first_name%> </p>
-             <p> <%= @user_most_recent_meeting.last_name %> </p>
-              <p><%= @user_most_recent_meeting.company_name %> </p>
+             <p><strong><%= @user_most_recent_meeting.first_name%></strong></p>
+             <p> <strong><%= @user_most_recent_meeting.last_name %></strong> </p>
+              <p style="font-weight: normal;"><%= @user_most_recent_meeting.company_name %></p>
           </div>
         <div>
 
           <%= link_to new_user_review_path(@most_recent_meeting) do %>
-        <%= image_tag 'like.png', class:"linkedin1" %>
+        <%= image_tag 'like2.png', class:"linkedin1", style:"color: blue" %>
         </div>
         <p class= "last-meet text-center pt-2">Dernier RDV</p>
       </div>
@@ -76,7 +77,7 @@
           </div>
            <br>
            <br>
-           <h5>Foundates</h5>
+           <h5 style="color: #1b262c">RDV</h5>
         </div>
     <% end %>
       </div>
