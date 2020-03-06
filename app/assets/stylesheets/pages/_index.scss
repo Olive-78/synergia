@@ -42,8 +42,8 @@ a {
     display: flex;
     padding-bottom: 5px;
     position: absolute;
-    top: 37%;
-    left: 18%;
+    top: -28px;
+    left: 45px;
   }
 }
 
@@ -157,6 +157,7 @@ a {
   border-radius: 25px;
   margin-right: 10px;
   margin-left: 10px;
+  position:relative;
 }
 
 .dashboard-card-last1 {
@@ -169,7 +170,7 @@ a {
   margin-right: 10px;
   margin-left: 10px;
   height: 215px;
-
+  position: relative;
 }
 
 .dashboard-card-last1 p {
