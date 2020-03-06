@@ -33,6 +33,25 @@ position: relative;
     margin-top: -100px;
 }
 
+.card-info-meeting {
+  background-color:  #001858;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  border-radius: 25px;
+  position: relative;
+  display: flex;
+  width: 90%;
+  margin: 60px auto 10px;
+  text-align: center;
+  padding-top: 60px;
+}
+
+.meeting-infos {
+  margin-top: 62px;
+  width: 90%;
+  margin: auto;
+  text-align: center;
+}
+
 .cardsphotomeeting {
  background-color:  #001858;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
@@ -59,7 +78,8 @@ transform: translate(6px, 2px);
 }
 
 #map.mapboxgl-map {
-  margin-top: 50px;
+margin-top: 113px;
+
 }
 
 .gpsshow {
@@ -73,6 +93,6 @@ transform: translate(6px, 2px);
 .meeting-infoshow {
   padding-inline: 10px;
   text-align: center;
-  transform: translate(42px, -153px);
   position: absolute;
+  transform: translate(52px, -129px);
 }

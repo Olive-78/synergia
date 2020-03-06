@@ -1,85 +1,163 @@
-<div class="cardsphotomeeting">
-  <div class="image-chevauchement">
-    <div class="avatar-large image-user-1">
-      <% if current_user.photo.attached? && current_user.photo.key.present? %>
-        <%= cl_image_tag current_user.photo.key %>
-      <% else %>
-        <%= image_tag("image_not_found.png") %>
-      <% end %>
-    </div>
-
-    <div class="avatar-large image-user-2">
-      <%# relation = [@meeting.user_one, @meeting.user_two].delete(current_user) %>
-      <%#= link_to user_path(current_user == @meeting.user_one ? @meeting.user_one : @meeting.user_two) do %>
-      <%= link_to user_path(meeting_relation) do %>
-        <% if meeting_relation.photo.present? %>
-          <%= cl_image_tag meeting_relation.photo.key %>
+  <div class="card-info-meeting">
+    <div class="avatars">
+      <div class="avatar-large image-user-1">
+        <% if current_user.photo.attached? && current_user.photo.key.present? %>
+          <%= cl_image_tag current_user.photo.key %>
         <% else %>
           <%= image_tag("image_not_found.png") %>
         <% end %>
-        <%# if @user_two != current_user %>
-          <%#= cl_image_tag @user_two.photo.key %>
-        <%# elsif @user_one != current_user %>
-          <%#= cl_image_tag @user_one.photo.key %>
-        <%# else %>
-          <%#= image_tag("image_not_found.png") %>
-        <%# end %>
-      <% end %>
+      </div>
+      <div class="avatar-large image-user-2">
+        <%= link_to user_path(meeting_relation) do %>
+          <% if meeting_relation.photo.present? %>
+            <%= cl_image_tag meeting_relation.photo.key %>
+          <% else %>
+            <%= image_tag("image_not_found.png") %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div class="meeting-infos">
+      <div class="name-address">
+        <div><%= @user_one == current_user ? "#{@user_two.first_name} #{@user_two.last_name}" : "#{@user_one.first_name} #{@user_one.last_name}" %></div>
+        <div>
+          <% if @meeting.slot.slice(0..-1) == "breakfast" %>
+            <i class="fas fa-coffee" style="color: white; margin-left: 10px;"></i>
+          <% elsif @meeting.slot.slice(0..-1) == "lunch" %>
+            <i class="fas fa-hamburger" style="color: white"></i>
+          <% elsif @meeting.slot.slice(0..-1) == "afterwork" %>
+            <i class="fas fa-beer" style="color: white"></i>
+          <% end %>
+          <% @month = @meeting.date.strftime("%B") %>
+          <% if @month == "January" %>
+            <span><%=@meeting.date.strftime("%d Janvier %Y") %></span>
+          <% elsif @month == "February"%>
+            <span><%= @meeting.date.strftime("%d Février %Y") %></span>
+          <% elsif @month == "March"%>
+            <span><%= @meeting.date.strftime("%d Mars %Y") %></span>
+          <% elsif @month == "April"%>
+            <span><%= @meeting.date.strftime("%d Avril %Y") %></span>
+          <% elsif @month == "May"%>
+            <span><%= @meeting.date.strftime("%d Mai %Y") %></span>
+          <% elsif @month == "June"%>
+            <span><%= @meeting.date.strftime("%d Juin %Y") %></span>
+          <% elsif @month == "July"%>
+            <span><%= @meeting.date.strftime("%d Juillet %Y") %></span>
+          <% elsif @month == "August"%>
+            <span><%= @meeting.date.strftime("%d Aout %Y") %></span>
+          <% elsif @month == "September"%>
+            <span><%= @meeting.date.strftime("%d Septembre %Y") %></span>
+          <% elsif @month == "October"%>
+            <span><%= @meeting.date.strftime("%d Octobre %Y") %></span>
+          <% elsif @month == "November"%>
+            <span><%= @meeting.date.strftime("%d Novembre %Y") %></span>
+          <% elsif @month == "December"%>
+            <span><%= @meeting.date.strftime("%d Décembre %Y") %></span>
+          <% else %>
+            <span><%= @meeting.date.strftime("%d %B %Y") %></span>
+          <% end %>
+        </div>
+      </div>
+      <div class="address">
+        <%= image_tag 'gps.png', class:"gpsshow" %>
+        <p><%= @meeting.venue_name %></p>
+        <p><%= @meeting.venue_address %></p>
+      </div>
     </div>
   </div>
-</div>
-<div class="container">
-  <div class="justify-content-center text-center bg-black p-2 my-3">
-    <div class="h3">
-      <% @month = @meeting.date.strftime("%B") %>
-      <% if @month == "January" %>
-        <p><%=@meeting.date.strftime("%d Janvier %Y") %></p>
-      <% elsif @month == "February"%>
-        <p><%= @meeting.date.strftime("%d Février %Y") %></p>
-      <% elsif @month == "March"%>
-        <p><%= @meeting.date.strftime("%d Mars %Y") %></p>
-      <% elsif @month == "April"%>
-        <p><%= @meeting.date.strftime("%d Avril %Y") %></p>
-      <% elsif @month == "May"%>
-        <p><%= @meeting.date.strftime("%d Mai %Y") %></p>
-      <% elsif @month == "June"%>
-        <p><%= @meeting.date.strftime("%d Juin %Y") %></p>
-      <% elsif @month == "July"%>
-        <p><%= @meeting.date.strftime("%d Juillet %Y") %></p>
-      <% elsif @month == "August"%>
-        <p><%= @meeting.date.strftime("%d Aout %Y") %></p>
-      <% elsif @month == "September"%>
-        <p><%= @meeting.date.strftime("%d Septembre %Y") %></p>
-      <% elsif @month == "October"%>
-        <p><%= @meeting.date.strftime("%d Octobre %Y") %></p>
-      <% elsif @month == "November"%>
-        <p><%= @meeting.date.strftime("%d Novembre %Y") %></p>
-      <% elsif @month == "December"%>
-        <p><%= @meeting.date.strftime("%d Décembre %Y") %></p>
-      <% else %>
-        <p><%= @meeting.date.strftime("%d %B %Y") %></p>
-      <% end %>
-    </div>
-    <h5><%= @user_one == current_user ? "#{@user_two.first_name} #{@user_two.last_name}" : "#{@user_one.first_name} #{@user_one.last_name}" %></h5>
-          <%= image_tag 'gps.png', class:"gpsshow" %>
-    <p class="h5"><%= @meeting.venue_name %></p>
-    <p><%= @meeting.venue_address %></p>
-    <div class="meeting-infoshow">
-                <% if @meeting.slot.slice(0..-1) == "breakfast" %>
-                  <p><i class="fas fa-coffee" style="color: white; margin-left: 10px;"></i></p>
-                <% elsif @meeting.slot.slice(0..-1) == "lunch" %>
-                  <p><i class="fas fa-hamburger" style="color: white"></i></p>
-                <% elsif @meeting.slot.slice(0..-1) == "afterwork" %>
-                  <p><i class="fas fa-beer" style="color: white"></i></p>
-                <% end %>
-            </div>
-  </div>
-
-  <div class="d-flex flex-row justify-content-center">
 
   <div id="map"
-     style="width: 100%;
-     height: 300px;"
+     style="width: 347px;
+     height: 290px;"
      data-markers="<%= @marker.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-</div>
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+
+  <!-- <div class="cardsphotomeeting">
+    <div class="image-chevauchement">
+      <div class="avatar-large image-user-1">
+        <% if current_user.photo.attached? && current_user.photo.key.present? %>
+          <%= cl_image_tag current_user.photo.key %>
+        <% else %>
+          <%= image_tag("image_not_found.png") %>
+        <% end %>
+      </div>
+
+      <div class="avatar-large image-user-2">
+        <%# relation = [@meeting.user_one, @meeting.user_two].delete(current_user) %>
+        <%#= link_to user_path(current_user == @meeting.user_one ? @meeting.user_one : @meeting.user_two) do %>
+        <%= link_to user_path(meeting_relation) do %>
+          <% if meeting_relation.photo.present? %>
+            <%= cl_image_tag meeting_relation.photo.key %>
+          <% else %>
+            <%= image_tag("image_not_found.png") %>
+          <% end %>
+          <%# if @user_two != current_user %>
+            <%#= cl_image_tag @user_two.photo.key %>
+          <%# elsif @user_one != current_user %>
+            <%#= cl_image_tag @user_one.photo.key %>
+          <%# else %>
+            <%#= image_tag("image_not_found.png") %>
+          <%# end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="justify-content-center text-center bg-black p-2 my-3">
+      <div class="h3">
+        <%# @month = @meeting.date.strftime("%B") %>
+        <%# if @month == "January" %>
+          <p><%#=@meeting.date.strftime("%d Janvier %Y") %></p>
+        <%# elsif @month == "February"%>
+          <p><%#= @meeting.date.strftime("%d Février %Y") %></p>
+        <%# elsif @month == "March"%>
+          <p><%#= @meeting.date.strftime("%d Mars %Y") %></p>
+        <%# elsif @month == "April"%>
+          <p><%#= @meeting.date.strftime("%d Avril %Y") %></p>
+        <%# elsif @month == "May"%>
+          <p><%#= @meeting.date.strftime("%d Mai %Y") %></p>
+        <%# elsif @month == "June"%>
+          <p><%#= @meeting.date.strftime("%d Juin %Y") %></p>
+        <%# elsif @month == "July"%>
+          <p><%#= @meeting.date.strftime("%d Juillet %Y") %></p>
+        <%# elsif @month == "August"%>
+          <p><%#= @meeting.date.strftime("%d Aout %Y") %></p>
+        <%# elsif @month == "September"%>
+          <p><%#= @meeting.date.strftime("%d Septembre %Y") %></p>
+        <%# elsif @month == "October"%>
+          <p><%#= @meeting.date.strftime("%d Octobre %Y") %></p>
+        <%# elsif @month == "November"%>
+          <p><%#= @meeting.date.strftime("%d Novembre %Y") %></p>
+        <%# elsif @month == "December"%>
+          <p><%#= @meeting.date.strftime("%d Décembre %Y") %></p>
+        <%# else %>
+          <p><%#= @meeting.date.strftime("%d %B %Y") %></p>
+        <%# end %>
+      </div>
+      <h5><%#= @user_one == current_user ? "#{@user_two.first_name} #{@user_two.last_name}" : "#{@user_one.first_name} #{@user_one.last_name}" %></h5>
+            <%#= image_tag 'gps.png', class:"gpsshow" %>
+      <p class="h5"><%#= @meeting.venue_name %></p>
+      <p><%#= @meeting.venue_address %></p>
+      <div class="meeting-infoshow">
+                  <%# if @meeting.slot.slice(0..-1) == "breakfast" %>
+                    <p><i class="fas fa-coffee" style="color: white; margin-left: 10px;"></i></p>
+                  <%# elsif @meeting.slot.slice(0..-1) == "lunch" %>
+                    <p><i class="fas fa-hamburger" style="color: white"></i></p>
+                  <%# elsif @meeting.slot.slice(0..-1) == "afterwork" %>
+                    <p><i class="fas fa-beer" style="color: white"></i></p>
+                  <%# end %>
+              </div>
+    </div>
+
+    <div>
+
+    <div id="map"
+       style="width: 347px;
+       height: 290px;
+       margin-right:30px;"
+       data-markers="<%#= @marker.to_json %>"
+       data-mapbox-api-key="<%#= ENV['MAPBOX_API_KEY'] %>">
+       </div>
+  </div>
+ -->
