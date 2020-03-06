@@ -1,8 +1,15 @@
 .content-wrapper {
-  margin-bottom: 80px;
+  // margin-bottom: 80px;
   min-height: calc(100vh - 142px);
   width: 98vw;
   margin: auto !important;
+  padding-bottom: 72px;
+}
+
+#pages-home {
+  .content-wrapper {
+    padding-bottom: 0px;
+  }
 }
 
 .navbar {
