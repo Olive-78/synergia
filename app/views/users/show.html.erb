@@ -1,53 +1,66 @@
 <div class="background">
   <div class="content-wrapper">
+
+    <div class="cardprofil3">
+      <h5><%= @user.first_name %>
+      <%= @user.last_name %></h5>
+      <br>
+      <p>
+        <i class="fas fa-building" style="margin-right: 5px;"></i>
+        <%= @user.company_name %>
+      </p>
+      <p>Chiffre d'affaire : <%= @user.company_ca %> €</p>
+      <p>Secteur : <%= @user.company_sector %></p>
+    </div>
+
     <div class="cardsphoto">
       <div class="photouser">
-        <%#= cl_image_tag @user.photo.key %>
         <% if @user.photo.attached? && @user.photo.key.present? %>
           <%= cl_image_tag @user.photo.key %>
         <% else %>
           <%= image_tag("image_not_found.png") %>
         <% end %>
       </div>
-    <div class="mesinfos">
-        <h5><%= @user.first_name %>
-        <%= @user.last_name %></h5>
-        <p><%= @user.company_name %></p>
+      <div class="mesinfos">
+        <h5>Infos</h5>
         <br>
-        <p><%= @user.email %></p>
-        <p><%= @user.phone_number %></p>
+        <p>
+          <i class="far fa-envelope" style="margin-right: 5px;"></i>
+          <%= @user.email %>
+        </p>
+        <p>
+          <i class="fas fa-phone" style="margin-right: 5px;"></i>
+          <%= @user.phone_number %>
+        </p>
         <div class="infosuser">
-        <p><%= @user.birth_date%></p>
-        <br>
-        <p><%= @user.address %></p>
-        <br>
-        <p><%= @user.distance%> Km max</p>
+          <p>
+            <i class="fas fa-birthday-cake" style="margin-right: 5px;"></i>
+            <%= @user.birth_date%>
+          </p>
+          <br>
+          <p>
+            <i class="fas fa-map-marker-alt" style="margin-right: 5px;"></i>
+            <%= @user.address %>
+          </p>
         </div>
       </div>
-    </div>
-
+      <br>
       <%= link_to @user.linkedin do %>
         <%= image_tag 'linkedin.png', class:"linkedin3" %>
       <% end %>
-      <div class="cardprofil2">
-        <p>" <%= @user.description %> "</p>
-      </div>
+    </div>
 
-<div class="cardprofil3">
-  <h5 class="entreprise"> Mon entreprise </h5>
-  <br>
-    <p><%= @user.company_name %></p>
-    <p>Chiffre d'affaire : <%= @user.company_ca %> €</p>
-    <p>Secteur : <%= @user.company_sector %></p>
-  </div>
+    <div class="cardprofil2">
+      <p>" <%= @user.description %> "</p>
+    </div>
 
-      <div class="deco mb-3 mt-0 text-center">
-        <% if @user == current_user %>
-          <p><%= link_to "Editer mes infos", edit_user_path(current_user) %></p>
-          <hr>
-          <p><%= link_to "Déconnexion", destroy_user_session_path, method: :delete %></p>
-        <% end %>
-      </div>
+    <div class="deco mb-3 mt-0 text-center">
+      <% if @user == current_user %>
+        <p><%= link_to "Editer mes infos", edit_user_path(current_user) %></p>
+        <hr>
+        <p><%= link_to "Déconnexion", destroy_user_session_path, method: :delete %></p>
+      <% end %>
+    </div>
   </div>
 </div>
 
