@@ -34,10 +34,12 @@
     <meta name="twitter:image:src" content="<%= meta_image %>">
   </head>
   <body id="<%= controller.controller_name %>-<%= action_name %>">
+
     <% unless action_name == 'home' %>
       <%= render 'shared/navbar' %>
     <% end %>
-    <%= render 'shared/flashes' %>
+
+    <%#= render 'shared/flashes' %>
     <div class="content-wrapper">
       <%= yield %>
     </div>

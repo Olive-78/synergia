@@ -1,10 +1,10 @@
 <div class="display-width">
     <h1 class="titre-meeting-index">Mes RDVs</h1>
-    <div class="row">
+    <div class="">
       <% current_user.all_meetings.each do |meeting| %>
         <% user = meeting.users.reject { |user| user == current_user }.first %>
         <%= link_to meeting_path(meeting) do %>
-        <div class="col-12">
+        <div class="">
           <% past_css = (meeting.date < Date.today) ? "past" : "" %>
           <div class="cardprofilindex <%= past_css %>">
             <div class="partie-gauche d-flex justify-content-start">
