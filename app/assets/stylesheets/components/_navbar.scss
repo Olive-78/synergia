@@ -2,6 +2,7 @@
   margin-bottom: 80px;
   min-height: calc(100vh - 142px);
   width: 98vw;
+  margin: auto !important;
 }
 
 .navbar {
@@ -42,15 +43,15 @@
 }
 
 .navbar-calendar .navbar-icon {
-  background-image: url(asset_path('calendar_2.png'));
+  background-image: url(asset_path('calendar_2-nb.png'));
 }
 
 .navbar-dashboard .navbar-icon {
-  background-image: url(asset_path('home.png'));
+  background-image: url(asset_path('home_nb.png'));
 }
 
 .navbar-network .navbar-icon {
-  background-image: url(asset_path('avatar.png'));
+  background-image: url(asset_path('avatar_nb.png'));
 }
 
 .navbar-search .navbar-icon {
@@ -69,8 +70,8 @@
   .navbar-icon {
     background-image: url(asset_path('calendar_2.png'));
   }
-  p {
-    color: #001f3f;
+  .text-secondary {
+    color: #218ab9 !important;
   }
 }
 
@@ -78,8 +79,8 @@
   .navbar-icon {
     background-image: url(asset_path('home.png'));
   }
- p {
-   color: #001f3f;
+ .text-secondary {
+   color: #218ab9 !important;
  }
 }
 
@@ -87,8 +88,8 @@
   .navbar-icon {
     background-image: url(asset_path('avatar.png'));
   }
-  p {
-   color: #001f3f;
+  .text-secondary {
+   color: #218ab9 !important;
  }
 }
 
@@ -109,4 +110,10 @@
   margin-right : 5px;
   margin-top: 3px;
   cursor: pointer;
+}
+
+.navbar-element {
+  a, a:active {
+    text-decoration:none;
+  }
 }

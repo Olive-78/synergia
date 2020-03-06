@@ -1,22 +1,26 @@
 
 .cardprofilnetwork {
-    padding-bottom: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // padding-bottom: 25px;
     background-color: #001858;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-    margin-top: 10px;
+    // margin-top: 10px;
     border-radius: 25px;
-    padding: 29px;
-    left: 23px;
-    margin-bottom: 47px;
-    margin-left: 3px;
-    margin-right: -10px;
-    padding-right: 82px;
-    padding-left: 57px;
+    padding: 10px;
+    // left: 23px;
+    // margin-bottom: 47px;
+    // margin-left: 3px;
+    // margin-right: -10px;
+    // padding-right: 82px;
+    // padding-left: 57px;
     width: 150px;
     position: relative;
-    height: 150px;
-    margin-top: 99px;
-    transform: translate(-17px, 10px);
+    height: 120px;
+    margin: 115px auto 20px;
+    // margin-top: 99px;
+    // transform: translate(-17px, 10px);
 }
 
 .cardprofilnetwork p {
@@ -24,7 +28,7 @@
 }
 
 .meetinginfouser {
-    width: 131px;
-    transform: translate(-48px, 19px) !important;
+    // width: 131px;
+    // transform: translate(-48px, 19px) !important;
     text-align: center;
 }
